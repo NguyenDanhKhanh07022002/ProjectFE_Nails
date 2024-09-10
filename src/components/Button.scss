@@ -1,0 +1,30 @@
+.main-button {
+    font-family: 'Catamaran', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 0.09375rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 25px;
+    color: #383838;
+    background-color: #1b76ab;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid #1b76ab;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button-hover {
+    &--blue {
+        &:hover {
+            color: #1b76ab;
+            background-color: transparent;
+        }
+    }
+    &--white {
+        &:hover {
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+        }
+    }
+}

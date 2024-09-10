@@ -13,6 +13,7 @@
     cursor: pointer;
     transition: 0.3s;
 }
+
 .button-hover {
     &--blue {
         &:hover {
@@ -20,6 +21,7 @@
             background-color: transparent;
         }
     }
+
     &--white {
         &:hover {
             color: white;

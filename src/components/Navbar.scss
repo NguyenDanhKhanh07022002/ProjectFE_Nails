@@ -1,8 +1,11 @@
-#navbar{
+#navbar {
     z-index: 999;
     background-color: white;
     position: sticky;
+    top: 0;
     letter-spacing: 0.09375rem;
+    font-family: "Catamaran", sans-serif;
+
     .screen-nav {
         padding: 20px;
         width: 100%;
@@ -14,9 +17,11 @@
         text-decoration: none;
         text-align: center;
         align-items: center;
+
         img {
             max-width: 50px;
         }
+
         a {
             text-decoration: none;
             color: #383838;
@@ -25,14 +30,17 @@
             text-transform: uppercase;
         }
     }
+
     .mobile-nav {
         display: none;
         justify-content: space-between;
+
         i {
             font-size: 1.5rem;
             cursor: pointer;
         }
     }
+
     .bar-nav {
         position: absolute;
         flex-direction: column;
@@ -41,13 +49,16 @@
         background-color: white;
         display: none;
     }
+
     @media only screen and (max-width: 1080px) {
         .wide-nav {
             display: none;
         }
+
         .mobile-nav {
             display: flex;
         }
+
         .bar-nav {
             display: flex;
         }

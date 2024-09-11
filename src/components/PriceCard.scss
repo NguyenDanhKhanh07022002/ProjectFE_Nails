@@ -1,0 +1,84 @@
+#pricing-card {
+    width: 50%;
+
+    .pricing-section {
+        display: block;
+        color: #8e8987;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.125rem;
+        margin-bottom: 28px;
+    }
+
+    .pricing-title {
+        line-height: 1;
+        margin-bottom: 40px;
+    }
+
+    .pricing-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .pricing-6-item {
+            margin-bottom: 15px;
+
+            .price-text {
+                .p-md {
+                    font-weight: 400;
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                    font-size: 1.125rem;
+                    color: #6c757d !important;
+                }
+
+            }
+
+            .detail-price {
+                display: table;
+                margin: 0;
+
+                .price-name {
+                    position: relative;
+                    display: table-cell;
+                    width: 1%;
+                    white-space: nowrap;
+                    padding: 0 10px 0 0;
+
+                    h5 {
+                        position: relative;
+                        line-height: 1;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .price-dots {
+                    position: relative;
+                    display: table-cell;
+                    height: 3px;
+                    width: 98%;
+                    z-index: 1;
+                    background-image: radial-gradient(circle closest-side, #878889 99%, transparent 100%);
+                    background-position: 50% 100%;
+                    background-size: 5px 2px;
+                    background-repeat: repeat-x;
+                }
+
+                .price-number {
+                    display: table-cell;
+                    width: 1%;
+                    padding: 0 0 0 10px;
+                    white-space: nowrap;
+
+                    h5 {
+                        position: relative;
+                        line-height: 1;
+                        margin-bottom: 0;
+
+                    }
+                }
+            }
+        }
+    }
+}

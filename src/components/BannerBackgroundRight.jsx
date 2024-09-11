@@ -8,7 +8,12 @@ function BannerBackgroundRight(props) {
   return (
     <>
       <div id="widget-container">
-        <section className="container-right">
+        <section
+          className={
+            "container-right " +
+            (props.isShowBackground ? "container-right-pink" : "")
+          }
+        >
           <div className="banner-wrapper">
             <div className="banner-wrapper--image">
               <img src={props.image} alt="img" />

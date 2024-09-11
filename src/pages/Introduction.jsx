@@ -6,12 +6,14 @@ import Banner2 from "../assets/Slide-2.jpg";
 import Banner3 from "../assets/Slide-3.jpg";
 import storeImg from "../assets/store-img-1.jpg";
 import voucherImg from "../assets/voucher.png";
+import nailPolishes from "../assets/nail-polish.png";
 
 import Button from "../components/Button";
 import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
 import BannerBackgroundRight from "../components/BannerBackgroundRight";
 import OpenningHour from "../components/OpenningHour";
 import ServiceOffer from "../components/ServiceOffer";
+import PriceCard from "../components/PriceCard";
 import { useTranslation } from "react-i18next";
 
 function Introduction() {
@@ -66,6 +68,7 @@ function Introduction() {
           header="NAILS HT 86"
           description="Jsme brněnské nehtové studio s&nbsp;přívětivými cenami."
           lists={listTextForBanner}
+          isShowBackground={true}
         />
         <OpenningHour />
         <ServiceOffer />
@@ -75,7 +78,17 @@ function Introduction() {
           header="Dárkové poukazy"
           description=""
           lists={listTextForVoucher}
+          isShowBackground={true}
         />
+        <BannerBackgroundLeft
+          image={nailPolishes}
+          title="Výhodné ceny"
+          header="Ceník"
+          description=""
+          lists={[]}
+          isShowBackground={false}
+        />
+        <PriceCard />
       </div>
     </>
   );

@@ -58,6 +58,19 @@
         width: 70%;
         margin: auto;
 
+        .banner-wrapper {
+            width: 100% !important;
+
+            &--image {
+                width: 50% !important;
+            }
+
+            &--text {
+                width: 40% !important;
+                padding-left: 30px;
+            }
+        }
+
         ul {
             list-style-type: none !important;
             margin-left: 0px !important;

@@ -35,7 +35,9 @@ function Navbar() {
             <Link to="/contact">{t("Contact")}</Link>
           </li>
           <li>
-            <Button hoverColor="blue" title="Reservation" />
+            <Link to="/reserve">
+              <Button hoverColor="blue" title="Reservation" />
+            </Link>
           </li>
         </ul>
         <ul className="screen-nav mobile-nav">
@@ -71,7 +73,9 @@ function Navbar() {
               <Link to="/contact">{t("Contact")}</Link>
             </li>
             <li>
-              <Button hoverColor="blue" title="Reservation" />
+              <Link to="/reserve">
+                <Button hoverColor="blue" title="Reservation" />
+              </Link>
             </li>
           </ul>
         ) : (

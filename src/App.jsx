@@ -7,7 +7,9 @@ import PriceList from "./pages/PriceList";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import Reserve from "./pages/Reserve";
 import { useTranslation } from "react-i18next";
+import "react-datepicker/dist/react-datepicker.css";
 function App() {
   const { t, i18n } = useTranslation();
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/price" element={<PriceList />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/reserve" element={<Reserve />} />
       </Routes>
       <div>
         <button

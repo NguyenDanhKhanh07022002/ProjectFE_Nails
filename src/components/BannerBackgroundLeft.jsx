@@ -8,7 +8,12 @@ function BannerBackgroundLeft(props) {
   return (
     <>
       <div id="widget-container">
-        <section className="container-left">
+        <section
+          className={
+            "container-left " +
+            (props.isShowBackground ? "container-left-pink" : "")
+          }
+        >
           <div className="banner-wrapper">
             <div className="banner-wrapper--text">
               <span className="banner-wrapper--text__title">{props.title}</span>

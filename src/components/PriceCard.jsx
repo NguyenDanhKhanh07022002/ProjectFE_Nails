@@ -1,8 +1,17 @@
 import "./PriceCard.scss";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import AOS from "aos";
 function PriceCard(props) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // thời gian hiệu ứng chạy
+      once: true, // hiệu ứng chạy một lần duy nhất
+    });
+  }, []);
   return (
     <>
-      <div id="pricing-card">
+      <div id="pricing-card" data-aos="fade-right">
         <span className="pricing-section">nové nehty</span>
         <h5 className="pricing-title">Manikúra</h5>
         <ul className="pricing-list">

@@ -14,7 +14,7 @@ function BannerBackgroundRight(props) {
             (props.isShowBackground ? "container-right-pink" : "")
           }
         >
-          <div className="banner-wrapper">
+          <div className="banner-wrapper" data-aos="fade-up">
             <div className="banner-wrapper--image">
               <img src={props.image} alt="img" />
             </div>

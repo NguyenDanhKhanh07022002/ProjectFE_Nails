@@ -1,10 +1,19 @@
 import "./OpenningHour.scss";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import AOS from "aos";
 function OpenningHour() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
       <div id="widget-container">
         <section className="open-hour-wrapper">
-          <div className="open-hour-wrapper--schedule">
+          <div className="open-hour-wrapper--schedule" data-aos="fade-right">
             <table className="table">
               <tbody>
                 <tr>
@@ -25,7 +34,7 @@ function OpenningHour() {
               </tbody>
             </table>
           </div>
-          <div className="open-hour-wrapper--title">
+          <div className="open-hour-wrapper--title" data-aos="fade-left">
             <h3>Otevírací doba</h3>
           </div>
         </section>

@@ -31,11 +31,13 @@
 
         &__header {
           margin-bottom: 28px;
+          font-size: 2rem;
         }
 
         &__description {
           margin-top: 12px;
           margin-bottom: 22px;
+          font-size: 1rem;
         }
 
         ul {
@@ -61,6 +63,8 @@
   }
 
   .container-left-pink {
+    position: relative;
+
     &:after {
       position: absolute;
       content: "";
@@ -70,6 +74,89 @@
       left: 0;
       z-index: -1;
       background-color: #f5f1f2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-left-pink {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .container-left .banner-wrapper {
+      width: 90%;
+    }
+
+    .container-left .banner-wrapper--text {
+      width: 45%;
+    }
+
+    .container-left .banner-wrapper--image {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .container-left .banner-wrapper {
+      width: 100%;
+      flex-direction: column;
+      padding-top: 80px;
+      padding-bottom: 60px;
+    }
+
+    .container-left .banner-wrapper--text,
+    .container-left .banner-wrapper--image {
+      width: 100%;
+      text-align: center;
+    }
+
+    .container-left .banner-wrapper--text__header {
+      font-size: 1.75rem;
+    }
+
+    .container-left .banner-wrapper--text__description {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container-left .banner-wrapper--text__title {
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .container-left .banner-wrapper--text__header {
+      font-size: 1.5rem;
+    }
+
+    .container-left .banner-wrapper--image {
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .container-left .banner-wrapper {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .container-left .banner-wrapper--text__header {
+      font-size: 1.25rem;
+    }
+
+    .container-left .banner-wrapper--image img {
+      max-width: 90%;
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &:after {
+      width: 100%;
     }
   }
 }

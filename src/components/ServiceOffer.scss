@@ -30,4 +30,61 @@
   align-items: center;
   width: 70%;
   margin: auto;
+
+  /* Đặt kích thước mặc định cho ServiceCard */
+  &>* {
+    margin-bottom: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    /* Điều chỉnh để có 3 cột trên màn hình lớn */
+  }
+}
+
+/* Media queries cho các kích thước màn hình nhỏ hơn */
+@media (max-width: 768px) {
+  .service-offer-title {
+    margin-top: 50px;
+  }
+
+  .service-offer-title-section {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .service-offer-title h2 {
+    font-size: 1.75rem;
+    margin-bottom: 30px;
+  }
+
+  #service-offer-container {
+    width: 90%;
+    /* Khi màn hình nhỏ hơn 768px, thay đổi cách sắp xếp thành cột */
+    flex-direction: column;
+
+    /* Đổi hướng sắp xếp thành cột */
+    &>* {
+      flex: 1 1 100%;
+      /* Mỗi phần tử chiếm toàn bộ chiều rộng của container */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .service-offer-title {
+    margin-top: 30px;
+  }
+
+  .service-offer-title-section {
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+  }
+
+  .service-offer-title h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  #service-offer-container {
+    width: 100%;
+    /* Đặt chiều rộng 100% cho màn hình rất nhỏ */
+  }
 }

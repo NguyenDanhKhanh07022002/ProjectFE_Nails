@@ -56,20 +56,20 @@ function Reserve() {
       service: bookingService,
       date: bookingDate.toISOString().split("T")[0],
       time: bookingTime,
-      name: bookingName,
-      phone: bookingPhone,
-      mail: bookingMail,
+      fullName: bookingName,
+      phoneNumber: bookingPhone,
+      email: bookingMail,
       description: bookingDescription,
     };
     console.log(data);
-    // axios
-    //   .post("/booking", data)
-    //   .then(function (response) {
-    //     console.log(response);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    axios
+      .post(`http://localhost:8082/api/bookings/create`, data)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   return (
     <Box sx={{ width: "60%", margin: "auto" }}>
@@ -190,20 +190,20 @@ function Reserve() {
                 </p>
               </div>
               <div>
-                <label for="fname">Name:</label>
+                <label for="fullName">Name:</label>
                 <input
                   type="text"
-                  id="fname"
-                  name="fname"
+                  id="fullName"
+                  name="fullName"
                   value={bookingName}
                   onChange={(e) => setBookingName(e.target.value)}
                 />
                 <br />
-                <label for="phone">Phone:</label>
+                <label for="phoneNumber">Phone:</label>
                 <input
                   type="text"
-                  id="phone"
-                  name="phone"
+                  id="phoneNumber"
+                  name="phoneNumber"
                   value={bookingPhone}
                   onChange={(e) => setBookingPhone(e.target.value)}
                 />

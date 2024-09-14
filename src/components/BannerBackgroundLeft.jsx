@@ -10,11 +10,6 @@ function BannerBackgroundLeft(props) {
     });
   }, []);
 
-  const listItems = props.lists.map((list, index) => (
-    <li key={index}>
-      <p>{list}</p>
-    </li>
-  ));
   return (
     <>
       <div id="widget-container" data-aos="fade-up">

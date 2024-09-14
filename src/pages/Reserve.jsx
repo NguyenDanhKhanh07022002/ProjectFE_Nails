@@ -53,7 +53,7 @@ function Reserve() {
   };
   const handleSubmit = () => {
     let data = {
-      service: bookingService,
+      bookingService: bookingService,
       date: bookingDate.toISOString().split("T")[0],
       time: bookingTime,
       fullName: bookingName,
@@ -112,10 +112,10 @@ function Reserve() {
                   onChange={(option) => setBookingService(option.target.value)}
                 >
                   <option value="0">Select a service</option>
-                  <option value="1">Manicure</option>
-                  <option value="2">Pedicure</option>
-                  <option value="3">Manicure + Pedicure</option>
-                  <option value="4">Cosmestics</option>
+                  <option value="Manicure">Manicure</option>
+                  <option value="Pedicure">Pedicure</option>
+                  <option value="Manicure + Pedicure">Manicure + Pedicure</option>
+                  <option value="Cosmestics">Cosmestics</option>
                 </select>
               </div>
               <div>

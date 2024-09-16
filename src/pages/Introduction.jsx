@@ -8,7 +8,7 @@ import storeImg from "../assets/store-img-1.jpg";
 import voucherImg from "../assets/voucher.png";
 import nailPolishes from "../assets/nail-polish.png";
 
-import Button from "../components/Button";s
+import Button from "../components/Button";
 import BannerBackgroundRight from "../components/BannerBackgroundRight";
 import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
 import OpenningHour from "../components/OpenningHour";

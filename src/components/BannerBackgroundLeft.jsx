@@ -2,13 +2,17 @@ import "./BannerBackgroundLeft.scss";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
+
 function BannerBackgroundLeft(props) {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    AOS.init();
   }, []);
+
+  const listItems = props.lists?.map((list, index) => (
+    <li key={index}>
+      <p>{list}</p>
+    </li>
+  ));
 
   return (
     <>

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Introduction.scss";
 import { Carousel } from "react-bootstrap";
 import Banner1 from "../assets/Slide-1.jpg";
@@ -14,9 +15,16 @@ import BannerBackgroundRight from "../components/BannerBackgroundRight";
 import OpenningHour from "../components/OpenningHour";
 import ServiceOffer from "../components/ServiceOffer";
 import PriceCard from "../components/PriceCard";
+import ImageListMansory from "../components/ImageListMansory";
+import CommentSlide from "../components/CommentSlide";
+import BigBanner from "../components/BigBanner";
 import { useTranslation } from "react-i18next";
 
 function Introduction() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const { t } = useTranslation();
   var listTextForBanner = [
     "Zaměřujeme se na manikúru, pedikúru a kosmetiku.",
@@ -88,7 +96,19 @@ function Introduction() {
           lists={[]}
           isShowBackground={false}
         />
-        <PriceCard />
+        <div className="price-card-wrapper">
+          <PriceCard />
+          <PriceCard />
+        </div>
+        <div className="link-to-page">
+          <a href="/price">Zobrazit všechny ceny</a>
+        </div>
+        <ImageListMansory />
+        <div className="link-to-page">
+          <Button hoverColor="blue" title="Reservation" />
+        </div>
+        <CommentSlide />
+        <BigBanner />
       </div>
     </>
   );

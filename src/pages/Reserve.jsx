@@ -1,5 +1,6 @@
 import * as React from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
@@ -7,6 +8,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useLocation } from "react-router-dom";
 
 import DatePicker from "react-datepicker";
 //radio
@@ -18,6 +20,10 @@ import FormLabel from "@mui/material/FormLabel";
 
 const steps = ["Service", "Time", "Your data", "Done"];
 function Reserve() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 

@@ -4,7 +4,7 @@ import "./Navbar.scss";
 import { useTranslation } from "react-i18next";
 import logoImg from "../assets/ht86-yellow.png";
 import Button from "./Button";
-function Navbar() {
+function Navbar(props) {
   const { t } = useTranslation();
   const [isOpenBarMenu, setIsOpenBarMenu] = useState(false);
   function handleOpenBarMenu() {
@@ -12,7 +12,7 @@ function Navbar() {
   }
   return (
     <>
-      <div id="navbar">
+      <div id="navbar" class={props.isScrollTop ? "nav--show" : ""}>
         <ul className="screen-nav wide-nav">
           <li>
             <Link to="/">
@@ -36,7 +36,7 @@ function Navbar() {
           </li>
           <li>
             <Link to="/reserve">
-              <Button hoverColor="blue" title="Reservation" />
+              <Button hoverColor="blue" title={t("Reservation")} />
             </Link>
           </li>
         </ul>
@@ -74,7 +74,7 @@ function Navbar() {
             </li>
             <li>
               <Link to="/reserve">
-                <Button hoverColor="blue" title="Reservation" />
+                <Button hoverColor="blue" title={t("Reservation")} />
               </Link>
             </li>
           </ul>

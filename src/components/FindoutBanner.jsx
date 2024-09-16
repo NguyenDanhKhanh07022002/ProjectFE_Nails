@@ -1,10 +1,11 @@
 import "./FindoutBanner.scss";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import AOS from "aos";
 function FindoutBanner(props) {
   return (
     <>
-      <div id="widget-container">
+      <div id="widget-container" data-aos="fade-up">
         <div class="elementor-widget-container">
           <section id="banner-5" class="banner-section division">
             <div class="container">
@@ -13,15 +14,15 @@ function FindoutBanner(props) {
                   <div class="col-sm-10 col-md-8 col-lg-7">
                     <div class="banner-5-txt">
                       <span class="section-id black--color">
-                        <font style={{ "vertical-align": "inherit;" }}>
-                          <font style={{ "vertical-align": "inherit;" }}>
+                        <font style={{ verticalAlign: "inherit" }}>
+                          <font style={{ verticalAlign: "inherit" }}>
                             View prices
                           </font>
                         </font>
                       </span>
                       <h2 class="h2-xs">
-                        <font style={{ "vertical-align": "inherit;" }}>
-                          <font style={{ "vertical-align": "inherit;" }}>
+                        <font style={{ verticalAlign: "inherit" }}>
+                          <font style={{ verticalAlign: "inherit" }}>
                             Get the unique nails you dream of
                           </font>
                         </font>

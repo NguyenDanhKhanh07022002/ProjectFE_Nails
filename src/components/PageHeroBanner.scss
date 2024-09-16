@@ -1,0 +1,44 @@
+.page-hero-banner {
+    padding-top: 160px;
+    padding-bottom: 110px;
+
+
+    &--text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+                color: #1b76ab;
+            }
+        }
+
+        h2 {
+            color: white;
+        }
+    }
+
+    .breadcrumb {
+        color: white;
+        font-family: 'Lora', serif;
+
+        .breadcrumb-item {
+            &::after {
+                font-size: 1.15rem;
+                display: inline-block;
+                padding-right: 16px;
+                padding-left: 16px;
+                margin-top: -3px;
+                color: white;
+                content: "\00bb";
+            }
+        }
+    }
+
+
+}

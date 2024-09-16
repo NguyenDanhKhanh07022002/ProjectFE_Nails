@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Introduction from "./pages/Introduction";
@@ -9,15 +9,31 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Reserve from "./pages/Reserve";
-import { useTranslation } from "react-i18next";
 import "react-datepicker/dist/react-datepicker.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
-  const { t, i18n } = useTranslation();
+  const [isScrollTop, setIsScrollTop] = useState(true);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const handleScroll = () => {
+        if (window.scrollY === 0) {
+          setIsScrollTop(true);
+        } else {
+          setIsScrollTop(false);
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    });
+  }, []);
   return (
     <>
-      <Navbar />
+      <Navbar isScrollTop={isScrollTop} />
 
       <Routes>
         <Route path="/" element={<Introduction />} />
@@ -27,22 +43,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/reserve" element={<Reserve />} />
       </Routes>
-      <div>
-        <button
-          onClick={() => {
-            i18n.changeLanguage("en");
-          }}
-        >
-          EN
-        </button>
-        <button
-          onClick={() => {
-            i18n.changeLanguage("cz");
-          }}
-        >
-          CZ
-        </button>
-      </div>
       <Footer />
     </>
   );

@@ -1,7 +1,9 @@
 #service-card {
   width: calc((100% / 3) - 20px);
+  /* 3 cột trên màn hình lớn */
   text-align: center;
   font-family: "Lora", serif;
+  margin-bottom: 20px;
 
   .image-wrapper {
     position: relative;
@@ -48,6 +50,29 @@
         background-color: white;
         opacity: 0.1;
       }
+    }
+  }
+}
+
+/* Media queries cho kích thước màn hình nhỏ hơn */
+@media (max-width: 1024px) {
+  #service-card {
+    width: calc((100% / 2) - 20px);
+    /* 2 cột trên màn hình tầm trung */
+  }
+}
+
+@media (max-width: 768px) {
+  #service-card {
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+    margin-bottom: 20px;
+  }
+
+  .image-wrapper {
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }

@@ -10,8 +10,8 @@ import voucherImg from "../assets/voucher.png";
 import nailPolishes from "../assets/nail-polish.png";
 
 import Button from "../components/Button";
-import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
 import BannerBackgroundRight from "../components/BannerBackgroundRight";
+import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
 import OpenningHour from "../components/OpenningHour";
 import ServiceOffer from "../components/ServiceOffer";
 import PriceCard from "../components/PriceCard";

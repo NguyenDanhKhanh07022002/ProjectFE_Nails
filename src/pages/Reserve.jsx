@@ -11,7 +11,6 @@ import Typography from "@mui/material/Typography";
 import { useLocation } from "react-router-dom";
 
 import DatePicker from "react-datepicker";
-//radio
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -19,6 +18,7 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 
 const steps = ["Service", "Time", "Your data", "Done"];
+
 function Reserve() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -35,19 +35,56 @@ function Reserve() {
   const [bookingMail, setBookingMail] = React.useState("");
   const [bookingDescription, setBookingDescription] = React.useState("");
 
+  const [errors, setErrors] = React.useState({});
+
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
 
-  const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
+  const validateStep = () => {
+    const newErrors = {};
+
+    if (activeStep === 0) {
+      // Step 0: Service and Date
+      if (!bookingService) {
+        newErrors.bookingService = "Please select a service";
+      }
+      if (!bookingDate) {
+        newErrors.bookingDate = "Please select a date";
+      }
+    } else if (activeStep === 1) {
+      // Step 1: Date and Time
+      if (!bookingTime) {
+        newErrors.bookingTime = "Please select a time";
+      }
+    } else if (activeStep === 2) {
+      // Step 2: Personal Information
+      if (!bookingName) {
+        newErrors.bookingName = "Please enter your name";
+      }
+      if (!bookingPhone) {
+        newErrors.bookingPhone = "Please enter your phone number";
+      }
+      if (!bookingMail) {
+        newErrors.bookingMail = "Please enter your email";
+      }
     }
 
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleNext = () => {
+    if (validateStep()) {
+      let newSkipped = skipped;
+      if (isStepSkipped(activeStep)) {
+        newSkipped = new Set(newSkipped.values());
+        newSkipped.delete(activeStep);
+      }
+
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      setSkipped(newSkipped);
+    }
   };
 
   const handleBack = () => {
@@ -56,10 +93,12 @@ function Reserve() {
 
   const handleReset = () => {
     setActiveStep(0);
+    setErrors({});
   };
+
   const handleSubmit = () => {
-    let data = {
-      service: bookingService,
+    const data = {
+      bookingService,
       date: bookingDate.toISOString().split("T")[0],
       time: bookingTime,
       fullName: bookingName,
@@ -67,16 +106,18 @@ function Reserve() {
       email: bookingMail,
       description: bookingDescription,
     };
-    console.log(data);
+
     axios
       .post(`http://localhost:8082/api/bookings/create`, data)
       .then(function (response) {
         console.log(response);
+        handleReset();
       })
       .catch(function (error) {
         console.log(error);
       });
   };
+
   return (
     <Box sx={{ width: "60%", margin: "auto" }}>
       <Stepper activeStep={activeStep}>
@@ -107,13 +148,11 @@ function Reserve() {
       ) : (
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-          {activeStep === 0 ? (
+          {activeStep === 0 && (
             <>
               <div>
                 <h5>Service</h5>
                 <select
-                  name=""
-                  id=""
                   value={bookingService}
                   onChange={(option) => setBookingService(option.target.value)}
                 >
@@ -121,8 +160,11 @@ function Reserve() {
                   <option value="1">Manicure</option>
                   <option value="2">Pedicure</option>
                   <option value="3">Manicure + Pedicure</option>
-                  <option value="4">Cosmestics</option>
+                  <option value="4">Cosmetics</option>
                 </select>
+                {errors.bookingService && (
+                  <Typography color="error">{errors.bookingService}</Typography>
+                )}
               </div>
               <div>
                 <h5>Date</h5>
@@ -130,12 +172,13 @@ function Reserve() {
                   selected={bookingDate}
                   onChange={(date) => setBookingDate(date)}
                 />
+                {errors.bookingDate && (
+                  <Typography color="error">{errors.bookingDate}</Typography>
+                )}
               </div>
             </>
-          ) : (
-            ""
           )}
-          {activeStep === 1 ? (
+          {activeStep === 1 && (
             <>
               <div>
                 <h5>Date</h5>
@@ -143,6 +186,9 @@ function Reserve() {
                   selected={bookingDate}
                   onChange={(date) => setBookingDate(date)}
                 />
+                {errors.bookingDate && (
+                  <Typography color="error">{errors.bookingDate}</Typography>
+                )}
               </div>
               <div>
                 <FormControl>
@@ -177,12 +223,13 @@ function Reserve() {
                     />
                   </RadioGroup>
                 </FormControl>
+                {errors.bookingTime && (
+                  <Typography color="error">{errors.bookingTime}</Typography>
+                )}
               </div>
             </>
-          ) : (
-            ""
           )}
-          {activeStep === 2 ? (
+          {activeStep === 2 && (
             <>
               <div>
                 <p>
@@ -196,51 +243,54 @@ function Reserve() {
                 </p>
               </div>
               <div>
-                <label for="fullName">Name:</label>
+                <label htmlFor="fullName">Name:</label>
                 <input
                   type="text"
                   id="fullName"
-                  name="fullName"
                   value={bookingName}
                   onChange={(e) => setBookingName(e.target.value)}
                 />
+                {errors.bookingName && (
+                  <Typography color="error">{errors.bookingName}</Typography>
+                )}
                 <br />
-                <label for="phoneNumber">Phone:</label>
+                <label htmlFor="phoneNumber">Phone:</label>
                 <input
                   type="text"
                   id="phoneNumber"
-                  name="phoneNumber"
                   value={bookingPhone}
                   onChange={(e) => setBookingPhone(e.target.value)}
                 />
+                {errors.bookingPhone && (
+                  <Typography color="error">{errors.bookingPhone}</Typography>
+                )}
                 <br />
-                <label for="email">Email:</label>
+                <label htmlFor="email">Email:</label>
                 <input
                   type="text"
                   id="email"
-                  name="email"
                   value={bookingMail}
                   onChange={(e) => setBookingMail(e.target.value)}
                 />
+                {errors.bookingMail && (
+                  <Typography color="error">{errors.bookingMail}</Typography>
+                )}
                 <br />
-                <label for="description">
-                  Please enter your additional requirements here::
+                <label htmlFor="description">
+                  Please enter your additional requirements here:
                 </label>
                 <textarea
                   rows="4"
                   cols="50"
                   id="description"
-                  name="description"
                   value={bookingDescription}
                   onChange={(e) => setBookingDescription(e.target.value)}
                 />
                 <br />
               </div>
             </>
-          ) : (
-            ""
           )}
-          {activeStep === 3 ? (
+          {activeStep === 3 && (
             <>
               <div>
                 <p>
@@ -265,26 +315,26 @@ function Reserve() {
                   <b>Description</b>: {bookingDescription}
                 </p>
               </div>
+              <Button onClick={handleSubmit} variant="contained">
+                Submit
+              </Button>
             </>
-          ) : (
-            ""
           )}
-          <hr />
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Button
               color="inherit"
-              disabled={activeStep === 0}
               onClick={handleBack}
-              sx={{ mr: 1 }}
+              disabled={activeStep === 0}
             >
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
-            {activeStep === steps.length - 1 ? (
-              <Button onClick={handleSubmit}>FINISH</Button>
-            ) : (
-              <Button onClick={handleNext}>NEXT</Button>
-            )}
+            <Button
+              onClick={handleNext}
+              disabled={activeStep === steps.length - 1}
+            >
+              {activeStep === steps.length - 1 ? "Finish" : "Next"}
+            </Button>
           </Box>
         </React.Fragment>
       )}

@@ -5,3 +5,17 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+.link-to-page {
+    text-align: center;
+    margin-top: 50px;
+}
+.link-to-page a {
+    text-decoration: none;
+    color: #373b4d;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+}
+.link-to-page a:hover {
+    border-bottom: 1px solid #373b4d;
+}

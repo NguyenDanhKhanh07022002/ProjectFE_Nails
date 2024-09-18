@@ -11,6 +11,9 @@ import Footer from "./components/Footer";
 import Reserve from "./pages/Reserve";
 import "react-datepicker/dist/react-datepicker.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.min.css";
+import "react-phone-input-2/lib/style.css";
 
 function App() {
   const [isScrollTop, setIsScrollTop] = useState(true);

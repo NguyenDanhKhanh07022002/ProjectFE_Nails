@@ -1,0 +1,26 @@
+.contact-map {
+    display: flex;
+    width: 60%;
+    margin: auto;
+
+    p {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: #201e29;
+        font-weight: 600;
+        box-shadow: none;
+        text-decoration: none;
+    }
+
+    &-item {
+        margin-bottom: 20px;
+    }
+
+    span {
+        color: #201e29;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+}

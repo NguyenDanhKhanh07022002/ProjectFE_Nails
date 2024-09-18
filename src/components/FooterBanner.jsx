@@ -1,10 +1,15 @@
-import "./BigBanner.scss";
+import "./FooterBanner.scss";
 import Button from "./Button";
-function BigBanner(props) {
+function FooterBanner(props) {
   return (
     <>
       <div id="widget-container">
-        <section id="banner-1">
+        <section
+          id="banner-1"
+          style={{
+            backgroundImage: `url(${props.image})`,
+          }}
+        >
           <div>
             <div>
               <div>
@@ -27,4 +32,4 @@ function BigBanner(props) {
   );
 }
 
-export default BigBanner;
+export default FooterBanner;

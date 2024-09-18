@@ -11,10 +11,11 @@ import pricePageImg4 from "../assets/pricePage/cenik-manikura3-opravy.jpg";
 import pricePageImg5 from "../assets/pricePage/cenik-pedikura1.jpg";
 import pricePageImg6 from "../assets/pricePage/cenik-pedikura2.jpg";
 import pricePageImg7 from "../assets/pricePage/cenik-kosmetika.jpg";
+import bigBannerImage from "../assets/bigBanner/banner-1.jpg";
 
 import BannerBackgroundRightPrice from "../components/BannerBackgroundRightPrice";
 import CommentSlide from "../components/CommentSlide";
-import BigBanner from "../components/BigBanner";
+import FooterBanner from "../components/FooterBanner";
 import FindoutBanner from "../components/FindoutBanner";
 import PageHeroBanner from "../components/PageHeroBanner";
 function PriceList() {
@@ -56,7 +57,7 @@ function PriceList() {
       />
       <FindoutBanner />
       <CommentSlide />
-      <BigBanner />
+      <FooterBanner image={bigBannerImage} />
     </>
   );
 }

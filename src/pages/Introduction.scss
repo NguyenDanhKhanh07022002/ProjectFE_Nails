@@ -84,20 +84,4 @@
         width: 60%;
         margin: auto;
     }
-
-    .link-to-page {
-        text-align: center;
-        margin-top: 50px;
-
-        a {
-            text-decoration: none;
-            color: #373b4d;
-            font-family: 'Lora', serif;
-            font-weight: 700;
-
-            &:hover {
-                border-bottom: 1px solid #373b4d;
-            }
-        }
-    }
 }

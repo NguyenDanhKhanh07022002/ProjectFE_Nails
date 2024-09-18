@@ -6,21 +6,21 @@ function FindoutBanner(props) {
   return (
     <>
       <div id="widget-container" data-aos="fade-up">
-        <div class="elementor-widget-container">
-          <section id="banner-5" class="banner-section division">
-            <div class="container">
-              <div class="banner-5-wrapper bg-fixed">
-                <div class="row">
-                  <div class="col-sm-10 col-md-8 col-lg-7">
-                    <div class="banner-5-txt">
-                      <span class="section-id black--color">
+        <div className="elementor-widget-container">
+          <section id="banner-5" className="banner-section division">
+            <div className="container">
+              <div className="banner-5-wrapper bg-fixed">
+                <div className="row">
+                  <div className="col-sm-10 col-md-8 col-lg-7">
+                    <div className="banner-5-txt">
+                      <span className="section-id black--color">
                         <font style={{ verticalAlign: "inherit" }}>
                           <font style={{ verticalAlign: "inherit" }}>
                             View prices
                           </font>
                         </font>
                       </span>
-                      <h2 class="h2-xs">
+                      <h2 className="h2-xs">
                         <font style={{ verticalAlign: "inherit" }}>
                           <font style={{ verticalAlign: "inherit" }}>
                             Get the unique nails you dream of

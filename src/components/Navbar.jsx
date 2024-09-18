@@ -12,7 +12,7 @@ function Navbar(props) {
   }
   return (
     <>
-      <div id="navbar" class={props.isScrollTop ? "nav--show" : ""}>
+      <div id="navbar" className={props.isScrollTop ? "nav--show" : ""}>
         <ul className="screen-nav wide-nav">
           <li>
             <Link to="/">

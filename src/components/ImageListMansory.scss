@@ -1,0 +1,15 @@
+.MuiImageList-root {
+    .MuiImageListItem-root {
+        overflow: hidden;
+
+        img {
+            transition: 0.5s;
+        }
+
+        &:hover {
+            img {
+                scale: 1.2;
+            }
+        }
+    }
+}

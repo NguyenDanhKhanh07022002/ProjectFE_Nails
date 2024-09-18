@@ -7,10 +7,11 @@ import serviceThumb01 from "../assets/service-img-thumb-01.jpg";
 import serviceThumb02 from "../assets/service-img-thumb-02.jpg";
 import serviceThumb03 from "../assets/service-img-thumb-03.jpg";
 import serviceHeroBanner from "../assets/serviceHero.jpg";
+import bigBannerImage from "../assets/bigBanner/banner-rezervace2.jpg";
 
 import CommentSlide from "../components/CommentSlide";
 import PageHeroBanner from "../components/PageHeroBanner";
-import BigBanner from "../components/BigBanner";
+import FooterBanner from "../components/FooterBanner";
 import FindoutBanner from "../components/FindoutBanner";
 function Service() {
   const { t } = useTranslation();
@@ -74,7 +75,7 @@ function Service() {
       />
       <FindoutBanner />
       <CommentSlide />
-      <BigBanner />
+      <FooterBanner image={bigBannerImage} />
     </>
   );
 }

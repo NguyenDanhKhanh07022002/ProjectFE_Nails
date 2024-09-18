@@ -2,6 +2,9 @@ import * as React from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import PhoneInput from "react-phone-input-2";
+
+import "./Reserve.scss";
 
 import reserveHeroBanner from "../assets/reserveHero.jpg";
 
@@ -41,7 +44,20 @@ function Reserve() {
   const [bookingDescription, setBookingDescription] = React.useState("");
 
   const [errors, setErrors] = React.useState({});
-
+  const renderServiceOption = (option) => {
+    switch (option) {
+      case "1":
+        return "Manicure";
+      case "2":
+        return "Pedicure";
+      case "3":
+        return "Manicure + Pedicure";
+      case "4":
+        return "Cosmetics";
+      default:
+        return "Select Service";
+    }
+  };
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
@@ -86,7 +102,9 @@ function Reserve() {
         newSkipped = new Set(newSkipped.values());
         newSkipped.delete(activeStep);
       }
-
+      if (activeStep === steps.length - 1) {
+        handleSubmit();
+      }
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setSkipped(newSkipped);
     }
@@ -99,6 +117,13 @@ function Reserve() {
   const handleReset = () => {
     setActiveStep(0);
     setErrors({});
+    setBookingService(0);
+    setBookingDate(new Date());
+    setBookingTime("");
+    setBookingName("");
+    setBookingPhone("");
+    setBookingMail("");
+    setBookingDescription("");
   };
 
   const handleSubmit = () => {
@@ -126,230 +151,322 @@ function Reserve() {
   return (
     <>
       <PageHeroBanner image={reserveHeroBanner} title={t("Reservation")} />
-      <Box sx={{ width: "60%", margin: "auto" }}>
-        <Stepper activeStep={activeStep}>
-          {steps.map((label, index) => {
-            const stepProps = {};
-            const labelProps = {};
+      <div id="reserve-container">
+        <Box sx={{ width: "60%", margin: "auto" }}>
+          <Stepper activeStep={activeStep}>
+            {steps.map((label, index) => {
+              const stepProps = {};
+              const labelProps = {};
 
-            if (isStepSkipped(index)) {
-              stepProps.completed = false;
-            }
-            return (
-              <Step key={label} {...stepProps}>
-                <StepLabel {...labelProps}>{label}</StepLabel>
-              </Step>
-            );
-          })}
-        </Stepper>
-        {activeStep === steps.length ? (
-          <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>
-              All steps completed - you&apos;re finished
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button onClick={handleReset}>Reset</Button>
-            </Box>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-            {activeStep === 0 && (
-              <>
-                <div>
-                  <h5>Service</h5>
-                  <select
-                    value={bookingService}
-                    onChange={(option) =>
-                      setBookingService(option.target.value)
-                    }
-                  >
-                    <option value="0">Select a service</option>
-                    <option value="1">Manicure</option>
-                    <option value="2">Pedicure</option>
-                    <option value="3">Manicure + Pedicure</option>
-                    <option value="4">Cosmetics</option>
-                  </select>
-                  {errors.bookingService && (
-                    <Typography color="error">
-                      {errors.bookingService}
-                    </Typography>
-                  )}
-                </div>
-                <div>
-                  <h5>Date</h5>
-                  <DatePicker
-                    selected={bookingDate}
-                    onChange={(date) => setBookingDate(date)}
-                  />
-                  {errors.bookingDate && (
-                    <Typography color="error">{errors.bookingDate}</Typography>
-                  )}
-                </div>
-              </>
-            )}
-            {activeStep === 1 && (
-              <>
-                <div>
-                  <h5>Date</h5>
-                  <DatePicker
-                    selected={bookingDate}
-                    onChange={(date) => setBookingDate(date)}
-                  />
-                  {errors.bookingDate && (
-                    <Typography color="error">{errors.bookingDate}</Typography>
-                  )}
-                </div>
-                <div>
-                  <FormControl>
-                    <FormLabel id="demo-controlled-radio-buttons-group">
-                      Time
-                    </FormLabel>
-                    <RadioGroup
-                      aria-labelledby="demo-controlled-radio-buttons-group"
-                      name="controlled-radio-buttons-group"
-                      value={bookingTime}
-                      onChange={(option) => setBookingTime(option.target.value)}
-                    >
-                      <FormControlLabel
-                        value="00:10"
-                        control={<Radio />}
-                        label="00:10"
+              if (isStepSkipped(index)) {
+                stepProps.completed = false;
+              }
+              return (
+                <Step key={label} {...stepProps}>
+                  <StepLabel {...labelProps}>{label}</StepLabel>
+                </Step>
+              );
+            })}
+          </Stepper>
+          {activeStep === steps.length ? (
+            <React.Fragment>
+              <Typography sx={{ mt: 2, mb: 1 }}>
+                All steps completed - you&apos;re finished
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <Box sx={{ flex: "1 1 auto" }} />
+                <Button onClick={handleReset}>Reset</Button>
+              </Box>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              {/* <Typography sx={{ mt: 2, mb: 1 }}>
+                Step {activeStep + 1}
+              </Typography> */}
+              {activeStep === 0 && (
+                <>
+                  <div className="reserve-wrapper">
+                    <div className="reserve-item">
+                      <p className="reserve-item-header">
+                        Select service and date of reservation:
+                      </p>
+                      <b className="reserve-item-title">Service</b>
+                      <select
+                        style={{ width: "100%" }}
+                        value={bookingService}
+                        onChange={(option) =>
+                          setBookingService(option.target.value)
+                        }
+                      >
+                        <option value="0">Select a service</option>
+                        <option value="1">Manicure</option>
+                        <option value="2">Pedicure</option>
+                        <option value="3">Manicure + Pedicure</option>
+                        <option value="4">Cosmetics</option>
+                      </select>
+                      {errors.bookingService && (
+                        <Typography color="error">
+                          {errors.bookingService}
+                        </Typography>
+                      )}
+                    </div>
+                    <div className="reserve-item">
+                      <b className="reserve-item-title">Date</b>
+                      <DatePicker
+                        selected={bookingDate}
+                        onChange={(date) => setBookingDate(date)}
+                        minDate={new Date()}
                       />
-                      <FormControlLabel
-                        value="00:30"
-                        control={<Radio />}
-                        label="00:30"
+                      {errors.bookingDate && (
+                        <Typography color="error">
+                          {errors.bookingDate}
+                        </Typography>
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
+              {activeStep === 1 && (
+                <>
+                  <div className="reserve-wrapper reserve-time-step">
+                    <div className="reserve-item">
+                      <b className="reserve-item-title">Date</b>
+                      <DatePicker
+                        selected={bookingDate}
+                        onChange={(date) => setBookingDate(date)}
+                        minDate={new Date()}
                       />
-                      <FormControlLabel
-                        value="00:40"
-                        control={<Radio />}
-                        label="00:40"
-                      />
-                      <FormControlLabel
-                        value="04:30"
-                        control={<Radio />}
-                        label="04:30"
-                      />
-                    </RadioGroup>
-                  </FormControl>
-                  {errors.bookingTime && (
-                    <Typography color="error">{errors.bookingTime}</Typography>
-                  )}
-                </div>
-              </>
-            )}
-            {activeStep === 2 && (
-              <>
-                <div>
-                  <p>
-                    <b>Service</b>: {bookingService}
-                  </p>
-                  <p>
-                    <b>Date</b>: {bookingDate.toISOString().split("T")[0]}
-                  </p>
-                  <p>
-                    <b>Time</b>: {bookingTime}
-                  </p>
-                </div>
-                <div>
-                  <label htmlFor="fullName">Name:</label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    value={bookingName}
-                    onChange={(e) => setBookingName(e.target.value)}
-                  />
-                  {errors.bookingName && (
-                    <Typography color="error">{errors.bookingName}</Typography>
-                  )}
-                  <br />
-                  <label htmlFor="phoneNumber">Phone:</label>
-                  <input
-                    type="text"
-                    id="phoneNumber"
-                    value={bookingPhone}
-                    onChange={(e) => setBookingPhone(e.target.value)}
-                  />
-                  {errors.bookingPhone && (
-                    <Typography color="error">{errors.bookingPhone}</Typography>
-                  )}
-                  <br />
-                  <label htmlFor="email">Email:</label>
-                  <input
-                    type="text"
-                    id="email"
-                    value={bookingMail}
-                    onChange={(e) => setBookingMail(e.target.value)}
-                  />
-                  {errors.bookingMail && (
-                    <Typography color="error">{errors.bookingMail}</Typography>
-                  )}
-                  <br />
-                  <label htmlFor="description">
-                    Please enter your additional requirements here:
-                  </label>
-                  <textarea
-                    rows="4"
-                    cols="50"
-                    id="description"
-                    value={bookingDescription}
-                    onChange={(e) => setBookingDescription(e.target.value)}
-                  />
-                  <br />
-                </div>
-              </>
-            )}
-            {activeStep === 3 && (
-              <>
-                <div>
-                  <p>
-                    <b>Service</b>: {bookingService}
-                  </p>
-                  <p>
-                    <b>Date</b>: {bookingDate.toISOString().split("T")[0]}
-                  </p>
-                  <p>
-                    <b>Time</b>: {bookingTime}
-                  </p>
-                  <p>
-                    <b>Name</b>: {bookingName}
-                  </p>
-                  <p>
-                    <b>Phone</b>: {bookingPhone}
-                  </p>
-                  <p>
-                    <b>Mail</b>: {bookingMail}
-                  </p>
-                  <p>
-                    <b>Description</b>: {bookingDescription}
-                  </p>
-                </div>
-                <Button onClick={handleSubmit} variant="contained">
-                  Submit
+                      {errors.bookingDate && (
+                        <Typography color="error">
+                          {errors.bookingDate}
+                        </Typography>
+                      )}
+                    </div>
+                    <div className="reserve-item">
+                      <FormControl>
+                        <FormLabel id="demo-controlled-radio-buttons-group">
+                          <b className="reserve-item-title">Time</b>
+                        </FormLabel>
+                        <RadioGroup
+                          className="reserve-time-option"
+                          aria-labelledby="demo-controlled-radio-buttons-group"
+                          name="controlled-radio-buttons-group"
+                          value={bookingTime}
+                          onChange={(option) =>
+                            setBookingTime(option.target.value)
+                          }
+                        >
+                          <FormControlLabel
+                            value="00:10"
+                            control={<Radio />}
+                            label="00:10"
+                          />
+                          <FormControlLabel
+                            value="00:20"
+                            control={<Radio />}
+                            label="00:20"
+                          />
+                          <FormControlLabel
+                            value="00:30"
+                            control={<Radio />}
+                            label="00:30"
+                          />
+                          <FormControlLabel
+                            value="00:40"
+                            control={<Radio />}
+                            label="00:40"
+                          />
+                          <FormControlLabel
+                            value="00:50"
+                            control={<Radio />}
+                            label="00:50"
+                          />
+                          <FormControlLabel
+                            value="01:00"
+                            control={<Radio />}
+                            label="01:00"
+                          />
+                          <FormControlLabel
+                            value="01:20"
+                            control={<Radio />}
+                            label="01:20"
+                          />
+                          <FormControlLabel
+                            value="01:40"
+                            control={<Radio />}
+                            label="01:40"
+                          />
+                          <FormControlLabel
+                            value="02:00"
+                            control={<Radio />}
+                            label="02:00"
+                          />
+                          <FormControlLabel
+                            value="02:30"
+                            control={<Radio />}
+                            label="02:30"
+                          />
+                        </RadioGroup>
+                      </FormControl>
+                      {errors.bookingTime && (
+                        <Typography color="error">
+                          {errors.bookingTime}
+                        </Typography>
+                      )}
+                    </div>
+                  </div>
+                </>
+              )}
+              {activeStep === 2 && (
+                <>
+                  <div className="reserve-wrapper">
+                    <div>
+                      <p>
+                        <b className="reserve-item-title">
+                          Service: {renderServiceOption(bookingService)}
+                        </b>
+                      </p>
+                      <p>
+                        <b className="reserve-item-title">
+                          Date: {bookingDate.toISOString().split("T")[0]}
+                        </b>
+                      </p>
+                      <p>
+                        <b className="reserve-item-title">
+                          Time: {bookingTime}
+                        </b>
+                      </p>
+                    </div>
+                    <p className="reserve-item-warning">
+                      *To complete the reservation, all that remains is to enter
+                      your contact details, which will not be processed further
+                      without your consent, according to the rules of the new
+                      European Union regulation on the protection of personal
+                      data.
+                    </p>
+                    <p className="reserve-item-warning">Your detail:</p>
+                    <div>
+                      <div className="reserve-item-form">
+                        <div className="reserve-item-form--item">
+                          <label htmlFor="fullName">Name:</label>
+                          <input
+                            type="text"
+                            id="fullName"
+                            value={bookingName}
+                            onChange={(e) => setBookingName(e.target.value)}
+                          />
+                          {errors.bookingName && (
+                            <Typography color="error">
+                              {errors.bookingName}
+                            </Typography>
+                          )}
+                        </div>
+                        <br />
+                        <div className="reserve-item-form--item">
+                          <label htmlFor="phoneNumber">Phone:</label>
+                          <PhoneInput
+                            inputProps={{
+                              required: true,
+                              id: "phoneNumber",
+                              className: "phone-input",
+                            }}
+                            country={"us"}
+                            value={bookingPhone}
+                            onChange={(phone) => setBookingPhone(phone)}
+                          />
+                          {errors.bookingPhone && (
+                            <Typography color="error">
+                              {errors.bookingPhone}
+                            </Typography>
+                          )}
+                        </div>
+                        <br />
+                        <div className="reserve-item-form--item">
+                          <label htmlFor="email">Email:</label>
+                          <input
+                            type="email"
+                            id="email"
+                            value={bookingMail}
+                            onChange={(e) => setBookingMail(e.target.value)}
+                          />
+                          {errors.bookingMail && (
+                            <Typography color="error">
+                              {errors.bookingMail}
+                            </Typography>
+                          )}
+                        </div>
+                      </div>
+                      <br />
+                      <div className="reserve-item-textarea">
+                        <label htmlFor="description">
+                          Please enter your additional requirements here:
+                        </label>
+                        <textarea
+                          rows="10"
+                          id="description"
+                          value={bookingDescription}
+                          onChange={(e) =>
+                            setBookingDescription(e.target.value)
+                          }
+                        />
+                      </div>
+                      <br />
+                    </div>
+                  </div>
+                </>
+              )}
+              {activeStep === 3 && (
+                <>
+                  <div className="reserve-wrapper">
+                    <p>
+                      <b className="reserve-item-title">
+                        Service: {renderServiceOption(bookingService)}
+                      </b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">
+                        Date: {bookingDate.toISOString().split("T")[0]}
+                      </b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">Time: {bookingTime}</b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">Name : {bookingName}</b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">
+                        Phone: {bookingPhone}
+                      </b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">Mail : {bookingMail}</b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">
+                        Description: {bookingDescription}
+                      </b>
+                    </p>
+                  </div>
+                </>
+              )}
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <Button
+                  color="inherit"
+                  onClick={handleBack}
+                  disabled={activeStep === 0}
+                >
+                  Back
                 </Button>
-              </>
-            )}
-            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-              <Button
-                color="inherit"
-                onClick={handleBack}
-                disabled={activeStep === 0}
-              >
-                Back
-              </Button>
-              <Box sx={{ flex: "1 1 auto" }} />
-              <Button
-                onClick={handleNext}
-                disabled={activeStep === steps.length - 1}
-              >
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
-              </Button>
-            </Box>
-          </React.Fragment>
-        )}
-      </Box>
+                <Box sx={{ flex: "1 1 auto" }} />
+                <Button onClick={handleNext}>
+                  {activeStep === steps.length - 1 ? "Submit" : "Next"}
+                </Button>
+              </Box>
+            </React.Fragment>
+          )}
+        </Box>
+      </div>
     </>
   );
 }

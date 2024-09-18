@@ -23,8 +23,10 @@
     "react-datepicker": "^7.3.0",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.0.1",
+    "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.26.1",
     "react-slick": "^0.30.2",
+    "react-toastify": "^10.0.5",
     "sass": "^1.78.0",
     "slick-carousel": "^1.8.1"
   },

@@ -1,0 +1,96 @@
+#reserve-container {
+    margin-top: 100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid black;
+    font-family: 'Lora', serif;
+
+    textarea {
+        padding-left: 5px;
+    }
+
+    #fullName,
+    #email {
+        border: 1px solid black;
+        letter-spacing: .01rem;
+        padding-left: 48px;
+        margin-left: 0;
+        background: #FFFFFF;
+        border-radius: 5px;
+        line-height: 25px;
+        height: 35px;
+        outline: none;
+        padding-left: 5px;
+    }
+
+    // phone flag picker
+    .form-control {
+        width: 100%;
+    }
+
+    .form-control,
+    .flag-dropdown {
+        border: 1px solid black;
+        outline: none;
+    }
+
+    .phone-input {
+        width: 100%;
+        border: 1px solid black;
+        letter-spacing: .01rem;
+        border-radius: 5px;
+        line-height: 25px;
+        height: 35px;
+        padding-left: 42px;
+    }
+
+    .reserve-wrapper {
+        margin-top: 50px;
+    }
+
+    .reserve-item {
+        margin-bottom: 20px;
+
+        &-header {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        &-title {
+            display: block;
+            color: #1b76ab;
+        }
+    }
+
+    .reserve-time-step {
+        display: flex;
+        gap: 50px;
+    }
+
+    .reserve-time-option {
+        max-height: 180px;
+        gap: 10px;
+    }
+
+    .reserve-item-warning {
+        font-size: 12px;
+        color: gray;
+    }
+
+    .reserve-item-form {
+        display: flex;
+        gap: 10px;
+
+        &--item {
+            display: flex;
+            flex-direction: column;
+            width: calc(100%/3);
+        }
+    }
+
+    .reserve-item-textarea {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+}

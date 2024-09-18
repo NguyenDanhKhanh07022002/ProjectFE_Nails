@@ -1,0 +1,58 @@
+.mini-banner {
+    font-family: 'Lora', serif;
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    &-description {
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .6), rgba(0, 0, 0, .03));
+        background-image: linear-gradient(bottom, rgba(0, 0, 0, .6), rgba(0, 0, 0, .03));
+        padding: 100px 0 0;
+
+        &-caption {
+            position: absolute;
+            width: 80%;
+            bottom: 30px;
+            left: 25px;
+            z-index: 1;
+
+            .txt-upcase {
+                display: block;
+                font-size: 0.9rem;
+                line-height: 1;
+                text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 0.125rem;
+            }
+
+            a {
+                transition: 0.5s;
+                position: relative;
+                color: #fff;
+                padding-bottom: 8px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &:hover {
+        img {
+            scale: 1.1
+        }
+
+        a {
+            border-bottom: 1px solid white
+        }
+    }
+}

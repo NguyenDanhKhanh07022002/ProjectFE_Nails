@@ -8,6 +8,7 @@ import Banner3 from "../assets/Slide-3.jpg";
 import storeImg from "../assets/store-img-1.jpg";
 import voucherImg from "../assets/voucher.png";
 import nailPolishes from "../assets/nail-polish.png";
+import bigBannerImage from "../assets/bigBanner/banner-rezervace2.jpg";
 
 import Button from "../components/Button";
 import BannerBackgroundRight from "../components/BannerBackgroundRight";
@@ -17,7 +18,7 @@ import ServiceOffer from "../components/ServiceOffer";
 import PriceCard from "../components/PriceCard";
 import ImageListMansory from "../components/ImageListMansory";
 import CommentSlide from "../components/CommentSlide";
-import BigBanner from "../components/BigBanner";
+import FooterBanner from "../components/FooterBanner";
 import { useTranslation } from "react-i18next";
 
 function Introduction() {
@@ -108,7 +109,7 @@ function Introduction() {
           <Button hoverColor="blue" title="Reservation" />
         </div>
         <CommentSlide />
-        <BigBanner />
+        <FooterBanner image={bigBannerImage} />
       </div>
     </>
   );

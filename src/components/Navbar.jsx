@@ -10,6 +10,9 @@ function Navbar(props) {
   function handleOpenBarMenu() {
     setIsOpenBarMenu(!isOpenBarMenu);
   }
+  function handleCloseBarMenu() {
+    setIsOpenBarMenu(false);
+  }
   return (
     <>
       <div id="navbar" className={props.isScrollTop ? "nav--show" : ""}>
@@ -58,22 +61,32 @@ function Navbar(props) {
         {isOpenBarMenu ? (
           <ul className="screen-nav bar-nav">
             <li>
-              <Link to="/">{t("Introduction")}</Link>
+              <Link to="/" onClick={handleCloseBarMenu}>
+                {t("Introduction")}
+              </Link>
             </li>
             <li>
-              <Link to="/service">{t("Service")}</Link>
+              <Link to="/service" onClick={handleCloseBarMenu}>
+                {t("Service")}
+              </Link>
             </li>
             <li>
-              <Link to="/price">{t("Price")}</Link>
+              <Link to="/price" onClick={handleCloseBarMenu}>
+                {t("Price")}
+              </Link>
             </li>
             <li>
-              <Link to="/about">{t("About")}</Link>
+              <Link to="/about" onClick={handleCloseBarMenu}>
+                {t("About")}
+              </Link>
             </li>
             <li>
-              <Link to="/contact">{t("Contact")}</Link>
+              <Link to="/contact" onClick={handleCloseBarMenu}>
+                {t("Contact")}
+              </Link>
             </li>
             <li>
-              <Link to="/reserve">
+              <Link to="/reserve" onClick={handleCloseBarMenu}>
                 <Button hoverColor="blue" title={t("Reservation")} />
               </Link>
             </li>

@@ -5,7 +5,10 @@ import AOS from "aos";
 
 function BannerBackgroundLeft(props) {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
   }, []);
 
   const listItems = props.lists?.map((list, index) => (

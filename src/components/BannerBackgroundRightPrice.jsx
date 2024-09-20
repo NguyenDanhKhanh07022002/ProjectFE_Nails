@@ -1,6 +1,14 @@
 import "./BannerBackgroundRight.scss";
 import PriceCard from "./PriceCard";
+import AOS from "aos";
+import { useEffect } from "react";
 function BannerBackgroundRightPrice(props) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <>
       <div id="widget-container">

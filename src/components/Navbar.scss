@@ -1,11 +1,19 @@
 .nav--show {
+    position: fixed !important;
     background-color: transparent !important;
     padding: 12px;
     transition: 0.5s;
     box-shadow: none !important;
 
-    a {
-        color: white !important;
+    .fa-bars {
+        color: white;
+    }
+
+    .wide-nav,
+    .mobile-nav {
+        a {
+            color: white !important;
+        }
     }
 }
 
@@ -13,7 +21,7 @@
     transition: 0.5s;
     z-index: 999;
     background-color: white;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     letter-spacing: 0.09375rem;
@@ -44,6 +52,7 @@
             font-weight: 600;
             font-size: 0.9rem;
             text-transform: uppercase;
+            cursor: pointer;
 
             &:hover {
                 text-shadow: 0 0 #383838;

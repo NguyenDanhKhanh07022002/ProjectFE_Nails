@@ -1,5 +1,13 @@
 import "./BannerBackgroundRight.scss";
+import AOS from "aos";
+import { useEffect } from "react";
 function BannerBackgroundRight(props) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   const listItems = props.lists.map((list, index) => (
     <li key={index}>
       <p>{list}</p>
@@ -7,7 +15,7 @@ function BannerBackgroundRight(props) {
   ));
   return (
     <>
-      <div id="widget-container">
+      <div id="widget-container" data-aos="fade-up">
         <section
           className={
             "container-right " +

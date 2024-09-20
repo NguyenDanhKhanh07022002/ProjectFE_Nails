@@ -1,6 +1,7 @@
 #pricing-card {
     width: 50%;
     padding: 20px;
+    margin: auto;
 
     .pricing-section {
         display: block;
@@ -81,5 +82,11 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #pricing-card {
+        width: 100%;
     }
 }

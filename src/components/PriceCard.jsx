@@ -5,8 +5,8 @@ import AOS from "aos";
 function PriceCard(props) {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // thời gian hiệu ứng chạy
-      once: true, // hiệu ứng chạy một lần duy nhất
+      duration: 1000,
+      once: true,
     });
   }, []);
   return (

@@ -20,8 +20,12 @@ function App() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const handleScroll = () => {
-        if (window.scrollY === 0) {
-          setIsScrollTop(true);
+        if (window.outerWidth > 1080) {
+          if (window.scrollY === 0) {
+            setIsScrollTop(true);
+          } else {
+            setIsScrollTop(false);
+          }
         } else {
           setIsScrollTop(false);
         }

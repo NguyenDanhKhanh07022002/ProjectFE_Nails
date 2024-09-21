@@ -3,16 +3,22 @@
     .carousel {
         z-index: 1;
         font-family: "Catamaran", sans-serif;
+        overflow: hidden;
     }
 
     .carousel-inner {
         width: 100%;
 
         .carousel-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             img {
                 width: 100%;
-                height: 100%;
+                height: auto;
                 min-height: 300px;
+                object-fit: cover;
             }
         }
 
@@ -25,7 +31,6 @@
 
             img {
                 transition: 10s;
-                -webkit-transform: scale(1.2) rotate(0.01deg);
                 transform: scale(1.2) rotate(0.01deg);
             }
         }
@@ -34,11 +39,12 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            bottom: 0;
-            right: 0;
-            transform: translate(-50%, -100%);
+            transform: translate(-50%, -50%);
             padding: 0;
             opacity: 0;
+            text-align: center;
+            max-width: 90%;
+            word-wrap: break-word;
         }
 
         h2 {
@@ -61,21 +67,26 @@
         margin: auto;
 
         .banner-wrapper {
-            width: 100% !important;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
 
             &--image {
-                width: 50% !important;
+                width: 50%;
+                max-width: 100%;
             }
 
             &--text {
-                width: 40% !important;
+                width: 40%;
+                max-width: 100%;
                 padding-left: 30px;
+                text-align: left;
             }
         }
 
         ul {
-            list-style-type: none !important;
-            margin-left: 0px !important;
+            list-style-type: none;
+            margin-left: 0px;
         }
     }
 
@@ -84,17 +95,85 @@
         flex-wrap: wrap;
         width: 60%;
         margin: auto;
+        justify-content: center;
     }
 
     @media screen and (max-width: 1400px) {
         .price-card-wrapper {
             width: 100%;
         }
+
+        .container-right {
+            width: 100%;
+        }
+
+        .banner-wrapper {
+
+            &--image,
+            &--text {
+                width: 100%;
+                padding-left: 0;
+                text-align: center;
+            }
+        }
     }
 
     @media screen and (max-width: 1000px) {
         .price-card-wrapper {
             width: 60%;
+        }
+
+        h2 {
+            font-size: 5vw;
+        }
+
+        .carousel-caption {
+            font-size: 2vw;
+        }
+
+        .banner-wrapper {
+            &--text {
+                padding: 15px;
+                text-align: center;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .price-card-wrapper {
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 6vw;
+        }
+
+        .container-right {
+            width: 90%;
+        }
+
+        .banner-wrapper {
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        h2 {
+            font-size: 7vw;
+        }
+
+        .carousel-caption {
+            top: 60%;
+        }
+
+        .price-card-wrapper {
+            width: 100%;
+        }
+
+        .banner-wrapper {
+            &--text {
+                padding: 10px;
+            }
         }
     }
 }

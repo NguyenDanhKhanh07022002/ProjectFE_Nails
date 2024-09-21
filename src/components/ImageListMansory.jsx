@@ -3,6 +3,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function ImageListMansory() {
   const itemData = [
@@ -55,6 +56,18 @@ function ImageListMansory() {
       title: "Coffee table",
     },
   ];
+
+  const isSmallScreen = useMediaQuery("(max-width: 1280px)");
+  const isMediumScreen = useMediaQuery("(max-width: 960px)");
+  const isLargeScreen = useMediaQuery("(max-width: 1280px)");
+
+  const getCols = () => {
+    if (isSmallScreen) return 1;
+    if (isMediumScreen) return 2;
+    if (isLargeScreen) return 3;
+    return 4;
+  };
+
   return (
     <>
       <div className="service-offer-title">
@@ -62,7 +75,7 @@ function ImageListMansory() {
         <h2>Nabízíme</h2>
       </div>
       <Box sx={{ width: "55%", margin: "auto" }}>
-        <ImageList variant="masonry" cols={3} gap={8}>
+        <ImageList variant="masonry" cols={getCols()} gap={8}>
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
               <img

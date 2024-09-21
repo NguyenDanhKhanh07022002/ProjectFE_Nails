@@ -1,5 +1,5 @@
 #pricing-card {
-    width: 50%;
+    width: 40%;
     padding: 20px;
     margin: auto;
 
@@ -77,7 +77,6 @@
                         position: relative;
                         line-height: 1;
                         margin-bottom: 0;
-
                     }
                 }
             }
@@ -85,8 +84,54 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
+    #pricing-card {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .pricing-section {
+        font-size: 0.85rem;
+    }
+
+    .pricing-title {
+        margin-bottom: 30px;
+    }
+
+    .pricing-6-item {
+        margin-bottom: 10px;
+    }
+
+    .price-text .p-md {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive for mobile devices */
+@media screen and (max-width: 480px) {
     #pricing-card {
         width: 100%;
+        padding: 10px;
+    }
+
+    .pricing-section {
+        font-size: 0.8rem;
+    }
+
+    .pricing-title {
+        margin-bottom: 20px;
+    }
+
+    .pricing-6-item {
+        margin-bottom: 5px;
+    }
+
+    .price-text .p-md {
+        font-size: 0.9rem;
+    }
+
+    .detail-price {
+        display: block; /* Hiển thị dọc */
+        margin-bottom: 10px;
     }
 }

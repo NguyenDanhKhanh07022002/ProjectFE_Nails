@@ -84,7 +84,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     #pricing-card {
         width: 80%;
         padding: 15px;
@@ -114,6 +114,14 @@
         padding: 10px;
     }
 
+    .price-name h5 {
+        font-size: 1.2rem;
+    }
+
+    .price-number h5 {
+        font-size: 1.2rem;
+    }
+
     .pricing-section {
         font-size: 0.8rem;
     }
@@ -131,7 +139,8 @@
     }
 
     .detail-price {
-        display: block; /* Hiển thị dọc */
+        display: block;
+        /* Hiển thị dọc */
         margin-bottom: 10px;
     }
 }

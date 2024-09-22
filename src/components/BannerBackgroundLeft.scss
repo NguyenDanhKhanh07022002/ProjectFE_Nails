@@ -1,4 +1,5 @@
 #widget-container {
+  min-width: 420px;
   margin-top: 60px;
   font-family: "Lora", serif;
 
@@ -77,15 +78,6 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .container-left-pink {
-      &:after {
-        width: 100%;
-        left: 0;
-      }
-    }
-  }
-
   @media (max-width: 1200px) {
     .container-left .banner-wrapper {
       width: 90%;
@@ -101,6 +93,13 @@
   }
 
   @media (max-width: 992px) {
+    .container-left-pink {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+
     .container-left .banner-wrapper {
       width: 100%;
       flex-direction: column;
@@ -110,7 +109,8 @@
 
     .container-left .banner-wrapper--text,
     .container-left .banner-wrapper--image {
-      width: 100%;
+      width: 80%;
+      margin: auto;
       text-align: center;
     }
 

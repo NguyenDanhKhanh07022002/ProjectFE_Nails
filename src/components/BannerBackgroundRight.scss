@@ -19,6 +19,10 @@
       &--text {
         width: 40%;
 
+        #pricing-card {
+          width: 100%;
+        }
+
         &__title {
           display: block;
           color: #8e8987;
@@ -90,6 +94,51 @@
     }
   }
 
+  @media (max-width: 1200px) {
+    .container-right .banner-wrapper {
+      width: 90%;
+    }
+
+    .container-right .banner-wrapper--text {
+      width: 45%;
+    }
+
+    .container-right .banner-wrapper--image {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .container-right-pink {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    .container-right .banner-wrapper {
+      width: 100%;
+      flex-direction: column;
+      padding-top: 80px;
+      padding-bottom: 60px;
+    }
+
+    .container-right .banner-wrapper--text,
+    .container-right .banner-wrapper--image {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .container-right .banner-wrapper--text__header {
+      font-size: 1.75rem;
+    }
+
+    .container-right .banner-wrapper--text__description {
+      font-size: 0.9rem;
+    }
+  }
+
   @media (max-width: 768px) {
     .banner-wrapper {
       flex-direction: column;
@@ -98,7 +147,7 @@
       padding-bottom: 50px;
 
       &--text {
-        width: 100%;
+        width: 80%;
         text-align: center;
 
         &__title,
@@ -109,7 +158,7 @@
       }
 
       &--image {
-        width: 100%;
+        width: 80%;
         margin-top: 30px;
 
         img {

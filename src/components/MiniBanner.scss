@@ -27,6 +27,11 @@
             left: 25px;
             z-index: 1;
 
+            @media (max-width: 900px) {
+                bottom: 0;
+                left: 0;
+            }
+
             .txt-upcase {
                 display: block;
                 font-size: 0.9rem;
@@ -34,6 +39,16 @@
                 text-transform: uppercase;
                 font-weight: 600;
                 letter-spacing: 0.125rem;
+
+                @media (max-width: 900px) {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .pbox-link {
+                @media (max-width: 900px) {
+                    font-size: 0.8rem;
+                }
             }
 
             a {

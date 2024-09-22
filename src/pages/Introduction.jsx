@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "./Introduction.scss";
 import { Carousel } from "react-bootstrap";
 import Banner1 from "../assets/Slide-1.jpg";
@@ -47,7 +47,9 @@ function Introduction() {
                 {t("heroBanner.header_1")}
                 <span>{t("heroBanner.title_1")}</span>
               </h2>
-              <Button hoverColor="white" title="BookingVisit" />
+              <Link to="/reserve">
+                <Button hoverColor="white" title="BookingVisit" />
+              </Link>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -57,7 +59,9 @@ function Introduction() {
                 {t("heroBanner.header_2")}
                 <span>{t("heroBanner.title_2")}</span>
               </h2>
-              <Button hoverColor="white" title="BookingVisit" />
+              <Link to="/reserve">
+                <Button hoverColor="white" title="BookingVisit" />
+              </Link>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -67,7 +71,9 @@ function Introduction() {
                 {t("heroBanner.header_3")}
                 <span>{t("heroBanner.title_3")}</span>
               </h2>
-              <Button hoverColor="white" title="BookingVisit" />
+              <Link to="/reserve">
+                <Button hoverColor="white" title="BookingVisit" />
+              </Link>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

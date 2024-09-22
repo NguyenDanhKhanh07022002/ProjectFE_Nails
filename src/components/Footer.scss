@@ -58,16 +58,13 @@
 
     &__socials {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 1rem;
 
-        @media (max-width: 768px) {
-            flex-direction: column;
-        }
     }
 
     &__social-link {
-        color: #ffffff;
+        color: #373b4d;
         font-size: 1.5rem;
         text-decoration: none;
 

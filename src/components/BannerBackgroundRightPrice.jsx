@@ -5,7 +5,7 @@ import { useEffect } from "react";
 function BannerBackgroundRightPrice(props) {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 1500,
       once: true,
     });
   }, []);

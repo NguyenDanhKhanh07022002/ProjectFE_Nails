@@ -13,7 +13,7 @@ function ServiceOffer() {
       const rect = element.getBoundingClientRect();
       if (rect.top <= window.innerHeight && !isAosTriggered) {
         AOS.init({
-          duration: 1000,
+          duration: 1500,
           once: true,
         });
         setIsAosTriggered(true);
@@ -33,8 +33,6 @@ function ServiceOffer() {
           <h2>Nabízíme</h2>
         </div>
         <section id="service-offer-container">
-          <ServiceCard />
-          <ServiceCard />
           <ServiceCard />
         </section>
       </div>

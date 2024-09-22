@@ -1,8 +1,11 @@
 import "./CommentSlide.scss";
+
 import React from "react";
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
+import "aos/dist/aos.css";
 function CommentSlide(props) {
+
   var settings = {
     dots: true,
     infinite: true,
@@ -42,11 +45,11 @@ function CommentSlide(props) {
   };
   return (
     <>
-      <div className="service-offer-title">
+      <div className="service-offer-title" data-aos="fade-left">
         <span className="service-offer-title-section">Reference</span>
         <h2>Co o nás říkají zákazníci</h2>
       </div>
-      <div className="slider-container">
+      <div className="slider-container" data-aos="fade-left">
         <Slider {...settings}>
           <div>
             <CommentCard />

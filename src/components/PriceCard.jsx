@@ -5,7 +5,7 @@ import AOS from "aos";
 function PriceCard(props) {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 1500,
       once: true,
     });
   }, []);

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 function FindoutBanner(props) {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 1500,
       once: true,
     });
   }, []);

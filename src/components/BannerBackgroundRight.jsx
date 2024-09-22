@@ -4,7 +4,7 @@ import { useEffect } from "react";
 function BannerBackgroundRight(props) {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 1500,
       once: true,
     });
   }, []);

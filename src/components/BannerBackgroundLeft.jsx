@@ -1,12 +1,12 @@
 import "./BannerBackgroundLeft.scss";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 import AOS from "aos";
 
+import { useEffect } from "react";
 function BannerBackgroundLeft(props) {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 1500,
       once: true,
     });
   }, []);

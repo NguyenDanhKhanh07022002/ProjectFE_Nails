@@ -1,9 +1,11 @@
 import "./ImageListMansory.scss";
-import * as React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 function ImageListMansory() {
   const itemData = [
@@ -57,7 +59,7 @@ function ImageListMansory() {
     },
   ];
 
-  const isSmallScreen = useMediaQuery("(max-width: 1280px)");
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const isMediumScreen = useMediaQuery("(max-width: 960px)");
   const isLargeScreen = useMediaQuery("(max-width: 1280px)");
 
@@ -68,14 +70,21 @@ function ImageListMansory() {
     return 4;
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true,
+    });
+  }, []);
+
   return (
     <>
-      <div className="service-offer-title">
+      <div className="service-offer-title" data-aos="fade-up">
         <span className="service-offer-title-section">Služby</span>
         <h2>Nabízíme</h2>
       </div>
       <Box sx={{ width: "55%", margin: "auto" }}>
-        <ImageList variant="masonry" cols={getCols()} gap={8}>
+        <ImageList variant="masonry" cols={getCols()} gap={8} data-aos="fade-up">
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
               <img

@@ -18,11 +18,11 @@ function BannerBackgroundRightPrice(props) {
             (props.isShowBackground ? "container-right-pink" : "")
           }
         >
-          <div className="banner-wrapper" data-aos="fade-up">
-            <div className="banner-wrapper--image">
+          <div className="banner-wrapper">
+            <div className="banner-wrapper--image"  data-aos="fade-left">
               <img src={props.image} alt="img" />
             </div>
-            <div className="banner-wrapper--text">
+            <div className="banner-wrapper--text"  data-aos="fade-right">
               <PriceCard />
             </div>
           </div>

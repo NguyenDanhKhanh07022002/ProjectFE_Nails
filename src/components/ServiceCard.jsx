@@ -1,7 +1,8 @@
 import "./ServiceCard.scss";
-import cardImg1 from "../assets/service-card-1.jpg";
-import cardImg2 from "../assets/service-card-2.jpg";
-import cardImg3 from "../assets/service-card-3.jpg";
+import cardImg1 from "../assets/nails.jpg";
+import cardImg2 from "../assets/eyelashes1.jpg";
+import cardImg3 from "../assets/pedicure.jpg";
+import cardImg4 from "../assets/massage1.jpg";
 
 function ServiceCard() {
   const services = [
@@ -18,6 +19,11 @@ function ServiceCard() {
     {
       img: cardImg3,
       title: "Facial",
+      link: "/service/facial",
+    },
+    {
+      img: cardImg4,
+      title: "Masáž",
       link: "/service/facial",
     },
   ];

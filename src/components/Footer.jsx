@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 
 const Footer = () => {
-
   const { t, i18n } = useTranslation();
   return (
     <footer id="footer-container" data-aos="fade-right">
@@ -65,7 +64,7 @@ const Footer = () => {
           <p className="footer__bottom-text">
             © 2024 Nails store. All rights reserved.
           </p>
-          <div>
+          <div className="language-btn">
             <button
               onClick={() => {
                 i18n.changeLanguage("en");

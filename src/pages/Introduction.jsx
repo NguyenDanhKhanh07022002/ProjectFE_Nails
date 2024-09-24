@@ -22,6 +22,30 @@ import FooterBanner from "../components/FooterBanner";
 import { useTranslation } from "react-i18next";
 
 function Introduction() {
+  const priceListOption1 = {
+    section: "Manikúra",
+    title: "Manikúra",
+    priceOption: [
+      { priceName: "Manikúra klasik", priceNumber: "250", priceTxt: "" },
+      {
+        priceName: "Manikúra a obycehné lakovàní O.P.I",
+        priceNumber: "350",
+        priceTxt: "",
+      },
+    ],
+  };
+  const priceListOption2 = {
+    section: "",
+    title: "Pedikúra",
+    priceOption: [
+      { priceName: "Pedikúra klasik", priceNumber: "250", priceTxt: "" },
+      {
+        priceName: "Pedikúra a obycehné lakovàní O.P.I",
+        priceNumber: "350",
+        priceTxt: "",
+      },
+    ],
+  };
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -104,8 +128,8 @@ function Introduction() {
           isShowBackground={false}
         />
         <div className="price-card-wrapper">
-          <PriceCard />
-          <PriceCard />
+          <PriceCard priceList={priceListOption1} />
+          <PriceCard priceList={priceListOption2} />
         </div>
         <div className="link-to-page">
           <a href="/price">Zobrazit všechny ceny</a>

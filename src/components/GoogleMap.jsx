@@ -124,7 +124,7 @@ function GoogleMap() {
               </p>
             </div>
           </div>
-          <div className="contact-map-wrapper">
+          <div className="contact-location-wrapper">
             <a
               href="https://www.google.com/maps/place/Provazn%C3%ADkova+890%2F40,+613+00+Brno-sever-%C4%8Cern%C3%A1+Pole,+%C4%8Cesko/@49.214178,16.623229,16z/data=!4m6!3m5!1s0x47129463308ffc77:0x3495eadd2b3ee7a8!8m2!3d49.2141775!4d16.623229!16s%2Fg%2F11c2ds1dj0?hl=cs-CZ&amp;entry=ttu"
               target="_blank"

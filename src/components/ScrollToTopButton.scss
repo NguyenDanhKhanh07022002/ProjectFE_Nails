@@ -1,0 +1,21 @@
+.scroll-to-top-btn {
+    background-color: rgba(10, 10, 10, .25);
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-image: url(../assets/back-to-top.png);
+    background-repeat: no-repeat;
+    background-position: 50% 48%;
+    cursor: pointer;
+    transition: 1s;
+
+    &:hover {
+        background-color: black;
+    }
+}

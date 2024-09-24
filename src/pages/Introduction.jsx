@@ -19,6 +19,7 @@ import PriceCard from "../components/PriceCard";
 import ImageListMansory from "../components/ImageListMansory";
 import CommentSlide from "../components/CommentSlide";
 import FooterBanner from "../components/FooterBanner";
+import FollowUsComponent from "../components/FollowUsComponent";
 import { useTranslation } from "react-i18next";
 
 function Introduction() {
@@ -27,9 +28,21 @@ function Introduction() {
     title: "Manikúra",
     priceOption: [
       { priceName: "Manikúra klasik", priceNumber: "150", priceTxt: "" },
-      { priceName: "Manikúra a obyčejné lakování O.P.I.", priceNumber: "250", priceTxt: "" },
-      { priceName: "Manikúra a lakování CND Shellac (Barva)", priceNumber: "500", priceTxt: "" },
-      { priceName: "Manikúra a lakování CND Shellac (Francie)", priceNumber: "550", priceTxt: "" },
+      {
+        priceName: "Manikúra a obyčejné lakování O.P.I.",
+        priceNumber: "250",
+        priceTxt: "",
+      },
+      {
+        priceName: "Manikúra a lakování CND Shellac (Barva)",
+        priceNumber: "500",
+        priceTxt: "",
+      },
+      {
+        priceName: "Manikúra a lakování CND Shellac (Francie)",
+        priceNumber: "550",
+        priceTxt: "",
+      },
     ],
   };
   const priceListOption2 = {
@@ -37,11 +50,31 @@ function Introduction() {
     title: "Pedikúra",
     priceOption: [
       { priceName: "Pedikúra klas", priceNumber: "450", priceTxt: "" },
-      { priceName: "Footlogix pedikúra klasik", priceNumber: "450", priceTxt: ""},
-      { priceName: "Footlogix pedikúra s obyčajným lakovaním O.P.I", priceNumber: "500", priceTxt: ""},
-      { priceName: "Footlogix pedikúra s gel-lakem", priceNumber: "590", priceTxt: ""},
-      { priceName: "Footlogix pedikúra s CND Shellac", priceNumber: "650", priceTxt: ""},
-      { priceName: "Lakovanie gel-lakem, shellac bez pedikúry", priceNumber: "350", priceTxt: ""},
+      {
+        priceName: "Footlogix pedikúra klasik",
+        priceNumber: "450",
+        priceTxt: "",
+      },
+      {
+        priceName: "Footlogix pedikúra s obyčajným lakovaním O.P.I",
+        priceNumber: "500",
+        priceTxt: "",
+      },
+      {
+        priceName: "Footlogix pedikúra s gel-lakem",
+        priceNumber: "590",
+        priceTxt: "",
+      },
+      {
+        priceName: "Footlogix pedikúra s CND Shellac",
+        priceNumber: "650",
+        priceTxt: "",
+      },
+      {
+        priceName: "Lakovanie gel-lakem, shellac bez pedikúry",
+        priceNumber: "350",
+        priceTxt: "",
+      },
     ],
   };
   const { pathname } = useLocation();
@@ -136,6 +169,7 @@ function Introduction() {
         <div className="link-to-page">
           <Button hoverColor="blue" title="Reservation" />
         </div>
+        <FollowUsComponent />
         <CommentSlide />
         <FooterBanner image={bigBannerImage} />
       </div>

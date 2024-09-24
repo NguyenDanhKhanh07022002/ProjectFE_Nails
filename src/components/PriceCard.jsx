@@ -15,25 +15,23 @@ function PriceCard(props) {
         <span className="pricing-section">{props.priceList.section}</span>
         <h5 className="pricing-title">{props.priceList.title}</h5>
         <ul className="pricing-list">
-          {props.priceList.priceOption.map((e) => (
-            <>
-              <li className="pricing-6-item">
-                <div className="detail-price">
-                  <div className="price-name">
-                    <h5>{e.priceName}</h5>
-                  </div>
-                  <div className="price-dots"></div>
-                  <div className="price-number">
-                    <h5>{e.priceNumber}</h5>
-                  </div>
+          {props.priceList.priceOption.map((e, i) => (
+            <li key={i} className="pricing-6-item">
+              <div className="detail-price">
+                <div className="price-name">
+                  <h5>{e.priceName}</h5>
                 </div>
-                <div className="price-text">
-                  <p className="p-md">
-                    <em>{e.priceTxt}</em>
-                  </p>
+                <div className="price-dots"></div>
+                <div className="price-number">
+                  <h5>{e.priceNumber}</h5>
                 </div>
-              </li>
-            </>
+              </div>
+              <div className="price-text">
+                <p className="p-md">
+                  <em>{e.priceTxt}</em>
+                </p>
+              </div>
+            </li>
           ))}
         </ul>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Introduction from "./pages/Introduction";
 import Service from "./pages/Service";
@@ -14,23 +14,30 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import "react-phone-input-2/lib/style.css";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
+  let location = useLocation();
   const [isScrollTop, setIsScrollTop] = useState(true);
+  const handleScroll = () => {
+    if (window.outerWidth > 1080) {
+      if (window.scrollY === 0) {
+        setIsScrollTop(true);
+      } else {
+        setIsScrollTop(false);
+      }
+    } else {
+      setIsScrollTop(false);
+    }
+  };
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      const handleScroll = () => {
-        if (window.outerWidth > 1080) {
-          if (window.scrollY === 0) {
-            setIsScrollTop(true);
-          } else {
-            setIsScrollTop(false);
-          }
-        } else {
-          setIsScrollTop(false);
-        }
-      };
-
       window.addEventListener("scroll", handleScroll);
 
       return () => {
@@ -38,10 +45,12 @@ function App() {
       };
     });
   }, []);
+  useEffect(() => {
+    handleScrollToTop();
+  }, [location]);
   return (
     <>
       <Navbar isScrollTop={isScrollTop} />
-
       <Routes>
         <Route path="/" element={<Introduction />} />
         <Route path="/service" element={<Service />} />
@@ -51,6 +60,7 @@ function App() {
         <Route path="/reserve" element={<Reserve />} />
       </Routes>
       <Footer />
+      {!isScrollTop ? <ScrollToTopButton /> : ""}
     </>
   );
 }

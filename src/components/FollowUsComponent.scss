@@ -1,0 +1,132 @@
+.follow-us-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+    }
+
+    .follow-us-container {
+        font-family: 'Lora', serif;
+        width: 50%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: #000;
+
+        @media (max-width: 750px) {
+            width: 100%;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            border-radius: 10px;
+            align-items: flex-start;
+
+            .small-text {
+                font-size: 1rem;
+                color: #666;
+            }
+
+            .main-text {
+                font-size: 2.5rem;
+                font-weight: 500;
+                font-style: italic;
+                margin: 10px 0;
+                letter-spacing: -0.015625rem;
+
+                .instagram-handle {
+                    font-weight: 700;
+                    color: #000;
+                }
+            }
+
+            .big-text {
+                font-size: 3rem;
+                color: #373b4d;
+                font-family: 'Lora', serif;
+                line-height: 1.3;
+                font-weight: 700;
+                letter-spacing: -0.015625rem;
+                margin-bottom: 20px;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                margin-top: 20px;
+
+                &:hover {
+                    background-color: #0056b3;
+                }
+            }
+        }
+    }
+
+    .follow-us-container-left {
+        height: 70vh;
+        background-image: url('https://nailsht86.cz/wp-content/uploads/2024/04/soc-box-uvod3.jpg');
+    }
+
+    .follow-us-container-right {
+        height: 80vh;
+        background-image: url('https://nailsht86.cz/wp-content/uploads/2024/04/kontakt-box-uvod2.jpg');
+        display: flex;
+        justify-content: flex-start !important;
+
+        @media (max-width: 750px) {
+            justify-content: center !important;
+        }
+
+        .content {
+            margin-left: 50px;
+            width: 70%;
+            display: flex;
+
+            @media (max-width: 750px) {
+                margin: 0;
+            }
+
+            .small-text {
+                color: white;
+            }
+
+            .big-text {
+                color: white;
+                font-size: 9.75rem;
+                line-height: 1;
+                letter-spacing: -3px;
+                text-align: left;
+
+                @media (max-width: 1400px) {
+                    font-size: 8.75rem;
+                }
+
+                @media (max-width: 1200px) {
+                    font-size: 7.75rem;
+                }
+
+                @media (max-width: 1090px) {
+                    font-size: 6.75rem;
+                }
+
+                @media (max-width: 975px) {
+                    font-size: 5.00rem;
+                }
+
+                @media (max-width: 920px) {
+                    font-size: 4.00rem;
+                }
+
+                @media (max-width: 750px) {
+                    font-size: 6.00rem;
+                }
+            }
+        }
+    }
+}

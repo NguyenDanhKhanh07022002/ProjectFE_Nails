@@ -5,7 +5,9 @@ function Button(props) {
   const { t } = useTranslation();
   return (
     <>
-      <button className={`button-hover--${props.hoverColor} main-button`}>
+      <button
+        className={`button-hover--${props.hoverColor} main-button main-button--${props.backgroundColor}`}
+      >
         {t(props.title)}
       </button>
     </>

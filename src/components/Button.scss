@@ -12,6 +12,16 @@
     border: 1px solid #1b76ab;
     cursor: pointer;
     transition: 0.3s;
+
+    &--blue {
+        background-color: #1b76ab;
+        border: 1px solid #1b76ab;
+    }
+
+    &--white {
+        background-color: transparent;
+        border: 1px solid white;
+    }
 }
 
 .button-hover {
@@ -27,6 +37,14 @@
             color: white;
             background-color: transparent;
             border: 1px solid white;
+        }
+    }
+
+    &--full {
+        &:hover {
+            color: white;
+            background-color: #1b76ab;
+            border: 1px solid #1b76ab;
         }
     }
 }

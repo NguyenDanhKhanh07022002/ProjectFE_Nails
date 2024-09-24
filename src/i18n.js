@@ -63,6 +63,15 @@ const resources = {
         "des_2" : "term",
         "BookingVisit" : "Book a visit",
       },
+      "FollowBanner" : {
+        "connected" : "BE CONNECTED",
+        "reach" : "How do you reach us ?",
+        "follow" : "Follow us",
+        "title" : "@nailsht86",
+        "title_2" : "Where are we based",
+        "btn_1" : "Go to our Instagram",
+        "btn_2" : "Show contacts",
+      },
       "service": {
         "Manicure": "Manicure",
         "Pedicure": "Pedicure",
@@ -131,6 +140,15 @@ const resources = {
         "des_1" : "Zarezervujte si",
         "des_2" : "termín",
         "BookingVisit" : "Rezervovat návštěvu",
+      },
+      "FollowBanner" : {
+        "connected" : "Buďte ve spojení",
+        "reach" : "Jak se k nám dostanete?",
+        "follow" : "Sledujte nás",
+        "title" : "@nailsht86",
+        "title_2" : "Kde sídlíme?",
+        "btn_1" : "Přejít na náš Instagram",
+        "btn_2" : "Ukázat kontakt",
       },
       "service": {
         "Manicure": "Manikúra",

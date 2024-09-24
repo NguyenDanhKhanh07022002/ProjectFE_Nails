@@ -26,24 +26,22 @@ function Introduction() {
     section: "Manikúra",
     title: "Manikúra",
     priceOption: [
-      { priceName: "Manikúra klasik", priceNumber: "250", priceTxt: "" },
-      {
-        priceName: "Manikúra a obycehné lakovàní O.P.I",
-        priceNumber: "350",
-        priceTxt: "",
-      },
+      { priceName: "Manikúra klasik", priceNumber: "150", priceTxt: "" },
+      { priceName: "Manikúra a obyčejné lakování O.P.I.", priceNumber: "250", priceTxt: "" },
+      { priceName: "Manikúra a lakování CND Shellac (Barva)", priceNumber: "500", priceTxt: "" },
+      { priceName: "Manikúra a lakování CND Shellac (Francie)", priceNumber: "550", priceTxt: "" },
     ],
   };
   const priceListOption2 = {
     section: "",
     title: "Pedikúra",
     priceOption: [
-      { priceName: "Pedikúra klasik", priceNumber: "250", priceTxt: "" },
-      {
-        priceName: "Pedikúra a obycehné lakovàní O.P.I",
-        priceNumber: "350",
-        priceTxt: "",
-      },
+      { priceName: "Pedikúra klas", priceNumber: "450", priceTxt: "" },
+      { priceName: "Footlogix pedikúra klasik", priceNumber: "450", priceTxt: ""},
+      { priceName: "Footlogix pedikúra s obyčajným lakovaním O.P.I", priceNumber: "500", priceTxt: ""},
+      { priceName: "Footlogix pedikúra s gel-lakem", priceNumber: "590", priceTxt: ""},
+      { priceName: "Footlogix pedikúra s CND Shellac", priceNumber: "650", priceTxt: ""},
+      { priceName: "Lakovanie gel-lakem, shellac bez pedikúry", priceNumber: "350", priceTxt: ""},
     ],
   };
   const { pathname } = useLocation();

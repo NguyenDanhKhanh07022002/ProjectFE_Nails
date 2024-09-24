@@ -3,8 +3,11 @@ import ServiceCard from "./ServiceCard";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import AOS from "aos";
+import { useTranslation } from "react-i18next";
 
 function ServiceOffer() {
+  const { t } = useTranslation();
+
   const [isAosTriggered, setIsAosTriggered] = useState(false);
 
   useEffect(() => {
@@ -29,8 +32,8 @@ function ServiceOffer() {
     <>
       <div id="widget-container" data-aos="fade-up">
         <div className="service-offer-title">
-          <span className="service-offer-title-section">Služby</span>
-          <h2>Nabízíme</h2>
+          <span className="service-offer-title-section">{t("Service")}</span>
+          <h2>{t("Offer")}</h2>
         </div>
         <section id="service-offer-container">
           <ServiceCard />

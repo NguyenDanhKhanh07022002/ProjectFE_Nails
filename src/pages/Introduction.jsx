@@ -50,13 +50,13 @@ function Introduction() {
   }, [pathname]);
   const { t } = useTranslation();
   var listTextForBanner = [
-    "Zaměřujeme se na manikúru, pedikúru a kosmetiku.",
-    "Sídlíme na adrese Provazníkova 890/40, cca 50 m od zastávky MHD linek 25 a 26.",
+    t("Introduction_Page.banner_des_1"),
+    t("Introduction_Page.banner_des_2"),
   ];
   var listTextForVoucher = [
-    "Koupíte je osobně v našem studiu.",
-    "Poukazy jsou v hodnotách 450 - 600 Kč.",
-    "Platí 5 měsíců od vystavení.",
+    t("Introduction_Page.voucher_des_1"),
+    t("Introduction_Page.voucher_des_2"),
+    t("Introduction_Page.voucher_des_3"),
   ];
   return (
     <>
@@ -101,9 +101,9 @@ function Introduction() {
         </Carousel>
         <BannerBackgroundLeft
           image={storeImg}
-          title="vítejte"
+          title={t("Introduction_Page.welcome")}
           header="NAILS HT 86"
-          description="Jsme brněnské nehtové studio s&nbsp;přívětivými cenami."
+          description={t("Introduction_Page.introduce")}
           lists={listTextForBanner}
           isShowBackground={true}
         />
@@ -111,16 +111,16 @@ function Introduction() {
         <ServiceOffer />
         <BannerBackgroundRight
           image={voucherImg}
-          title="Udělejte radost"
-          header="Dárkové poukazy"
+          title={t("Introduction_Page.voucher_text")}
+          header={t("Introduction_Page.voucher_title")}
           description=""
           lists={listTextForVoucher}
           isShowBackground={true}
         />
         <BannerBackgroundLeft
           image={nailPolishes}
-          title="Výhodné ceny"
-          header="Ceník"
+          title={t("BargainPrice")}
+          header={t("Price")}
           description=""
           lists={[]}
           isShowBackground={false}
@@ -130,7 +130,7 @@ function Introduction() {
           <PriceCard priceList={priceListOption2} />
         </div>
         <div className="link-to-page">
-          <a href="/price">Zobrazit všechny ceny</a>
+          <a href="/price">{t("ShowPrice")}</a>
         </div>
         <ImageListMansory />
         <div className="link-to-page">

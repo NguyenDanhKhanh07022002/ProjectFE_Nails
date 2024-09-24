@@ -2,7 +2,10 @@ import "./OpenningHour.scss";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import AOS from "aos";
+import { useTranslation } from "react-i18next";
+
 function OpenningHour() {
+  const { t } = useTranslation();
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -17,25 +20,27 @@ function OpenningHour() {
             <table className="table">
               <tbody>
                 <tr>
-                  <td>Po - Pá</td>
+                  <td>
+                    {t("Days.Monday")} - {t("Days.Friday")}
+                  </td>
                   <td>-</td>
                   <td className="text-end">8:30 - 19:30</td>
                 </tr>
                 <tr>
-                  <td>So</td>
+                  <td>{t("Days.Saturday")}</td>
                   <td>-</td>
                   <td className="text-end">9:30 - 18:00</td>
                 </tr>
                 <tr className="last-tr">
                   <td>Ne</td>
                   <td>-</td>
-                  <td className="text-end">na tel. objednávku</td>
+                  <td className="text-end">{t("TelOrder")}</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div className="open-hour-wrapper--title" data-aos="fade-left">
-            <h3>Otevírací doba</h3>
+            <h3>{t("OpeningHours")}</h3>
           </div>
         </section>
       </div>

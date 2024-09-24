@@ -3,28 +3,30 @@ import cardImg1 from "../assets/nails.jpg";
 import cardImg2 from "../assets/eyelashes1.jpg";
 import cardImg3 from "../assets/pedicure.jpg";
 import cardImg4 from "../assets/massage1.jpg";
+import { useTranslation } from "react-i18next";
 
 function ServiceCard() {
+  const { t } = useTranslation();
   const services = [
     {
       img: cardImg1,
-      title: "Manikúra",
-      link: "/service/manikura",
+      title: t("service.Manicure"),
+      link: "/service",
     },
     {
       img: cardImg2,
-      title: "Pedikúra",
-      link: "/service/pedikura",
+      title: t("service.Pedicure"),
+      link: "/service",
     },
     {
       img: cardImg3,
-      title: "Facial",
-      link: "/service/facial",
+      title: t("service.Facial"),
+      link: "/service",
     },
     {
       img: cardImg4,
-      title: "Masáž",
-      link: "/service/facial",
+      title: t("service.Massage"),
+      link: "/service",
     },
   ];
 

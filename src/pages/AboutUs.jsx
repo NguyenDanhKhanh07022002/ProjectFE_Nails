@@ -14,16 +14,13 @@ import bigBannerImage from "../assets/bigBanner/banner-rezervace2.jpg";
 import { useTranslation } from "react-i18next";
 function AboutUs() {
   const { t } = useTranslation();
-  const listTextForAboutUs = [
-    "Jsme brněnské nehtové studio s přívětivými cenami. Manikúře a pedikúře se věnujeme přes 8 let. Sídlíme na adrese Provazníkova 890/40, cca 50 m od zastávky MHD linek 25 a 26.",
-    "Studio je moderně vybavené. Naše specializace je manikúra, pedikúra a kosmetika.",
-  ];
+  const listTextForAboutUs = [t("About_Page.des_1"), t("About_Page.des_2")];
   return (
     <>
       <PageHeroBanner image={aboutHeroBanner} title={t("About")} />
       <BannerBackgroundLeft
         image={storeImg}
-        title="Kdo jsme"
+        title={t("About_Page.intro")}
         header="Nails HT 86"
         description=""
         lists={listTextForAboutUs}

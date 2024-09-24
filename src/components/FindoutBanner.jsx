@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import AOS from "aos";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+
 function FindoutBanner(props) {
+  const { t } = useTranslation();
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -23,21 +26,21 @@ function FindoutBanner(props) {
                       <span className="section-id black--color">
                         <font style={{ verticalAlign: "inherit" }}>
                           <font style={{ verticalAlign: "inherit" }}>
-                            View prices
+                            {t("Findout.ViewPrice")}
                           </font>
                         </font>
                       </span>
                       <h2 className="h2-xs">
                         <font style={{ verticalAlign: "inherit" }}>
                           <font style={{ verticalAlign: "inherit" }}>
-                            Get the unique nails you dream of
+                            {t("Findout.GetUnique")}
                           </font>
                         </font>
                       </h2>
                       <Link to="/price">
                         <Button
                           hoverColor="blue"
-                          title="Go to the price list"
+                          title={t("Findout.Gotoprice")}
                         />
                       </Link>
                     </div>

@@ -6,10 +6,9 @@ function CommentCard() {
       <div id="comment-card">
         <Card style={{ width: "80%" }}>
           <Card.Body>
-            <Card.Title>Nabízíme</Card.Title>
+            <Card.Title>Eva Scalet</Card.Title>
             <Card.Text>
-              -"Nehtové studio bylo pro mě objevem! Profesionální přístup,
-              skvělá péče a krásné výsledky. Doporučuji."
+              -"I když jsou noví. Umí. Doporučuji všem kamarádkám."
             </Card.Text>
           </Card.Body>
         </Card>

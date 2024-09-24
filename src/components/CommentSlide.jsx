@@ -3,9 +3,11 @@ import "./CommentSlide.scss";
 import React from "react";
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
+import { useTranslation } from "react-i18next";
+
 import "aos/dist/aos.css";
 function CommentSlide(props) {
-
+  const { t } = useTranslation();
   var settings = {
     dots: true,
     infinite: true,
@@ -46,8 +48,8 @@ function CommentSlide(props) {
   return (
     <>
       <div className="service-offer-title" data-aos="fade-left">
-        <span className="service-offer-title-section">Reference</span>
-        <h2>Co o nás říkají zákazníci</h2>
+        <span className="service-offer-title-section">{t("Reference")}</span>
+        <h2>{t("CustomerFeedback")}</h2>
       </div>
       <div className="slider-container" data-aos="fade-left">
         <Slider {...settings}>

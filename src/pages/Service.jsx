@@ -52,7 +52,7 @@ function Service() {
       <BannerBackgroundLeft
         image={serviceThumb01}
         title="naše služby"
-        header="Manikúra"
+        header={t("service.Manicure")}
         description=""
         lists={listTextForThumb01}
         isShowBackground={true}
@@ -60,7 +60,7 @@ function Service() {
       <BannerBackgroundLeft
         image={serviceThumb02}
         title="naše služby"
-        header="Pedikúra"
+        header={t("service.Pedicure")}
         description=""
         lists={listTextForThumb02}
         isShowBackground={true}
@@ -68,7 +68,7 @@ function Service() {
       <BannerBackgroundLeft
         image={serviceThumb03}
         title="naše služby"
-        header="Kosmetika"
+        header={t("service.Cosmetic")}
         description=""
         lists={listTextForThumb03}
         isShowBackground={true}

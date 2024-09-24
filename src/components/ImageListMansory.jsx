@@ -3,21 +3,23 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import ImageGalerie1 from "../assets/galerie/nails1.jpg"
-import ImageGalerie2 from "../assets/galerie/nail-foot.png"
-import ImageGalerie3 from "../assets/galerie/eyelashes.jpeg"
-import ImageGalerie4 from "../assets/galerie/massage2.jpg"
-import ImageGalerie5 from "../assets/galerie/eyelashes.jpg"
-import ImageGalerie6 from "../assets/galerie/nail-foot2.jpg"
-import ImageGalerie7 from "../assets/galerie/galerie-09-nehty.jpg"
-import ImageGalerie8 from "../assets/galerie/massage4.jpg"
-import ImageGalerie9 from "../assets/galerie/galerie-11-nehty.jpg"
-import ImageGalerie10 from "../assets/galerie/eyelashes1.jpg"
-import ImageGalerie11 from "../assets/galerie/nail-foot1.jpg"
-import ImageGalerie12 from "../assets/galerie/galerie-14-nehty.jpg"
-import ImageGalerie13 from "../assets/galerie/massage1.jpg"
+import ImageGalerie1 from "../assets/galerie/nails1.jpg";
+import ImageGalerie2 from "../assets/galerie/nail-foot.png";
+import ImageGalerie3 from "../assets/galerie/eyelashes.jpeg";
+import ImageGalerie4 from "../assets/galerie/massage2.jpg";
+import ImageGalerie5 from "../assets/galerie/eyelashes.jpg";
+import ImageGalerie6 from "../assets/galerie/nail-foot2.jpg";
+import ImageGalerie7 from "../assets/galerie/galerie-09-nehty.jpg";
+import ImageGalerie8 from "../assets/galerie/massage4.jpg";
+import ImageGalerie9 from "../assets/galerie/galerie-11-nehty.jpg";
+import ImageGalerie10 from "../assets/galerie/eyelashes1.jpg";
+import ImageGalerie11 from "../assets/galerie/nail-foot1.jpg";
+import ImageGalerie12 from "../assets/galerie/galerie-14-nehty.jpg";
+import ImageGalerie13 from "../assets/galerie/massage1.jpg";
+import { useTranslation } from "react-i18next";
 
 function ImageListMansory() {
+  const { t } = useTranslation();
   const itemData = [
     {
       img: ImageGalerie1,
@@ -71,13 +73,12 @@ function ImageListMansory() {
       img: ImageGalerie12,
       title: "Store",
     },
-
   ];
   return (
     <>
       <div className="service-offer-title">
-        <span className="service-offer-title-section">Služby</span>
-        <h2>Nabízíme</h2>
+        <span className="service-offer-title-section">{t("GalleryTitle")}</span>
+        <h2>{t("Gallery")}</h2>
       </div>
       <Box sx={{ width: "55%", margin: "auto" }}>
         <ImageList variant="masonry" cols={3} gap={8}>

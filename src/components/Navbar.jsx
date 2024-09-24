@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import logoImg from "../assets/ht86-yellow.png";
 import Button from "./Button";
 function Navbar(props) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpenBarMenu, setIsOpenBarMenu] = useState(false);
   function handleOpenBarMenu() {
     setIsOpenBarMenu(!isOpenBarMenu);
@@ -58,6 +58,22 @@ function Navbar(props) {
             <i className="fa-solid fa-bars" onClick={handleOpenBarMenu}></i>
           </li>
         </ul>
+        <div className="language-btn">
+          <button
+            onClick={() => {
+              i18n.changeLanguage("en");
+            }}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => {
+              i18n.changeLanguage("cz");
+            }}
+          >
+            CZ
+          </button>
+        </div>
         {isOpenBarMenu ? (
           <ul className="screen-nav bar-nav">
             <li>

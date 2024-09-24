@@ -12,12 +12,12 @@ const Footer = () => {
       <div className="footer">
         <div className="footer__container">
           <div className="footer__section">
-            <h2 className="footer__title">Kde nás najdete</h2>
+            <h2 className="footer__title">{t("FindUs")}</h2>
             <p className="footer__text">Provazníkova 890/40</p>
             <p className="footer__text">613 00 Brno</p>
           </div>
           <div className="footer__section">
-            <h2 className="footer__title">Contact</h2>
+            <h2 className="footer__title">{t("Contact")}</h2>
             <ul className="footer__list">
               <li className="footer__list-item">Email: contact@company.com</li>
               <li className="footer__list-item">Phone: (123) 456-7890</li>
@@ -27,7 +27,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="footer__section">
-            <h2 className="footer__title">Follow Us</h2>
+            <h2 className="footer__title">{t("Social")}</h2>
             <div className="footer__socials">
               <a
                 href="https://facebook.com"

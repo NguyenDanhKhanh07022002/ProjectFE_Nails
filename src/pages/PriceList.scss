@@ -1,22 +1,24 @@
-.banner-wrapper {
-    width: 80% !important;
-    justify-content: center !important;
+#price-page {
+    .banner-wrapper {
+        width: 80% !important;
+        justify-content: center !important;
 
-    &--image {
-        width: 50% !important;
-    }
-
-    &--text {
-        width: 50% !important;
-    }
-
-    @media screen and (max-width: 992px) {
         &--image {
-            width: 80% !important;
+            width: 50% !important;
         }
 
         &--text {
-            width: 80% !important;
+            width: 50% !important;
+        }
+
+        @media screen and (max-width: 992px) {
+            &--image {
+                width: 80% !important;
+            }
+
+            &--text {
+                width: 80% !important;
+            }
         }
     }
 }

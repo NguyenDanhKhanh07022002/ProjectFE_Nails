@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -15,6 +15,10 @@ import FooterBanner from "../components/FooterBanner";
 import FindoutBanner from "../components/FindoutBanner";
 function Service() {
   const { t } = useTranslation();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   var listTextForThumb01 = [
     "Akrylové nehty",
     "Gelové nehty",
@@ -44,34 +48,44 @@ function Service() {
   ];
   return (
     <>
-      <PageHeroBanner image={serviceHeroBanner} title={t("Service")} />
-      <BannerBackgroundLeft
-        image={serviceThumb01}
-        title="naše služby"
-        header={t("service.Manicure")}
-        description=""
-        lists={listTextForThumb01}
-        isShowBackground={true}
-      />
-      <BannerBackgroundLeft
-        image={serviceThumb02}
-        title="naše služby"
-        header={t("service.Pedicure")}
-        description=""
-        lists={listTextForThumb02}
-        isShowBackground={true}
-      />
-      <BannerBackgroundLeft
-        image={serviceThumb03}
-        title="naše služby"
-        header={t("service.Cosmetic")}
-        description=""
-        lists={listTextForThumb03}
-        isShowBackground={true}
-      />
-      <FindoutBanner />
-      <CommentSlide />
-      <FooterBanner image={bigBannerImage} />
+      {loading ? (
+        <div>
+          <div className="loading-container">
+            <div className="loading-spinner"></div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <PageHeroBanner image={serviceHeroBanner} title={t("Service")} />
+          <BannerBackgroundLeft
+            image={serviceThumb01}
+            title="naše služby"
+            header={t("service.Manicure")}
+            description=""
+            lists={listTextForThumb01}
+            isShowBackground={true}
+          />
+          <BannerBackgroundLeft
+            image={serviceThumb02}
+            title="naše služby"
+            header={t("service.Pedicure")}
+            description=""
+            lists={listTextForThumb02}
+            isShowBackground={true}
+          />
+          <BannerBackgroundLeft
+            image={serviceThumb03}
+            title="naše služby"
+            header={t("service.Cosmetic")}
+            description=""
+            lists={listTextForThumb03}
+            isShowBackground={true}
+          />
+          <FindoutBanner />
+          <CommentSlide />
+          <FooterBanner image={bigBannerImage} />
+        </div>
+      )}
     </>
   );
 }

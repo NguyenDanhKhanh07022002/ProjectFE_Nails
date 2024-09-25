@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageHeroBanner from "../components/PageHeroBanner";
 import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
 import OpenningHour from "../components/OpenningHour";
@@ -15,24 +15,38 @@ import { useTranslation } from "react-i18next";
 function AboutUs() {
   const { t } = useTranslation();
   const listTextForAboutUs = [t("About_Page.des_1"), t("About_Page.des_2")];
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
   return (
     <>
-      <PageHeroBanner image={aboutHeroBanner} title={t("About")} />
-      <BannerBackgroundLeft
-        image={storeImg}
-        title={t("About_Page.intro")}
-        header="Nails HT 86"
-        description=""
-        lists={listTextForAboutUs}
-        isShowBackground={false}
-      />
-      <OpenningHour />
-      <ImageListMansory />
-      <div className="link-to-page">
-        <Button hoverColor="blue" title="Reservation" />
-      </div>
-      <CommentSlide />
-      <FooterBanner image={bigBannerImage} />
+      {loading ? (
+        <div>
+          <div className="loading-container">
+            <div className="loading-spinner"></div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <PageHeroBanner image={aboutHeroBanner} title={t("About")} />
+          <BannerBackgroundLeft
+            image={storeImg}
+            title={t("About_Page.intro")}
+            header="Nails HT 86"
+            description=""
+            lists={listTextForAboutUs}
+            isShowBackground={false}
+          />
+          <OpenningHour />
+          <ImageListMansory />
+          <div className="link-to-page">
+            <Button hoverColor="blue" title="Reservation" />
+          </div>
+          <CommentSlide />
+          <FooterBanner image={bigBannerImage} />
+        </div>
+      )}
     </>
   );
 }

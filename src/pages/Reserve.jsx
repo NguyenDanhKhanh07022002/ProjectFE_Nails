@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import PhoneInput from "react-phone-input-2";
-
+import moment from "moment";
 import "./Reserve.scss";
 
 import reserveHeroBanner from "../assets/reserveHero.jpg";
@@ -151,7 +151,7 @@ function Reserve() {
   const handleSubmit = () => {
     const data = {
       bookingService,
-      date: bookingDate.toISOString().split("T")[0],
+      date: moment(bookingDate.toISOString()).format("MM-DD-YYYY"),
       time: bookingTime,
       fullName: bookingName,
       phoneNumber: bookingPhone,
@@ -308,7 +308,10 @@ function Reserve() {
                       </p>
                       <p>
                         <b className="reserve-item-title">
-                          Date: {bookingDate.toISOString().split("T")[0]}
+                          Date:{" "}
+                          {moment(bookingDate.toISOString()).format(
+                            "MM-DD-YYYY"
+                          )}
                         </b>
                       </p>
                       <p>
@@ -405,7 +408,8 @@ function Reserve() {
                     </p>
                     <p>
                       <b className="reserve-item-title">
-                        Date: {bookingDate.toISOString().split("T")[0]}
+                        Date:{" "}
+                        {moment(bookingDate.toISOString()).format("MM-DD-YYYY")}
                       </b>
                     </p>
                     <p>

@@ -67,7 +67,7 @@
     }
 
     .reserve-time-option {
-        max-height: 180px;
+        flex-direction: row;
         gap: 10px;
     }
 
@@ -80,10 +80,18 @@
         display: flex;
         gap: 10px;
 
+        @media (max-width: 1000px) {
+            flex-wrap: wrap;
+        }
+
         &--item {
             display: flex;
             flex-direction: column;
             width: calc(100%/3);
+
+            @media (max-width: 1000px) {
+                width: 100% !important;
+            }
         }
     }
 

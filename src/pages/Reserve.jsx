@@ -42,7 +42,33 @@ function Reserve() {
   const [bookingPhone, setBookingPhone] = React.useState("");
   const [bookingMail, setBookingMail] = React.useState("");
   const [bookingDescription, setBookingDescription] = React.useState("");
-
+  const bookingTimeOptions = [
+    "08:00",
+    "08:30",
+    "09:00",
+    "09:30",
+    "10:00",
+    "10:30",
+    "11:00",
+    "11:30",
+    "12:00",
+    "12:30",
+    "13:00",
+    "13:30",
+    "14:00",
+    "14:30",
+    "15:00",
+    "15:30",
+    "16:00",
+    "16:30",
+    "17:00",
+    "17:30",
+    "18:00",
+    "18:30",
+    "19:00",
+    "19:30",
+    "20:00",
+  ];
   const [errors, setErrors] = React.useState({});
   const renderServiceOption = (option) => {
     switch (option) {
@@ -256,56 +282,14 @@ function Reserve() {
                             setBookingTime(option.target.value)
                           }
                         >
-                          <FormControlLabel
-                            value="00:10"
-                            control={<Radio />}
-                            label="00:10"
-                          />
-                          <FormControlLabel
-                            value="00:20"
-                            control={<Radio />}
-                            label="00:20"
-                          />
-                          <FormControlLabel
-                            value="00:30"
-                            control={<Radio />}
-                            label="00:30"
-                          />
-                          <FormControlLabel
-                            value="00:40"
-                            control={<Radio />}
-                            label="00:40"
-                          />
-                          <FormControlLabel
-                            value="00:50"
-                            control={<Radio />}
-                            label="00:50"
-                          />
-                          <FormControlLabel
-                            value="01:00"
-                            control={<Radio />}
-                            label="01:00"
-                          />
-                          <FormControlLabel
-                            value="01:20"
-                            control={<Radio />}
-                            label="01:20"
-                          />
-                          <FormControlLabel
-                            value="01:40"
-                            control={<Radio />}
-                            label="01:40"
-                          />
-                          <FormControlLabel
-                            value="02:00"
-                            control={<Radio />}
-                            label="02:00"
-                          />
-                          <FormControlLabel
-                            value="02:30"
-                            control={<Radio />}
-                            label="02:30"
-                          />
+                          {bookingTimeOptions.map((e, i) => (
+                            <FormControlLabel
+                              value={e}
+                              control={<Radio />}
+                              label={e}
+                              key={i}
+                            />
+                          ))}
                         </RadioGroup>
                       </FormControl>
                       {errors.bookingTime && (
@@ -361,7 +345,7 @@ function Reserve() {
                             </Typography>
                           )}
                         </div>
-                        <br />
+
                         <div className="reserve-item-form--item">
                           <label htmlFor="phoneNumber">Phone:</label>
                           <PhoneInput
@@ -380,7 +364,7 @@ function Reserve() {
                             </Typography>
                           )}
                         </div>
-                        <br />
+
                         <div className="reserve-item-form--item">
                           <label htmlFor="email">Email:</label>
                           <input
@@ -396,7 +380,7 @@ function Reserve() {
                           )}
                         </div>
                       </div>
-                      <br />
+
                       <div className="reserve-item-textarea">
                         <label htmlFor="description">
                           Please enter your additional requirements here:

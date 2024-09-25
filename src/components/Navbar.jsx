@@ -39,7 +39,10 @@ function Navbar(props) {
           </li>
           <li>
             <Link to="/reserve">
-              <Button hoverColor="blue" title={t("Reservation")} />
+              <Button
+                hoverColor={props.isScrollTop ? "white" : "blue"}
+                title={t("Reservation")}
+              />
             </Link>
           </li>
         </ul>

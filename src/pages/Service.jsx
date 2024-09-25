@@ -15,10 +15,6 @@ import FooterBanner from "../components/FooterBanner";
 import FindoutBanner from "../components/FindoutBanner";
 function Service() {
   const { t } = useTranslation();
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
   var listTextForThumb01 = [
     "Akrylové nehty",
     "Gelové nehty",

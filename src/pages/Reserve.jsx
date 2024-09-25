@@ -28,10 +28,6 @@ const steps = ["Service", "Time", "Your data", "Done"];
 
 function Reserve() {
   const { t } = useTranslation();
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 

@@ -77,10 +77,6 @@ function Introduction() {
       },
     ],
   };
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
   const { t } = useTranslation();
   var listTextForBanner = [
     t("Introduction_Page.banner_des_1"),

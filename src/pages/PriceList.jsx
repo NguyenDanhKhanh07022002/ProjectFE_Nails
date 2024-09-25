@@ -21,7 +21,6 @@ import FindoutBanner from "../components/FindoutBanner";
 import PageHeroBanner from "../components/PageHeroBanner";
 function PriceList() {
   const { t } = useTranslation();
-  const { pathname } = useLocation();
   const priceListOption1 = {
     section: "Manikúra",
     title: "Manikúra",
@@ -190,9 +189,6 @@ function PriceList() {
       },
     ],
   };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
   return (
     <>
       <PageHeroBanner image={priceHeroBanner} title={t("Price")} />

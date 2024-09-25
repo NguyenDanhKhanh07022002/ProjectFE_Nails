@@ -1,14 +1,42 @@
 import "./BannerBackgroundRight.scss";
 import PriceCard from "./PriceCard";
 import AOS from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 function BannerBackgroundRightPrice(props) {
+  const [scrollDirection, setScrollDirection] = useState(null);
+
   useEffect(() => {
-    AOS.init({
-      duration: 1500,
-      once: true,
-    });
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else if (currentScrollY < lastScrollY) {
+        setScrollDirection("up");
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  useEffect(() => {
+    if (scrollDirection === "down") {
+      AOS.init({
+        duration: 1500,
+        once: true,
+      });
+    }
+  }, [scrollDirection]);
+
   return (
     <>
       <div id="widget-container">

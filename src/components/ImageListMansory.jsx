@@ -1,6 +1,8 @@
 import "./ImageListMansory.scss";
 import * as React from "react";
 import Box from "@mui/material/Box";
+import AOS from "aos";
+import { useEffect, useState } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageGalerie1 from "../assets/galerie/nails1.jpg";
@@ -74,26 +76,34 @@ function ImageListMansory() {
       title: "Store",
     },
   ];
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      once: true,
+    });
+  }, []);
   return (
     <>
-      <div className="service-offer-title">
+      <div className="service-offer-title" data-aos="fade-up">
         <span className="service-offer-title-section">{t("GalleryTitle")}</span>
         <h2>{t("Gallery")}</h2>
       </div>
-      <Box sx={{ width: "55%", margin: "auto" }}>
-        <ImageList variant="masonry" cols={3} gap={8}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Box>
+      <div data-aos="fade-up">
+        <Box sx={{ width: "55%", margin: "auto" }}>
+          <ImageList variant="masonry" cols={3} gap={8}>
+            {itemData.map((item) => (
+              <ImageListItem key={item.img}>
+                <img
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  alt={item.title}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
+      </div>
     </>
   );
 }

@@ -5,13 +5,13 @@ import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import priceHeroBanner from "../assets/priceHero.jpg";
-import pricePageImg1 from "../assets/pricePage/price-page-img01.jpg";
-import pricePageImg2 from "../assets/pricePage/cenik-kosmetika.jpg";
-import pricePageImg3 from "../assets/pricePage/cenik-manikura2.jpg";
-import pricePageImg4 from "../assets/pricePage/cenik-manikura3-opravy.jpg";
-import pricePageImg5 from "../assets/pricePage/cenik-pedikura1.jpg";
-import pricePageImg6 from "../assets/pricePage/cenik-pedikura2.jpg";
-import pricePageImg7 from "../assets/pricePage/cenik-kosmetika.jpg";
+import pricePageImg1 from "../assets/pricePage/cenik-manikura2.jpg";
+import pricePageImg2 from "../assets/pricePage/cenik-pedikura1.jpg";
+import pricePageImg3 from "../assets/pricePage/price-page-img01.jpg";
+import pricePageImg4 from "../assets/pricePage/Zdobení-Nehtú.jpg";
+import pricePageImg5 from "../assets/pricePage/Úpravy-Nehtú.png";
+import pricePageImg6 from "../assets/pricePage/cenik-kosmetika.jpg";
+import pricePageImg7 from "../assets/pricePage/massage.jpg";
 import bigBannerImage from "../assets/bigBanner/banner-1.jpg";
 
 import BannerBackgroundRightPrice from "../components/BannerBackgroundRightPrice";

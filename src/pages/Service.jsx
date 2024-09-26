@@ -46,6 +46,13 @@ function Service() {
     "Barvení obočí",
     "Odstraňování řas na přání",
   ];
+  var listTextForThumb04 = [
+    "Prodlužování řas – první aplikace",
+    "Doplňování a barvení řas",
+    "Francouzská manikúra",
+    "Barvení obočí",
+    "Odstraňování řas na přání",
+  ];
   return (
     <>
       {loading ? (
@@ -76,9 +83,17 @@ function Service() {
           <BannerBackgroundLeft
             image={serviceThumb03}
             title="naše služby"
-            header={t("service.Cosmetic")}
+            header={t("service.Facial")}
             description=""
             lists={listTextForThumb03}
+            isShowBackground={true}
+          />
+          <BannerBackgroundLeft
+            image={serviceThumb03}
+            title="naše služby"
+            header={t("service.Massage")}
+            description=""
+            lists={listTextForThumb04}
             isShowBackground={true}
           />
           <FindoutBanner />

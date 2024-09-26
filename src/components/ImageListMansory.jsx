@@ -11,7 +11,7 @@ import ImageGalerie3 from "../assets/galerie/eyelashes.jpeg";
 import ImageGalerie4 from "../assets/galerie/massage2.jpg";
 import ImageGalerie5 from "../assets/galerie/eyelashes.jpg";
 import ImageGalerie6 from "../assets/galerie/nail-foot2.jpg";
-import ImageGalerie7 from "../assets/galerie/galerie-09-nehty.jpg";
+import ImageGalerie7 from "../assets/galerie/nails.jpg";
 import ImageGalerie8 from "../assets/galerie/massage4.jpg";
 import ImageGalerie9 from "../assets/galerie/galerie-11-nehty.jpg";
 import ImageGalerie10 from "../assets/galerie/eyelashes1.jpg";

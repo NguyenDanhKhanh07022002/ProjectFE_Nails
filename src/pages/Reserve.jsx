@@ -75,6 +75,10 @@ function Reserve() {
       case "3":
         return "Manicure + Pedicure";
       case "4":
+        return "Prodluzování Ras";
+      case "5":
+        return "Masáze";
+      case "6":
         return "Cosmetics";
       default:
         return "Select Service";
@@ -232,7 +236,9 @@ function Reserve() {
                         <option value="1">Manicure</option>
                         <option value="2">Pedicure</option>
                         <option value="3">Manicure + Pedicure</option>
-                        <option value="4">Cosmetics</option>
+                        <option value="4">Prodluzování Ras</option>
+                        <option value="5">Masáze</option>
+                        <option value="6">Cosmetics</option>
                       </select>
                       {errors.bookingService && (
                         <Typography color="error">

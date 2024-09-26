@@ -174,7 +174,15 @@ function Reserve() {
     <>
       <PageHeroBanner image={reserveHeroBanner} title={t("Reservation")} />
       <div id="reserve-container">
-        <Box sx={{ width: "60%", margin: "auto" }}>
+        <Box
+          sx={{
+            width: { xs: "90%", sm: "70%", md: "60%" }, // Responsive width
+            margin: "auto",
+            padding: "16px",
+            borderRadius: "8px",
+            backgroundColor: "#fff",
+          }}
+        >
           <Stepper activeStep={activeStep}>
             {steps.map((label, index) => {
               const stepProps = {};
@@ -214,7 +222,7 @@ function Reserve() {
                       </p>
                       <b className="reserve-item-title">Service</b>
                       <select
-                        style={{ width: "100%" }}
+                        style={{ width: "90%", boxSizing: "border-box" }}
                         value={bookingService}
                         onChange={(option) =>
                           setBookingService(option.target.value)

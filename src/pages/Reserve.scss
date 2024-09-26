@@ -62,13 +62,17 @@
     }
 
     .reserve-time-step {
-        display: flex;
+        display: block;
         gap: 50px;
     }
 
     .reserve-time-option {
         flex-direction: row;
         gap: 10px;
+
+        @media (max-width: 1000px) {
+            gap: 38px;
+        }
     }
 
     .reserve-item-warning {
@@ -78,7 +82,7 @@
 
     .reserve-item-form {
         display: flex;
-        gap: 10px;
+        gap: 35px;
 
         @media (max-width: 1000px) {
             flex-wrap: wrap;

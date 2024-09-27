@@ -1,4 +1,5 @@
 import "./GoogleMap.scss";
+import priceHeroBanner from "../assets/map.png";
 
 function GoogleMap() {
   return (
@@ -9,13 +10,13 @@ function GoogleMap() {
             <div className="contact-map-item">
               <h5 className="h5-lg">
                 <font style={{ verticalAlign: "inherit" }}>
-                  <font style={{ verticalAlign: "inherit" }}>Nails HT 86</font>
+                  <font style={{ verticalAlign: "inherit" }}>NSC 88 Nails</font>
                 </font>
               </h5>
               <p className="p-lg">
                 <font style={{ verticalAlign: "inherit" }}>
                   <font style={{ verticalAlign: "inherit" }}>
-                    Provazníkova 890/40, 613 00 Brno
+                    Lidická 1877/44
                   </font>
                 </font>
               </p>
@@ -32,7 +33,7 @@ function GoogleMap() {
                 <a href="tel:00420776156 865">
                   <font style={{ verticalAlign: "inherit" }}>
                     <font style={{ verticalAlign: "inherit" }}>
-                      +420 776 156 865{" "}
+                      +420 608 412 416{" "}
                     </font>
                   </font>
                 </a>
@@ -62,7 +63,7 @@ function GoogleMap() {
                 <span>
                   <font style={{ verticalAlign: "inherit" }}>
                     <font style={{ verticalAlign: "inherit" }}>
-                      8:30 - 19:30
+                      8:30 - 20:00
                     </font>
                   </font>
                 </span>
@@ -74,7 +75,7 @@ function GoogleMap() {
                 <span>
                   <font style={{ verticalAlign: "inherit" }}>
                     <font style={{ verticalAlign: "inherit" }}>
-                      9:30 - 18:00
+                      10:00 - 19:00
                     </font>
                   </font>
                 </span>
@@ -100,7 +101,7 @@ function GoogleMap() {
               </h5>
               <p className="p-lg">
                 <font style={{ verticalAlign: "inherit" }}>
-                  <font style={{ verticalAlign: "inherit" }}>Chu Han Do</font>
+                  <font style={{ verticalAlign: "inherit" }}>Nguyen Thi Nhung</font>
                 </font>
               </p>
               <p className="p-lg">
@@ -126,20 +127,10 @@ function GoogleMap() {
           </div>
           <div className="contact-location-wrapper">
             <a
-              href="https://www.google.com/maps/place/Provazn%C3%ADkova+890%2F40,+613+00+Brno-sever-%C4%8Cern%C3%A1+Pole,+%C4%8Cesko/@49.214178,16.623229,16z/data=!4m6!3m5!1s0x47129463308ffc77:0x3495eadd2b3ee7a8!8m2!3d49.2141775!4d16.623229!16s%2Fg%2F11c2ds1dj0?hl=cs-CZ&amp;entry=ttu"
+              href="https://maps.app.goo.gl/2xcVC1mSiHSHaFNf7"
               target="_blank"
             >
-              <img
-                fetchpriority="high"
-                decoding="async"
-                width="663"
-                height="600"
-                src="https://nailsht86.cz/wp-content/uploads/2024/04/mapa-nailsht86-mala.png"
-                className="attachment-large size-large wp-image-2156"
-                alt=""
-                srcSet="https://nailsht86.cz/wp-content/uploads/2024/04/mapa-nailsht86-mala.png 663w, https://nailsht86.cz/wp-content/uploads/2024/04/mapa-nailsht86-mala-300x271.png 300w, https://nailsht86.cz/wp-content/uploads/2024/04/mapa-nailsht86-mala-24x22.png 24w, https://nailsht86.cz/wp-content/uploads/2024/04/mapa-nailsht86-mala-36x33.png 36w, https://nailsht86.cz/wp-content/uploads/2024/04/mapa-nailsht86-mala-48x43.png 48w"
-                sizes="(max-width: 663px) 100vw, 663px"
-              />
+              <img src={priceHeroBanner} />
             </a>
           </div>
         </div>

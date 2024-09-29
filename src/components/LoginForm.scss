@@ -1,0 +1,73 @@
+// LoginForm.scss
+
+$primary-color: #3498db;
+$background-color: #f2f2f2;
+$border-color: #ccc;
+$input-border-radius: 5px;
+$btn-border-radius: 5px;
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $background-color;
+    background-image: url("../assets/aboutHero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 500px;
+
+    h2 {
+        margin-bottom: 1.5rem;
+        color: $primary-color;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid $border-color;
+            border-radius: $input-border-radius;
+            font-size: 1rem;
+            outline: none;
+
+            &:focus {
+                border-color: $primary-color;
+            }
+        }
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: $btn-border-radius;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}

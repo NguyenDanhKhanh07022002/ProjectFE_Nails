@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Reserve from "./pages/Reserve";
+import LoginForm from "./components/LoginForm";
+import Admin from "./pages/Admin";
 import "react-datepicker/dist/react-datepicker.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,6 +20,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   let location = useLocation();
+  const isAdminPage = location.pathname.startsWith("/admin");
   const [isScrollTop, setIsScrollTop] = useState(true);
   const handleScroll = () => {
     if (window.outerWidth > 1080) {
@@ -50,7 +53,8 @@ function App() {
   }, [location]);
   return (
     <>
-      <Navbar isScrollTop={isScrollTop} />
+      {!isAdminPage && <Navbar isScrollTop={isScrollTop} />}
+
       <Routes>
         <Route path="/" element={<Introduction />} />
         <Route path="/service" element={<Service />} />
@@ -58,9 +62,11 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/reserve" element={<Reserve />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/login" element={<LoginForm />} />
       </Routes>
-      <Footer />
       {!isScrollTop ? <ScrollToTopButton /> : ""}
+      {!isAdminPage && <Footer />}
     </>
   );
 }

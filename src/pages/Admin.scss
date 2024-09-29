@@ -1,0 +1,164 @@
+// AdminPage.scss
+
+$primary-color: #710f0f;
+$light-gray: #f7f7f7;
+$dark-gray: #333;
+$table-header-bg: #f2f2f2;
+$border-color: #ddd;
+$icon-size: 24px;
+$input-padding: 5px;
+$btn-hover-color: darken($primary-color, 10%);
+$border-radius: 10px;
+
+.admin-page {
+    font-family: Arial, sans-serif;
+    background-color: $light-gray;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .admin-header {
+        background-color: $primary-color;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .admin-logo {
+            height: 100%;
+            width: 50px;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .user-notification {
+            display: flex;
+            align-items: center;
+
+            .icon {
+                color: white;
+                font-size: $icon-size;
+                margin-left: 1.5rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: lighten($primary-color, 10%);
+                }
+            }
+        }
+    }
+
+    .admin-content {
+        padding: 2rem;
+        background-color: white;
+        flex-grow: 1;
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+
+            li {
+                margin: 0 0.5rem;
+
+                a {
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                    background-color: #3498db;
+                    color: white;
+                    text-decoration: none;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #2980b9;
+                    }
+                }
+
+                &.active a {
+                    background-color: #2980b9;
+                }
+            }
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+            color: $dark-gray;
+        }
+
+        .custom-search-container {
+            display: flex;
+            justify-content: flex-end;
+            margin: 2rem 0;
+
+            form {
+                display: flex;
+                width: 100%;
+                max-width: 400px;
+                position: relative;
+            }
+
+            .custom-search-input {
+                flex-grow: 1;
+                padding: $input-padding;
+                border: 1px solid $primary-color;
+                border-radius: $border-radius 0 0 $border-radius;
+                outline: none;
+                font-size: 1rem;
+
+                &:focus {
+                    border-color: $primary-color;
+                    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+                }
+            }
+
+            .custom-search-btn {
+                background-color: $primary-color;
+                color: white;
+                border: none;
+                padding: $input-padding;
+                border-radius: 0 $border-radius $border-radius 0;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $btn-hover-color;
+                }
+            }
+        }
+
+        .table-container {
+            overflow-x: auto;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                th,
+                td {
+                    padding: 1rem;
+                    text-align: left;
+                    border-bottom: 1px solid $border-color;
+                }
+
+                th {
+                    background-color: $table-header-bg;
+                    color: $dark-gray;
+                    font-weight: bold;
+                }
+
+                tr:nth-child(even) {
+                    background-color: $light-gray;
+                }
+
+                td {
+                    color: $dark-gray;
+                }
+            }
+        }
+    }
+}

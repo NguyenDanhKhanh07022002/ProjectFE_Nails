@@ -203,7 +203,7 @@ function PriceList() {
       },
       {
         priceName: t("priceMenu.option_6.text_7"),
-        priceNumber: "100 ",
+        priceNumber: "100 Kč",
         priceTxt: "",
       },
     ],

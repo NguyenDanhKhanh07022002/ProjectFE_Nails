@@ -92,6 +92,7 @@ const Admin = () => {
         setCurrentPage(1);
         setPageCount(Math.ceil(transformedRows.length / itemsPerPage));
         setCurrentItems(transformedRows.slice(0, itemsPerPage));
+        calculateServiceTotals(transformedRows);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -139,33 +140,7 @@ const Admin = () => {
   // }, []);
 
   useEffect(() => {
-
     getAll();
-
-    const socket = new WebSocket("ws://localhost:8081/socket.io/");
-
-    socket.onopen = () => {
-      console.log("Kết nối WebSocket đã được thiết lập");
-
-      socket.send(JSON.stringify({ message: "Client đã kết nối!" }));
-    };
-
-    socket.onmessage = (event) => {
-      const notification = JSON.parse(event.data);
-      setNotifications((prevNotifications) => [...prevNotifications, notification]);
-    };
-
-    socket.onerror = (error) => {
-      console.error("Lỗi WebSocket:", error);
-    };
-
-    socket.onclose = () => {
-      console.log("Kết nối WebSocket đã bị đóng");
-    };
-
-    return () => {
-      socket.close();
-    };
   }, []);
 
   const onDelete = (id) => {
@@ -305,7 +280,7 @@ const Admin = () => {
       )}
 
       <main className="admin-content">
-        <h1>Admin Dashboard</h1>
+        <h4>booking management</h4>
         <div className="cards-container">
           <div className="card">
             <h4>Total Booking Service</h4>

@@ -1,6 +1,6 @@
 // AdminPage.scss
 
-$primary-color: #710f0f;
+$primary-color: #f7f7f7;
 $light-gray: #f7f7f7;
 $dark-gray: #333;
 $table-header-bg: #f2f2f2;
@@ -40,13 +40,12 @@ $border-radius: 10px;
             align-items: center;
 
             .icon {
-                color: white;
                 font-size: $icon-size;
                 margin-left: 1.5rem;
                 cursor: pointer;
 
                 &:hover {
-                    color: lighten($primary-color, 10%);
+                    color: lighten(#710f0f, 10%);
                 }
             }
         }
@@ -120,7 +119,7 @@ $border-radius: 10px;
                 }
 
                 .custom-search-btn {
-                    background-color: $primary-color;
+                    background-color: #710f0f;
                     color: white;
                     border: none;
                     padding: 0.5rem 0.8rem;
@@ -129,7 +128,7 @@ $border-radius: 10px;
                     transition: background-color 0.3s ease, transform 0.2s ease;
 
                     &:hover {
-                        background-color: $btn-hover-color;
+                        background-color: #710f0f;
                         transform: scale(1.05);
                     }
                 }

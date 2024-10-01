@@ -17,7 +17,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import "react-phone-input-2/lib/style.css";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-
+import BookingManagement from "./components/BookingManagement";
+import MessageManagement from "./components/MessageManagement";
 function App() {
   let location = useLocation();
   const isAdminPage = location.pathname.startsWith("/admin");
@@ -62,8 +63,11 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/reserve" element={<Reserve />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/login" element={<LoginForm />} />
+        <Route path="/admin" element={<Admin />}>
+          <Route path="login" element={<LoginForm />} />
+          <Route path="booking" element={<BookingManagement />} />
+          <Route path="message" element={<MessageManagement />} />
+        </Route>
       </Routes>
       {!isScrollTop ? <ScrollToTopButton /> : ""}
       {!isAdminPage && <Footer />}

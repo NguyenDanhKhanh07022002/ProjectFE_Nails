@@ -30,6 +30,7 @@ function Reserve() {
   const { t } = useTranslation();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
+  const [isSendingReserve, setIsSendingReserve] = React.useState(false);
 
   const [bookingService, setBookingService] = React.useState(0);
   const [bookingDate, setBookingDate] = React.useState(new Date());
@@ -129,9 +130,11 @@ function Reserve() {
         newSkipped.delete(activeStep);
       }
       if (activeStep === steps.length - 1) {
+        setIsSendingReserve(true);
         handleSubmit();
+      } else {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
       }
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setSkipped(newSkipped);
     }
   };
@@ -168,6 +171,8 @@ function Reserve() {
       .then(function (response) {
         console.log(response);
         handleReset();
+        setIsSendingReserve(false);
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
       })
       .catch(function (error) {
         console.log(error);
@@ -458,7 +463,11 @@ function Reserve() {
                 </Button>
                 <Box sx={{ flex: "1 1 auto" }} />
                 <Button onClick={handleNext}>
-                  {activeStep === steps.length - 1 ? "Submit" : "Next"}
+                  {activeStep === steps.length - 1
+                    ? !isSendingReserve
+                      ? "Submit"
+                      : "Sending..."
+                    : "Next"}
                 </Button>
               </Box>
             </React.Fragment>

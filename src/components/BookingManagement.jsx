@@ -40,10 +40,6 @@ const BookingManagement = () => {
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const dropdownRef = useRef(null);
-  const [manicureCount, setManicureCount] = useState(0);
-  const [pedicureCount, setPedicureCount] = useState(0);
-  const [comboCount, setComboCount] = useState(0);
-  const [cosmeticsCount, setCosmeticsCount] = useState(0);
 
   const [serviceTotals, setServiceTotals] = useState({
     total: 0,
@@ -165,7 +161,7 @@ const BookingManagement = () => {
     setSearchTerm(e.target.value);
   };
 
-  const handleSearchSubmit = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     if (!searchTerm.trim()) {
@@ -219,12 +215,6 @@ const BookingManagement = () => {
 
   return (
     <div className="admin-page" ref={dropdownRef}>
-      {/* <Nav defaultActiveKey="/home" className="flex-column sidebar">
-        <Nav.Link href="/home">Active</Nav.Link>
-        <Nav.Link eventKey="link-1">Link</Nav.Link>
-        <Nav.Link eventKey="link-2">Link</Nav.Link>
-        <Nav.Link eventKey="disabled" disabled>Disabled</Nav.Link>
-      </Nav> */}
       <main className="admin-content">
         <h4>Booking management</h4>
         <div className="cards-container">
@@ -255,7 +245,7 @@ const BookingManagement = () => {
         </div>
         {error && <div className="error-message">{error}</div>}
         <div className="custom-search-container">
-          <form onSubmit={handleSearchSubmit}>
+          <div className="custom-search-container--form">
             <input
               type="text"
               placeholder="Search by Phone or Email..."
@@ -263,10 +253,10 @@ const BookingManagement = () => {
               onChange={handleSearchChange}
               className="custom-search-input"
             />
-            <button type="submit" className="custom-search-btn">
+            <button onClick={handleSearch} className="custom-search-btn">
               Search
             </button>
-          </form>
+          </div>
         </div>
         <div className="table-container">
           <table>
@@ -298,17 +288,17 @@ const BookingManagement = () => {
                       backgroundColor: isToday
                         ? "inherit"
                         : isPast
-                        ? "#ffcccc"
-                        : isFuture
-                        ? "#ccffcc"
-                        : "inherit",
+                          ? "#ffcccc"
+                          : isFuture
+                            ? "#ccffcc"
+                            : "inherit",
                       transition: "background-color 0.3s",
                       "&:hover": {
                         backgroundColor: isPast
                           ? "#ffb3b3"
                           : isFuture
-                          ? "#b3ffb3"
-                          : "inherit",
+                            ? "#b3ffb3"
+                            : "inherit",
                       },
                     }}
                   >

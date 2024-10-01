@@ -108,10 +108,10 @@ const Admin = () => {
       </header>
       <nav className="admin-body">
         <div className="admin-body--navbar">
-          <NavLink to="/admin/booking" activeClassName="active">
+          <NavLink to="/admin/booking" activeclassname="active">
             booking
           </NavLink>
-          <NavLink to="/admin/message" activeClassName="active">
+          <NavLink to="/admin/message" activeclassname="active">
             message
           </NavLink>
         </div>

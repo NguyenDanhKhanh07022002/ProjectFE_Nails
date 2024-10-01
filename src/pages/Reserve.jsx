@@ -21,6 +21,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import { ToastContainer, toast } from "react-toastify";
 
 import PageHeroBanner from "../components/PageHeroBanner";
 
@@ -93,7 +94,6 @@ function Reserve() {
     const newErrors = {};
 
     if (activeStep === 0) {
-      // Step 0: Service and Date
       if (!bookingService) {
         newErrors.bookingService = "Please select a service";
       }
@@ -101,12 +101,10 @@ function Reserve() {
         newErrors.bookingDate = "Please select a date";
       }
     } else if (activeStep === 1) {
-      // Step 1: Date and Time
       if (!bookingTime) {
         newErrors.bookingTime = "Please select a time";
       }
     } else if (activeStep === 2) {
-      // Step 2: Personal Information
       if (!bookingName) {
         newErrors.bookingName = "Please enter your name";
       }
@@ -171,6 +169,7 @@ function Reserve() {
       .then(function (response) {
         console.log(response);
         handleReset();
+        toast.success("Your booking has been sent!");
         setIsSendingReserve(false);
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
       })
@@ -181,6 +180,12 @@ function Reserve() {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        closeOnClick
+        draggable
+      />
       <PageHeroBanner image={reserveHeroBanner} title={t("Reservation")} />
       <div id="reserve-container">
         <Box

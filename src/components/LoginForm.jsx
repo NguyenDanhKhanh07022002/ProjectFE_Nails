@@ -9,7 +9,11 @@ const LoginForm = () => {
     username: "",
     password: "",
   });
-  const [errors, setErrors] = useState({ submit: "", username: "", password: "" });
+  const [errors, setErrors] = useState({
+    submit: "",
+    username: "",
+    password: "",
+  });
   const [submitting, setSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
@@ -30,7 +34,9 @@ const LoginForm = () => {
     let formErrors = { ...errors };
 
     if (value.trim() === "") {
-      formErrors[name] = `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
+      formErrors[name] = `${
+        name.charAt(0).toUpperCase() + name.slice(1)
+      } is required`;
     }
 
     setErrors(formErrors);
@@ -67,19 +73,26 @@ const LoginForm = () => {
   };
 
   const handleLogin = (values, { setErrors, setSubmitting }) => {
-    axios.post('http://localhost:8082/api/auth/signin', {
-      username: values.username,
-      password: values.password
-    })
+    axios
+      .post("http://localhost:8082/api/auth/signin", {
+        username: values.username,
+        password: values.password,
+      })
       .then((response) => {
-        console.log('Login successful:', response.data);
-        localStorage.setItem('token', response.data.accessToken);
-        localStorage.setItem('userId', response.data.id);
-        navigate('/admin');
+        console.log("Login successful:", response.data);
+        localStorage.setItem("token", response.data.accessToken);
+        localStorage.setItem("userId", response.data.id);
+        navigate("/admin/booking");
       })
       .catch((error) => {
-        console.error('Login error:', error.response ? error.response.data : error.message);
-        setErrors({ submit: error.response?.data?.message || 'Invalid username or password' });
+        console.error(
+          "Login error:",
+          error.response ? error.response.data : error.message
+        );
+        setErrors({
+          submit:
+            error.response?.data?.message || "Invalid username or password",
+        });
       })
       .finally(() => {
         setSubmitting(false);
@@ -102,7 +115,9 @@ const LoginForm = () => {
             onBlur={handleBlur}
             required
           />
-          {errors.username && <div className="error-message">{errors.username}</div>}
+          {errors.username && (
+            <div className="error-message">{errors.username}</div>
+          )}
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
@@ -115,10 +130,12 @@ const LoginForm = () => {
             onBlur={handleBlur}
             required
           />
-          {errors.password && <div className="error-message">{errors.password}</div>}
+          {errors.password && (
+            <div className="error-message">{errors.password}</div>
+          )}
         </div>
         <button type="submit" className="login-btn" disabled={submitting}>
-          {submitting ? 'Logging in...' : 'Login'}
+          {submitting ? "Logging in..." : "Login"}
         </button>
       </form>
     </div>

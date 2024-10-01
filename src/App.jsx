@@ -64,10 +64,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/reserve" element={<Reserve />} />
         <Route path="/admin" element={<Admin />}>
-          <Route path="login" element={<LoginForm />} />
           <Route path="booking" element={<BookingManagement />} />
           <Route path="message" element={<MessageManagement />} />
         </Route>
+        <Route path="/admin/login" element={<LoginForm />} />
       </Routes>
       {!isScrollTop ? <ScrollToTopButton /> : ""}
       {!isAdminPage && <Footer />}

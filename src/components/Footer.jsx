@@ -2,13 +2,11 @@
 import React from "react";
 import "./Footer.scss";
 import { useTranslation } from "react-i18next";
-import "aos/dist/aos.css";
-import AOS from "aos";
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
   return (
-    <footer id="footer-container" data-aos="fade-right">
+    <footer id="footer-container">
       <div className="footer">
         <div className="footer__container">
           <div className="footer__section">

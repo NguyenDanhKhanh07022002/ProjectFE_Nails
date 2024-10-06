@@ -71,19 +71,21 @@ function Reserve() {
   const renderServiceOption = (option) => {
     switch (option) {
       case "1":
-        return "Manicure";
+        return t("service.Manicure");
       case "2":
-        return "Pedicure";
+        return t("service.Pedicure");
       case "3":
-        return "Manicure + Pedicure";
+        return t("priceMenu.title_3");
       case "4":
-        return "Prodluzování Ras";
+        return t("priceMenu.title_4");
       case "5":
-        return "Masáze";
+        return t("priceMenu.title_5");
       case "6":
-        return "Cosmetics";
+        return t("priceMenu.title_6");
+      case "7":
+        return t("priceMenu.title_7");
       default:
-        return "Select Service";
+        return t("reservePage.defaultService");
     }
   };
   const isStepSkipped = (step) => {
@@ -207,7 +209,7 @@ function Reserve() {
               }
               return (
                 <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
+                  <StepLabel {...labelProps}>{t(label)}</StepLabel>
                 </Step>
               );
             })}
@@ -232,9 +234,9 @@ function Reserve() {
                   <div className="reserve-wrapper">
                     <div className="reserve-item">
                       <p className="reserve-item-header">
-                        Select service and date of reservation:
+                        {t("reservePage.Select-service")}
                       </p>
-                      <b className="reserve-item-title">Service</b>
+                      <b className="reserve-item-title">{t("Service")}</b>
                       <select
                         style={{ width: "90%", boxSizing: "border-box" }}
                         value={bookingService}
@@ -242,13 +244,16 @@ function Reserve() {
                           setBookingService(option.target.value)
                         }
                       >
-                        <option value="0">Select a service</option>
-                        <option value="1">Manicure</option>
-                        <option value="2">Pedicure</option>
-                        <option value="3">Manicure + Pedicure</option>
-                        <option value="4">Prodluzování Ras</option>
-                        <option value="5">Masáze</option>
-                        <option value="6">Cosmetics</option>
+                        <option value="0">
+                          {t("reservePage.defaultService")}
+                        </option>
+                        <option value="1">{t("service.Manicure")}</option>
+                        <option value="2">{t("service.Pedicure")}</option>
+                        <option value="3">{t("priceMenu.title_3")}</option>
+                        <option value="4">{t("priceMenu.title_4")}</option>
+                        <option value="5">{t("priceMenu.title_5")}</option>
+                        <option value="6">{t("priceMenu.title_6")}</option>
+                        <option value="7">{t("priceMenu.title_7")}</option>
                       </select>
                       {errors.bookingService && (
                         <Typography color="error">
@@ -257,7 +262,9 @@ function Reserve() {
                       )}
                     </div>
                     <div className="reserve-item">
-                      <b className="reserve-item-title">Date</b>
+                      <b className="reserve-item-title">
+                        {t("reservePage.Date")}
+                      </b>
                       <DatePicker
                         selected={bookingDate}
                         onChange={(date) => setBookingDate(date)}
@@ -276,7 +283,9 @@ function Reserve() {
                 <>
                   <div className="reserve-wrapper reserve-time-step">
                     <div className="reserve-item">
-                      <b className="reserve-item-title">Date</b>
+                      <b className="reserve-item-title">
+                        {t("reservePage.Date")}
+                      </b>
                       <DatePicker
                         selected={bookingDate}
                         onChange={(date) => setBookingDate(date)}
@@ -291,7 +300,7 @@ function Reserve() {
                     <div className="reserve-item">
                       <FormControl>
                         <FormLabel id="demo-controlled-radio-buttons-group">
-                          <b className="reserve-item-title">Time</b>
+                          <b className="reserve-item-title">{t("Time")}</b>
                         </FormLabel>
                         <RadioGroup
                           className="reserve-time-option"
@@ -327,12 +336,12 @@ function Reserve() {
                     <div>
                       <p>
                         <b className="reserve-item-title">
-                          Service: {renderServiceOption(bookingService)}
+                          {t("Service")}: {renderServiceOption(bookingService)}
                         </b>
                       </p>
                       <p>
                         <b className="reserve-item-title">
-                          Date:{" "}
+                          {t("reservePage.Date")}:{" "}
                           {moment(bookingDate.toISOString()).format(
                             "MM-DD-YYYY"
                           )}
@@ -345,17 +354,15 @@ function Reserve() {
                       </p>
                     </div>
                     <p className="reserve-item-warning">
-                      *To complete the reservation, all that remains is to enter
-                      your contact details, which will not be processed further
-                      without your consent, according to the rules of the new
-                      European Union regulation on the protection of personal
-                      data.
+                      *{t("reservePage.Warning")}
                     </p>
-                    <p className="reserve-item-warning">Your detail:</p>
+                    <p className="reserve-item-warning">{t("Your data")}:</p>
                     <div>
                       <div className="reserve-item-form">
                         <div className="reserve-item-form--item">
-                          <label htmlFor="fullName">Name:</label>
+                          <label htmlFor="fullName">
+                            {t("reservePage.name")}:
+                          </label>
                           <input
                             type="text"
                             id="fullName"
@@ -370,7 +377,9 @@ function Reserve() {
                         </div>
 
                         <div className="reserve-item-form--item">
-                          <label htmlFor="phoneNumber">Phone:</label>
+                          <label htmlFor="phoneNumber">
+                            {t("reservePage.phone")}:
+                          </label>
                           <PhoneInput
                             inputProps={{
                               required: true,
@@ -389,7 +398,9 @@ function Reserve() {
                         </div>
 
                         <div className="reserve-item-form--item">
-                          <label htmlFor="email">Email:</label>
+                          <label htmlFor="email">
+                            {t("reservePage.email")}:
+                          </label>
                           <input
                             type="email"
                             id="email"
@@ -406,7 +417,7 @@ function Reserve() {
 
                       <div className="reserve-item-textarea">
                         <label htmlFor="description">
-                          Please enter your additional requirements here:
+                          {t("reservePage.enterInfor")}:
                         </label>
                         <textarea
                           rows="10"
@@ -427,32 +438,38 @@ function Reserve() {
                   <div className="reserve-wrapper">
                     <p>
                       <b className="reserve-item-title">
-                        Service: {renderServiceOption(bookingService)}
+                        {t("Service")}: {renderServiceOption(bookingService)}
                       </b>
                     </p>
                     <p>
                       <b className="reserve-item-title">
-                        Date:{" "}
+                        {t("reservePage.Date")}:{" "}
                         {moment(bookingDate.toISOString()).format("MM-DD-YYYY")}
                       </b>
                     </p>
                     <p>
-                      <b className="reserve-item-title">Time: {bookingTime}</b>
-                    </p>
-                    <p>
-                      <b className="reserve-item-title">Name : {bookingName}</b>
-                    </p>
-                    <p>
                       <b className="reserve-item-title">
-                        Phone: {bookingPhone}
+                        {t("Time")}: {bookingTime}
                       </b>
                     </p>
                     <p>
-                      <b className="reserve-item-title">Mail : {bookingMail}</b>
+                      <b className="reserve-item-title">
+                        {t("reservePage.name")} : {bookingName}
+                      </b>
                     </p>
                     <p>
                       <b className="reserve-item-title">
-                        Description: {bookingDescription}
+                        {t("reservePage.phone")}: {bookingPhone}
+                      </b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">
+                        Email : {bookingMail}
+                      </b>
+                    </p>
+                    <p>
+                      <b className="reserve-item-title">
+                        {t("reservePage.Description")}: {bookingDescription}
                       </b>
                     </p>
                   </div>
@@ -464,15 +481,15 @@ function Reserve() {
                   onClick={handleBack}
                   disabled={activeStep === 0}
                 >
-                  Back
+                  {t("reservePage.Back")}
                 </Button>
                 <Box sx={{ flex: "1 1 auto" }} />
                 <Button onClick={handleNext}>
                   {activeStep === steps.length - 1
                     ? !isSendingReserve
-                      ? "Submit"
-                      : "Sending..."
-                    : "Next"}
+                      ? t("reservePage.Submit")
+                      : t("reservePage.Sending")
+                    : t("reservePage.Next")}
                 </Button>
               </Box>
             </React.Fragment>

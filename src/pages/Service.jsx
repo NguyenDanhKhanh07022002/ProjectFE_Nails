@@ -21,35 +21,35 @@ function Service() {
     setLoading(false);
   }, []);
   var listTextForThumb01 = [
-    "Akrylové nehty",
-    "Gelové nehty",
-    "Francouzská manikúra",
-    "Shellac",
-    "Japonská manikúra P Shine",
-    "Umělé prodlužování a zpevňování vlastních nehtů",
-    "Lakování nehtů",
-    "Nail art – malování a zdobení nehtů",
-    "Opravy, regenerační procedury",
+    t("service.option_1.text_1"),
+    t("service.option_1.text_2"),
+    t("service.option_1.text_3"),
+    t("service.option_1.text_4"),
+    t("service.option_1.text_5"),
+    t("service.option_1.text_6"),
+    t("service.option_1.text_7"),
+    t("service.option_1.text_8"),
+    t("service.option_1.text_9"),
   ];
   var listTextForThumb02 = [
-    "Zdravotní pedikúra Footlogix",
-    "Akrylové nehty",
-    "Gelové nehty",
-    "Lakování a zdobení nehtů",
-    "Ošetření nohou v bublinkové lázni",
-    "Odstranění otlaků, mozolů a zrohovatělé kůže",
-    "Relaxační masáž",
+    t("service.option_2.text_1"),
+    t("service.option_2.text_2"),
+    t("service.option_2.text_3"),
+    t("service.option_2.text_4"),
+    t("service.option_2.text_5"),
+    t("service.option_2.text_6"),
+    t("service.option_2.text_7"),
   ];
   var listTextForThumb03 = [
-    "Prodlužování řas – první aplikace",
-    "Doplňování a barvení řas",
-    "Francouzská manikúra",
-    "Barvení obočí",
-    "Odstraňování řas na přání",
+    t("service.option_3.text_1"),
+    t("service.option_3.text_2"),
+    t("service.option_3.text_3"),
+    t("service.option_3.text_4"),
+    t("service.option_3.text_5"),
   ];
   var listTextForThumb04 = [
-    "Prodlužování řas – první aplikace",
-    "THE SPA masáž (Tradiční VietNamská + olejová)",
+    t("service.option_4.text_1"),
+    t("service.option_4.text_2"),
   ];
   return (
     <>

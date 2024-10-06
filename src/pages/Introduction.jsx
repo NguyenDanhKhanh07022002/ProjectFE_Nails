@@ -21,239 +21,237 @@ import CommentSlide from "../components/CommentSlide";
 import FooterBanner from "../components/FooterBanner";
 import FollowUsComponent from "../components/FollowUsComponent";
 import { useTranslation } from "react-i18next";
-const priceListOption1 = {
-  section: "Manikúra",
-  title: "MANIKÚRA",
-  priceOption: [
-    { priceName: "Manikúra klasik", priceNumber: "200 Kč", priceTxt: "" },
-    {
-      priceName: "Manikúra a obyčejné lakování O.P.I.",
-      priceNumber: "250 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Manikúra a lakování CND Shellac (Barva)",
-      priceNumber: "480 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Manikúra a lakování CND Shellac (Francie)",
-      priceNumber: "550 Kč",
-      priceTxt: "",
-    },
-  ],
-};
-const priceListOption2 = {
-  section: "",
-  title: "PEDIKÚRA",
-  priceOption: [
-    {
-      priceName: "Footlogix pedikúra klasik",
-      priceNumber: "450 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Footlogix pedikúra s gel-lakem",
-      priceNumber: "590 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Footlogix pedikúra s CND Shellac",
-      priceNumber: "690 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Lakovanie gel-lakem",
-      priceNumber: "350 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Lakovanie shellac bez pedikúry",
-      priceNumber: "450 Kč",
-      priceTxt: "",
-    },
-  ],
-};
-const priceListOption3 = {
-  section: "",
-  title: "MODELACE UMĚLÝCH NEHTŮ",
-  priceOption: [
-    {
-      priceName: "Gelové / Akrylové nehty klasik",
-      priceNumber: "350 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Gelové / Akrylové nehty s lakovaním",
-      priceNumber: "450 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Gelové / Akrylové nehty s lakovaním CND Shellac",
-      priceNumber: "550 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Nová aplikácia plus (+)",
-      priceNumber: "50 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Dlouhé nehty plus (+)",
-      priceNumber: "od 50 Kč",
-      priceTxt: "",
-    },
-  ],
-};
-const priceListOption4 = {
-  section: "",
-  title: "ZDOBENÍ NEHTŮ",
-  priceOption: [
-    {
-      priceName: "Malování",
-      priceNumber: "od 15 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Kompletní malování",
-      priceNumber: "od 140 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Kamínky dle velikosti",
-      priceNumber: "5 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Mašlička/ks",
-      priceNumber: "30 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Komplet magnetický efekt",
-      priceNumber: "100 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Komplet pigment",
-      priceNumber: "100 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Airbrush/Francie",
-      priceNumber: "80 Kč",
-      priceTxt: "",
-    },
-  ],
-};
-const priceListOption5 = {
-  section: "",
-  title: "ÚPRAVY NEHTŮ",
-  priceOption: [
-    {
-      priceName: "1 nehet",
-      priceNumber: "50 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Odstranění v případě nové aplikace",
-      priceNumber: "50 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Odstraněni gelových / akrylových nehtů",
-      priceNumber: "50 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Odstraněni CND Shellac nehtů",
-      priceNumber: "150 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Změna barvy",
-      priceNumber: "150 Kč",
-      priceTxt: "",
-    },
-  ],
-};
-const priceListOption6 = {
-  section: "",
-  title: "PRODLUŽOVÁNÍ ŘAS",
-  priceOption: [
-    {
-      priceName: "Prodlužování řas",
-      priceNumber: "700 Kč (NOVÁ APLIKACE)",
-      priceTxt: "",
-    },
-    {
-      priceName: "Prodlužování řas",
-      priceNumber: "550 Kč (DOPLNĚNÍ)",
-      priceTxt: "",
-    },
-    {
-      priceName: "Prodlužování řas 'volume'",
-      priceNumber: "850 Kč (NOVÁ APLIKACE)",
-      priceTxt: "",
-    },
-    {
-      priceName: "Prodlužování řas 'volume'",
-      priceNumber: "700 Kč (NOVÁ APLIKACE)",
-      priceTxt: "",
-    },
-    {
-      priceName: "Úprava obočí",
-      priceNumber: "80 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Barvení obočí",
-      priceNumber: "80 Kč",
-      priceTxt: "",
-    },
-    {
-      priceName: "Barvení řas",
-      priceNumber: "100 Kč",
-      priceTxt: "",
-    },
-  ],
-};
-const priceListOption7 = {
-  section: "",
-  title: "MASÁŽE",
-  priceOption: [
-    {
-      priceName: "Masáž nohou ",
-      priceNumber: "390 Kč (30 MIN)",
-      priceTxt: "",
-    },
-    {
-      priceName: "Masáž nohou ",
-      priceNumber: "790 Kč (60 MIN)",
-      priceTxt: "",
-    },
-    {
-      priceName: "THE SPA masáž (Tradiční VietNamská + olejová)",
-      priceNumber: "430 Kč (30 MIN)",
-      priceTxt: "",
-    },
-    {
-      priceName: "THE SPA masáž (Tradiční VietNamská + olejová)",
-      priceNumber: "830 Kč (60 MIN)",
-      priceTxt: "",
-    },
-  ],
-};
+
 function Introduction() {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
-  const priceOption1 = useMemo(() => priceListOption1, []);
-  const priceOption2 = useMemo(() => priceListOption2, []);
-  const priceOption3 = useMemo(() => priceListOption3, []);
-  const priceOption4 = useMemo(() => priceListOption4, []);
-  const priceOption5 = useMemo(() => priceListOption5, []);
-  const priceOption6 = useMemo(() => priceListOption6, []);
-  const priceOption7 = useMemo(() => priceListOption7, []);
+  const priceOption1 = {
+    section: t("service.Manicure"),
+    title: t("service.Manicure"),
+    priceOption: [
+      {
+        priceName: t("priceMenu.option_1.text_1"),
+        priceNumber: "200 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_1.text_2"),
+        priceNumber: "250 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_1.text_3"),
+        priceNumber: "480 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_1.text_4"),
+        priceNumber: "550 Kč",
+        priceTxt: "",
+      },
+    ],
+  };
+  const priceOption2 = {
+    section: t("service.Pedicure"),
+    title: t("service.Pedicure"),
+    priceOption: [
+      {
+        priceName: t("priceMenu.option_2.text_2"),
+        priceNumber: "450 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_2.text_4"),
+        priceNumber: "590 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_2.text_5"),
+        priceNumber: "690 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_2.text_6"),
+        priceNumber: "350 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_2.text_7"),
+        priceNumber: "450 Kč",
+        priceTxt: "",
+      },
+    ],
+  };
+  const priceOption3 = {
+    section: "",
+    title: t("priceMenu.title_3"),
+    priceOption: [
+      {
+        priceName: t("priceMenu.option_3.text_1"),
+        priceNumber: "350 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_3.text_2"),
+        priceNumber: "450 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_3.text_3"),
+        priceNumber: "550 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_3.text_4"),
+        priceNumber: "50 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_3.text_5"),
+        priceNumber: "od 50 Kč",
+        priceTxt: "",
+      },
+    ],
+  };
+  const priceOption4 = {
+    section: "",
+    title: t("priceMenu.title_4"),
+    priceOption: [
+      {
+        priceName: t("priceMenu.option_4.text_1"),
+        priceNumber: "od 15 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_4.text_2"),
+        priceNumber: "od 140 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_4.text_3"),
+        priceNumber: "5 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_4.text_4"),
+        priceNumber: "30 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_4.text_5"),
+        priceNumber: "100 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_4.text_6"),
+        priceNumber: "100 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_4.text_7"),
+        priceNumber: "80 Kč",
+        priceTxt: "",
+      },
+    ],
+  };
+  const priceOption5 = {
+    section: "",
+    title: t("priceMenu.title_5"),
+    priceOption: [
+      {
+        priceName: t("priceMenu.option_5.text_1"),
+        priceNumber: "50 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_5.text_2"),
+        priceNumber: "50 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_5.text_3"),
+        priceNumber: "50 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_5.text_4"),
+        priceNumber: "150 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_5.text_5"),
+        priceNumber: "150 Kč",
+        priceTxt: "",
+      },
+    ],
+  };
+  const priceOption6 = {
+    section: "",
+    title: t("priceMenu.title_6"),
+    priceOption: [
+      {
+        priceName: t("priceMenu.option_6.text_1"),
+        priceNumber: "700 Kč " + t("priceMenu.new"),
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_6.text_2"),
+        priceNumber: "550 Kč " + t("priceMenu.addition"),
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_6.text_3"),
+        priceNumber: "850 Kč " + t("priceMenu.new"),
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_6.text_4"),
+        priceNumber: "700 Kč " + t("priceMenu.addition"),
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_6.text_5"),
+        priceNumber: "80 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_6.text_6"),
+        priceNumber: "80 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_6.text_7"),
+        priceNumber: "100 Kč",
+        priceTxt: "",
+      },
+    ],
+  };
+  const priceOption7 = {
+    section: "",
+    title: t("priceMenu.title_7"),
+    priceOption: [
+      {
+        priceName: t("priceMenu.option_7.text_1"),
+        priceNumber: "390 Kč (30 min)",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_7.text_2"),
+        priceNumber: "790 Kč (60 min)",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_7.text_3"),
+        priceNumber: "430 Kč (60 min)",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_7.text_4"),
+        priceNumber: "830 Kč (60 min)",
+        priceTxt: "",
+      },
+    ],
+  };
   var listTextForBanner = [
     t("Introduction_Page.banner_des_1"),
     t("Introduction_Page.banner_des_2"),

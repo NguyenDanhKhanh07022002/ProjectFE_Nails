@@ -9,6 +9,9 @@ const resources = {
     translation: {
       "Introduction": "Introduction",
       "Service": "Service",
+      "Time" : "Time",
+      "Your data" : "Your detail",
+      "Done" : "Done",
       "Price": "Price list",
       "About": "About us",
       "Contact": "Contact",
@@ -23,6 +26,21 @@ const resources = {
       "GalleryTitle": "How it looks in NSC 89 Nails",
       "FindUs" : "Where to find us",
       "Social" : "Social network",
+      "reservePage" : {
+        "Submit" : "Submit",
+        "Sending" : "Sending...",
+        "Description" : "Description",
+        "name" : "Name",
+        "phone" : "Phone",
+        "email" : "Email",
+        "enterInfor" : "Please enter your additional requirements here",
+        "defaultService" : "Select a service",
+        "Back" : "Back",
+        "Next" : "Next",
+        "Select-service" : "Select service and date of reservation:",
+        "Date" : "Date",
+        "Warning" : "To complete the reservation, all that remains is to enter your contact details, which will not be processed further without your consent, according to the rules of the new European Union regulation on the protection of personal data."
+      },
       "Findout" : {
         "ViewPrice" : "View prices",
         "GetUnique" : "Get the unique nails you dream of",
@@ -139,7 +157,38 @@ const resources = {
         "Pedicure": "Pedicure",
         "Facial": "Facial",
         "Massage": "Massage",
-        "Cosmetic" : "Cosmetic"
+        "Cosmetic" : "Cosmetic",
+        "option_1": {
+          "text_1": "Acrylic Nails",
+          "text_2": "Gel Nails",
+          "text_3": "French Manicure",
+          "text_4": "Shellac",
+          "text_5": "Japanese Manicure P Shine",
+          "text_6": "Artificial Extension and Strengthening of Natural Nails",
+          "text_7": "Nail Polishing",
+          "text_8": "Nail Art – Painting and Decorating Nails",
+          "text_9": "Repairs, Regenerative Procedures"
+        },
+        "option_2": {
+          "text_1": "Medical Pedicure Footlogix",
+          "text_2": "Acrylic Nails",
+          "text_3": "Gel Nails",
+          "text_4": "Nail Polishing and Decorating",
+          "text_5": "Foot Treatment in a Bubble Bath",
+          "text_6": "Removal of Calluses, Corns, and Hardened Skin",
+          "text_7": "Relaxation Massage"
+        },
+        "option_3": {
+          "text_1": "Eyelash Extensions – First Application",
+          "text_2": "Eyelash Refilling and Tinting",
+          "text_3": "French Manicure",
+          "text_4": "Eyebrow Tinting",
+          "text_5": "Eyelash Removal on Request"
+        },
+        "option_4": {
+          "text_1": "Eyelash Extensions – First Application",
+          "text_2": "THE SPA Massage (Traditional Vietnamese + Oil Massage)"
+        }
       },
       "Reference": "Reference",
       "CustomerFeedback" : "What customers say about us",
@@ -149,6 +198,9 @@ const resources = {
     translation: {
       "Introduction": "Úvod",
       "Service": "Služby",
+      "Time" : "Čas",
+      "Your data" : "Váš detail",
+      "Done" : "Hotovo",
       "Price": "Ceník",
       "About": "O nás",
       "Contact": "Kontakt",
@@ -163,6 +215,21 @@ const resources = {
       "GalleryTitle": "Jak to v NSC 89 Nails vypadá",
       "FindUs" : "Kde nás najdete",
       "Social" : "Sociální sítě",
+      "reservePage" : {
+        "Submit" : "Předložit",
+        "Sending" : "Odesílání...",
+        "Description" : "Popis",
+        "name" : "Jméno",
+        "phone" : "Telefon",
+        "email" : "Email",
+        "enterInfor" : "Tu zadajte svoje dodatočné požiadavky",
+        "defaultService" : "Vyberte službu",
+        "Back" : "Späť",
+        "Next" : "Ďalej",
+        "Select-service" : "Vyberte službu a dátum rezervácie:",
+        "Date" : "Dátum",
+        "Warning" : "Pre dokončenie rezervácie ostáva už len zadať Vaše kontaktné údaje, ktoré nebudú bez Vášho súhlasu ďalej spracovávané podľa pravidiel nového nariadenia Európskej únie o ochrane osobných údajov."
+      },
       "Findout" : {
         "ViewPrice" : "Prohlédněte si ceny",
         "GetUnique" : "Získejte jedinečné nehty, o kterých sníte",
@@ -279,7 +346,38 @@ const resources = {
         "Pedicure": "Pedikúra",
         "Facial": "Facial",
         "Massage": "Masáž",
-        "Cosmetic" : "Kosmetika"
+        "Cosmetic" : "Kosmetika",
+        "option_1" : {
+          "text_1": "Akrylové nehty",
+          "text_2": "Gelové nehty",
+          "text_3": "Francouzská manikúra",
+          "text_4": "Shellac",
+          "text_5": "Japonská manikúra P Shine",
+          "text_6": "Umělé prodlužování a zpevňování vlastních nehtů",
+          "text_7": "Lakování nehtů",
+          "text_8": "Nail art – malování a zdobení nehtů",
+          "text_9": "Opravy, regenerační procedury"
+        },
+        "option_2": {
+          "text_1": "Zdravotní pedikúra Footlogix",
+          "text_2": "Akrylové nehty",
+          "text_3": "Gelové nehty",
+          "text_4": "Lakování a zdobení nehtů",
+          "text_5": "Ošetření nohou v bublinkové lázni",
+          "text_6": "Odstranění otlaků, mozolů a zrohovatělé kůže",
+          "text_7": "Relaxační masáž"
+        },
+        "option_3" : {
+          "text_1": "Prodlužování řas – první aplikace",
+          "text_2": "Doplňování a barvení řas",
+          "text_3": "Francouzská manikúra",
+          "text_4": "Barvení obočí",
+          "text_5": "Odstraňování řas na přání"
+        },
+        "option_4" : {
+          "text_1": "Prodlužování řas – první aplikace",
+          "text_2": "THE SPA masáž (Tradiční VietNamská + olejová)",
+        }
       },
       "Reference": "Reference",
       "CustomerFeedback" : "Co o nás říkají zákazníci",
@@ -291,7 +389,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "en", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
+    lng: "cz", // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
     // you can use the i18n.changeLanguage function to change the language manually: https://www.i18next.com/overview/api#changelanguage
     // if you're using a language detector, do not define the lng option
 

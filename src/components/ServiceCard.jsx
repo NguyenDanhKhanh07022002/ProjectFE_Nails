@@ -15,12 +15,12 @@ function ServiceCard() {
     },
     {
       img: cardImg2,
-      title: t("service.Pedicure"),
+      title: t("service.Facial"),
       link: "/service",
     },
     {
       img: cardImg3,
-      title: t("service.Facial"),
+      title: t("service.Pedicure"),
       link: "/service",
     },
     {

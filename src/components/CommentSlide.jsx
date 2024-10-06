@@ -4,8 +4,9 @@ import React from "react";
 import Slider from "react-slick";
 import CommentCard from "./CommentCard";
 import { useTranslation } from "react-i18next";
-
 import "aos/dist/aos.css";
+import CommentCard1 from "./CommentCard1";
+import CommentCard2 from "./CommentCard2";
 function CommentSlide(props) {
   const { t } = useTranslation();
   var settings = {
@@ -57,25 +58,10 @@ function CommentSlide(props) {
             <CommentCard />
           </div>
           <div>
-            <CommentCard />
+            <CommentCard1 />
           </div>
           <div>
-            <CommentCard />
-          </div>
-          <div>
-            <CommentCard />
-          </div>
-          <div>
-            <CommentCard />
-          </div>
-          <div>
-            <CommentCard />
-          </div>
-          <div>
-            <CommentCard />
-          </div>
-          <div>
-            <CommentCard />
+            <CommentCard2 />
           </div>
         </Slider>
       </div>

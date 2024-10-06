@@ -13,16 +13,16 @@ const Footer = () => {
         <div className="footer__container">
           <div className="footer__section">
             <h2 className="footer__title">{t("FindUs")}</h2>
-            <p className="footer__text">Provazníkova 890/40</p>
-            <p className="footer__text">613 00 Brno</p>
+            <p className="footer__text">Lidická 1877/44, 60200 Brno - střed</p>
+            {/* <p className="footer__text">613 00 Brno</p> */}
           </div>
           <div className="footer__section">
             <h2 className="footer__title">{t("Contact")}</h2>
             <ul className="footer__list">
-              <li className="footer__list-item">Email: contact@company.com</li>
-              <li className="footer__list-item">Phone: (123) 456-7890</li>
+              <li className="footer__list-item">Email: nsc89nails@seznam.cz</li>
+              <li className="footer__list-item">Phone: +420 608 412 416</li>
               <li className="footer__list-item">
-                Address: 123 Business Rd, City, Country
+                Address: Lidická 1877/44, 60200 Brno - střed
               </li>
             </ul>
           </div>

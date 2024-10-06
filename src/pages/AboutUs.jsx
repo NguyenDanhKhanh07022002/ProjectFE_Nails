@@ -33,7 +33,7 @@ function AboutUs() {
           <BannerBackgroundLeft
             image={storeImg}
             title={t("About_Page.intro")}
-            header="Nails HT 86"
+            header="NSC 89 Nails"
             description=""
             lists={listTextForAboutUs}
             isShowBackground={false}

@@ -28,7 +28,7 @@ function PriceList() {
     priceOption: [
       {
         priceName: t("priceMenu.option_1.text_1"),
-        priceNumber: "150 Kč",
+        priceNumber: "200 Kč",
         priceTxt: "",
       },
       {
@@ -38,7 +38,7 @@ function PriceList() {
       },
       {
         priceName: t("priceMenu.option_1.text_3"),
-        priceNumber: "500 Kč",
+        priceNumber: "480 Kč",
         priceTxt: "",
       },
       {
@@ -53,18 +53,8 @@ function PriceList() {
     title: t("service.Pedicure"),
     priceOption: [
       {
-        priceName: t("priceMenu.option_2.text_1"),
-        priceNumber: "450 Kč",
-        priceTxt: "",
-      },
-      {
         priceName: t("priceMenu.option_2.text_2"),
         priceNumber: "450 Kč",
-        priceTxt: "",
-      },
-      {
-        priceName: t("priceMenu.option_2.text_3"),
-        priceNumber: "500 Kč",
         priceTxt: "",
       },
       {
@@ -74,12 +64,17 @@ function PriceList() {
       },
       {
         priceName: t("priceMenu.option_2.text_5"),
-        priceNumber: "650 Kč",
+        priceNumber: "690 Kč",
         priceTxt: "",
       },
       {
         priceName: t("priceMenu.option_2.text_6"),
         priceNumber: "350 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_2.text_7"),
+        priceNumber: "450 Kč",
         priceTxt: "",
       },
     ],
@@ -90,7 +85,7 @@ function PriceList() {
     priceOption: [
       {
         priceName: t("priceMenu.option_3.text_1"),
-        priceNumber: "300 Kč",
+        priceNumber: "350 Kč",
         priceTxt: "",
       },
       {
@@ -100,11 +95,16 @@ function PriceList() {
       },
       {
         priceName: t("priceMenu.option_3.text_3"),
-        priceNumber: "50 Kč",
+        priceNumber: "550 Kč",
         priceTxt: "",
       },
       {
         priceName: t("priceMenu.option_3.text_4"),
+        priceNumber: "50 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_3.text_5"),
         priceNumber: "od 50 Kč",
         priceTxt: "",
       },
@@ -116,12 +116,12 @@ function PriceList() {
     priceOption: [
       {
         priceName: t("priceMenu.option_4.text_1"),
-        priceNumber: "od 15Kč",
+        priceNumber: "od 15 Kč",
         priceTxt: "",
       },
       {
         priceName: t("priceMenu.option_4.text_2"),
-        priceNumber: "100 Kč",
+        priceNumber: "od 140 Kč",
         priceTxt: "",
       },
       {
@@ -139,6 +139,16 @@ function PriceList() {
         priceNumber: "100 Kč",
         priceTxt: "",
       },
+      {
+        priceName: t("priceMenu.option_4.text_6"),
+        priceNumber: "100 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_4.text_7"),
+        priceNumber: "80 Kč",
+        priceTxt: "",
+      },
     ],
   };
   const priceListOption5 = {
@@ -152,16 +162,21 @@ function PriceList() {
       },
       {
         priceName: t("priceMenu.option_5.text_2"),
-        priceNumber: "150 Kč",
+        priceNumber: "50 Kč",
         priceTxt: "",
       },
       {
         priceName: t("priceMenu.option_5.text_3"),
-        priceNumber: "150 Kč",
+        priceNumber: "50 Kč",
         priceTxt: "",
       },
       {
         priceName: t("priceMenu.option_5.text_4"),
+        priceNumber: "150 Kč",
+        priceTxt: "",
+      },
+      {
+        priceName: t("priceMenu.option_5.text_5"),
         priceNumber: "150 Kč",
         priceTxt: "",
       },
@@ -214,12 +229,12 @@ function PriceList() {
     priceOption: [
       {
         priceName: t("priceMenu.option_7.text_1"),
-        priceNumber: "450 Kč (30 min)",
+        priceNumber: "390 Kč (30 min)",
         priceTxt: "",
       },
       {
         priceName: t("priceMenu.option_7.text_2"),
-        priceNumber: "850 Kč (60 min)",
+        priceNumber: "790 Kč (60 min)",
         priceTxt: "",
       },
       {

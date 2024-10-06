@@ -20,7 +20,7 @@ const resources = {
       "BargainPrice": "Bargain prices",
       "ShowPrice": "Show all price",
       "Gallery" : "Gallery",
-      "GalleryTitle": "How it looks in Nails HT 86",
+      "GalleryTitle": "How it looks in NSC 89 Nails",
       "FindUs" : "Where to find us",
       "Social" : "Social network",
       "Findout" : {
@@ -37,7 +37,7 @@ const resources = {
         "welcome" : "Welcome",
         "introduce" : "We are a Brno nail studio with friendly prices.",
         "banner_des_1" : "We focus on manicure, pedicure and cosmetics.",
-        "banner_des_2" : "We are located at Provazníkova 890/40, approx. 50 m from the public transport stop of lines 25 and 26.",
+        "banner_des_2" : "We are located at Lidická 1877/44, 60200 Brno - střed, approx. 50 m from the public transport stop of lines 25 and 26.",
         "voucher_text" : "Make happy",
         "voucher_title" : "Gift vouchers",
         "voucher_des_1" : "You can buy them personally in our studio.",
@@ -46,7 +46,7 @@ const resources = {
       },
       "About_Page" : {
         "intro" : "Who we are",
-        "des_1" : "We are a Brno nail studio with friendly prices. We have been doing manicures and pedicures for over 8 years. We are located at Provazníkova 890/40, approx. 50 m from the public transport stop of lines 25 and 26.",
+        "des_1" : "We are a Brno nail studio with friendly prices. We have been doing manicures and pedicures for over 8 years. We are located at Lidická 1877/44, 60200 Brno - střed, approx. 50 m from the public transport stop of lines 25 and 26.",
         "des_2" : "The studio is modernly equipped. Our specialization is manicure, pedicure and cosmetics."
       },
       "heroBanner": {
@@ -92,26 +92,31 @@ const resources = {
           "text_3": "Footlogix pedicure with regular O.P.I polish",
           "text_4": "Footlogix pedicure with gel polish",
           "text_5": "Footlogix pedicure with CND Shellac",
-          "text_6": "Gel polish or Shellac application without pedicure"
+          "text_6": "Nail gel polish",
+          "text_7": "Shellac nail polish without pedicure"
         },
         "option_3": {
           "text_1": "Classic gel/acrylic nails",
           "text_2": "Gel/acrylic nails with polish",
-          "text_3": "New application plus (+)",
-          "text_4": "Long nails plus (+)"
+          "text_3": "Gel / Acrylic nails with CND Shellac polish",
+          "text_4": "New application plus (+)",
+          "text_5": "Long nails plus (+)"
         },
         "option_4": {
           "text_1": "Nail art",
           "text_2": "Complete nail art",
           "text_3": "Rhinestones by size",
           "text_4": "Bow per piece",
-          "text_5": "Complete magnetic effect"
+          "text_5": "Complete magnetic effect",
+          "text_6" : "Complete nail pigment",
+          "text_7" : "Airbrush/Francie"
         },
         "option_5": {
           "text_1": "1 nail",
-          "text_2": "Removal of gel/acrylic nails",
-          "text_3": "Removal of CND Shellac nails",
-          "text_4": "Color change"
+          "text_2": "Removal before new application",
+          "text_3": "Removal of gel/acrylic nails",
+          "text_4": "Removal of CND Shellac nails",
+          "text_5": "Color change"
         },
         "option_6": {
           "text_1": "Eyelash extensions",
@@ -155,7 +160,7 @@ const resources = {
       "BargainPrice": "Výhodné ceny",
       "ShowPrice": "Zobrazit všechny ceny",
       "Gallery" : "Galerie",
-      "GalleryTitle": "Jak to v Nails HT 86 vypadá",
+      "GalleryTitle": "Jak to v NSC 89 Nails vypadá",
       "FindUs" : "Kde nás najdete",
       "Social" : "Sociální sítě",
       "Findout" : {
@@ -227,13 +232,15 @@ const resources = {
           "text_3" : "Footlogix pedikúra s obyčajným lakovaním O.P.I",
           "text_4" : "Footlogix pedikúra s gel-lakem",
           "text_5" : "Footlogix pedikúra s CND Shellac",
-          "text_6" : "Lakovanie gel-lakem, shellac bez pedikúry",
+          "text_6" : "Lakovanie gel-lakem",
+          "text_7" : "Lakovanie shellac bez pedikúry",
         },
          "option_3" : {
           "text_1" : "Gelové / Akrylové nehty klasik",
           "text_2" : "Gelové / Akrylové nehty s lakovaním",
-          "text_3" : "Nová aplikácia plus (+)",
-          "text_4" : "Dlouhé nehty plus (+)",
+          "text_3" : "Gelové / Akrylové nehty s lakovaním CND Shellac",
+          "text_4" : "Nová aplikácia plus (+)",
+          "text_5" : "Dlouhé nehty plus (+)",
         },
          "option_4" : {
           "text_1" : "Malování",
@@ -241,12 +248,15 @@ const resources = {
           "text_3" : "Kamínky dle velikosti",
           "text_4" : "Mašlička/ks",
           "text_5" : "Komplet magnetický efekt",
+          "text_6" : "Komplet pigment",
+          "text_7" : "Airbrush/Francie",
         },
          "option_5" : {
           "text_1" : "1 nehet",
-          "text_2" : "Odstraněni gelových / akrylových nehtů",
-          "text_3" : "Odstraněni CND Shellac nehtů",
-          "text_4" : "Změna barvy",
+          "text_2" : "Odstranění v případě nové aplikace",
+          "text_3" : "Odstraněni gelových / akrylových nehtů",
+          "text_4" : "Odstraněni CND Shellac nehtů",
+          "text_5" : "Změna barvy",
         },
          "option_6" : {
           "text_1" : "Prodlužování řas",

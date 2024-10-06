@@ -16,7 +16,7 @@ function GoogleMap() {
               <p className="p-lg">
                 <font style={{ verticalAlign: "inherit" }}>
                   <font style={{ verticalAlign: "inherit" }}>
-                    Lidická 1877/44
+                  Lidická 1877/44, 60200 Brno - střed
                   </font>
                 </font>
               </p>

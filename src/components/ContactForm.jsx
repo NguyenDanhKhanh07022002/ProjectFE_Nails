@@ -122,7 +122,7 @@ function ContactForm() {
         />
         <MiniBanner
           image={promoImg3}
-          title="Více o Nails HT 86"
+          title="Více o NSC 89 Nails"
           linkTitle="O nás"
           linkTo="/about"
         />

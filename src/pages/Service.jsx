@@ -6,6 +6,7 @@ import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
 import serviceThumb01 from "../assets/service-img-thumb-01.jpg";
 import serviceThumb02 from "../assets/service-img-thumb-02.jpg";
 import serviceThumb03 from "../assets/service-img-thumb-03.jpg";
+import serviceThumb04 from "../assets/massage.jpeg";
 import serviceHeroBanner from "../assets/serviceHero.jpg";
 import bigBannerImage from "../assets/bigBanner/banner-rezervace2.jpg";
 
@@ -48,10 +49,7 @@ function Service() {
   ];
   var listTextForThumb04 = [
     "Prodlužování řas – první aplikace",
-    "Doplňování a barvení řas",
-    "Francouzská manikúra",
-    "Barvení obočí",
-    "Odstraňování řas na přání",
+    "THE SPA masáž (Tradiční VietNamská + olejová)",
   ];
   return (
     <>
@@ -89,7 +87,7 @@ function Service() {
             isShowBackground={true}
           />
           <BannerBackgroundLeft
-            image={serviceThumb03}
+            image={serviceThumb04}
             title="naše služby"
             header={t("service.Massage")}
             description=""

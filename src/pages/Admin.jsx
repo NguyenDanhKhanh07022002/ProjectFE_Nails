@@ -2,13 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "./Admin.scss";
 import logoImg from "../assets/ht86-yellow.png";
+import video from "../assets/video-admin/2.mp4";
+import { AiFillAppstore, AiFillMessage } from "react-icons/ai";
+import Swal from "sweetalert2";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 const Admin = () => {
+  const navigate = useNavigate();
   const [notifications, setNotifications] = useState([
     {
       message:
@@ -35,15 +42,57 @@ const Admin = () => {
     setShowNotifications(false);
   };
 
-  const handleLogout = () => {
-    console.log("Logged out");
+  const handleLogout = async () => {
+    const result = await Swal.fire({
+      title: 'Are you sure?',
+      text: 'Do you want to log out?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, log out',
+      cancelButtonText: 'No, cancel'
+    });
+
+    if (result.isConfirmed) {
+      axios.post('http://localhost:8082/api/auth/logout')
+        .then(() => {
+          localStorage.removeItem('token');
+          navigate('/admin/login');
+        })
+        .catch((error) => {
+          console.error('Error during logout', error);
+        });
+    }
   };
   const handleClickOutside = (event) => {
     event.preventDefault();
     setShowNotifications(false);
     setShowAccountMenu(false);
   };
+  const videoRef = useRef(null);
 
+  useEffect(() => {
+    const videoElement = videoRef.current;
+
+    if (videoElement) {
+      const hideControls = () => {
+        videoElement.controls = false;
+      };
+
+      const showControls = () => {
+        videoElement.controls = true;
+      };
+
+      videoElement.addEventListener("mousemove", showControls);
+      videoElement.addEventListener("mouseleave", hideControls);
+
+      hideControls();
+
+      return () => {
+        videoElement.removeEventListener("mousemove", showControls);
+        videoElement.removeEventListener("mouseleave", hideControls);
+      };
+    }
+  }, []);
   useEffect(() => {
     window.addEventListener("click", handleClickOutside);
     return () => {
@@ -53,15 +102,14 @@ const Admin = () => {
 
   return (
     <div className="admin-page" ref={dropdownRef}>
-      {/* <Nav defaultActiveKey="/home" className="flex-column sidebar">
-        <Nav.Link href="/home">Active</Nav.Link>
-        <Nav.Link eventKey="link-1">Link</Nav.Link>
-        <Nav.Link eventKey="link-2">Link</Nav.Link>
-        <Nav.Link eventKey="disabled" disabled>Disabled</Nav.Link>
-      </Nav> */}
       <header className="admin-header">
         <div className="admin-logo">
           <img src={logoImg} alt="logo" />
+        </div>
+        <div className="videoContainer">
+          <video ref={videoRef} controls loop autoPlay muted>
+            <source src={video} />
+          </video>
         </div>
         <div className="user-notification">
           <div className="user-notification--item">
@@ -109,9 +157,11 @@ const Admin = () => {
       <nav className="admin-body">
         <div className="admin-body--navbar">
           <NavLink to="/admin/booking" activeclassname="active">
+            <AiFillAppstore />
             booking
           </NavLink>
           <NavLink to="/admin/message" activeclassname="active">
+            <AiFillMessage />
             message
           </NavLink>
         </div>
@@ -122,5 +172,4 @@ const Admin = () => {
     </div>
   );
 };
-
 export default Admin;

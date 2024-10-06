@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import "bootstrap-icons/font/bootstrap-icons.css";
 const itemsPerPage = 10;
@@ -40,6 +41,7 @@ const BookingManagement = () => {
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
 
   const [serviceTotals, setServiceTotals] = useState({
     total: 0,
@@ -52,6 +54,9 @@ const BookingManagement = () => {
 
   const getAll = () => {
     const token = localStorage.getItem("token");
+    if (token == null) {
+      navigate('/admin/login');
+    }
     axios
       .get("http://localhost:8082/api/bookings/getAll", {
         headers: {
@@ -105,8 +110,6 @@ const BookingManagement = () => {
 
   const handleClickOutside = (event) => {
     event.preventDefault();
-    setShowNotifications(false);
-    setShowAccountMenu(false);
   };
 
   useEffect(() => {
@@ -231,7 +234,7 @@ const BookingManagement = () => {
             <p>{serviceTotals.pedicure}</p>
           </div>
           <div className="card">
-            <h4>Total Manicure + Pedicure</h4>
+            <h4>Total Mani + Pedi</h4>
             <p>{serviceTotals.manicurePedicure}</p>
           </div>
           <div className="card">

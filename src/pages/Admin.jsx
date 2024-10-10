@@ -112,7 +112,7 @@ const Admin = () => {
           </video>
         </div>
         <div className="user-notification">
-          <div className="user-notification--item">
+          {/* <div className="user-notification--item">
             <Badge color="warning" badgeContent={notifications.length} showZero>
               <NotificationsIcon
                 className="icon notif-icon"
@@ -135,7 +135,7 @@ const Admin = () => {
                 </ul>
               </div>
             )}
-          </div>
+          </div> */}
           <div className="user-notification--item">
             <AccountCircleIcon
               className="icon user"

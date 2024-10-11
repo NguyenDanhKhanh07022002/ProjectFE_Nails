@@ -1,6 +1,9 @@
 #widget-container {
-  margin-top: 50px;
   font-family: "Lora", serif;
+
+  @media (max-width: 768px) {
+    margin-top: 50px !important;
+  }
 
   .container-right {
     position: relative;
@@ -200,8 +203,8 @@
       }
     }
 
-    .container-right-pink:after {
-      display: none;
-    }
+    // .container-right-pink:after {
+    //   display: none;
+    // }
   }
 }

@@ -98,26 +98,8 @@
         margin: auto;
         justify-content: center;
 
-        #pricing-card {
-            .pricing-list {
-                .detail-price {
-
-                    .price-name,
-                    .price-number {
-                        @media screen and (max-width: 992px) {
-                            h5 {
-                                font-size: 1rem !important;
-                            }
-                        }
-
-                        @media screen and (max-width: 560px) {
-                            h5 {
-                                font-size: 0.9rem !important;
-                            }
-                        }
-                    }
-                }
-            }
+        #pricing-card:nth-child(2n+1):last-child {
+            width: 50%;
         }
 
     }
@@ -144,7 +126,7 @@
 
     @media screen and (max-width: 1000px) {
         .price-card-wrapper {
-            width: 60%;
+            width: 80%;
         }
 
         h2 {

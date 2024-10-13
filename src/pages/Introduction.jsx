@@ -6,7 +6,7 @@ import Banner1 from "../assets/Slide-1.jpg";
 import Banner2 from "../assets/Slide-2.jpg";
 import Banner3 from "../assets/Slide-3.jpg";
 import storeImg from "../assets/store-img-1.jpg";
-import voucherImg from "../assets/voucher.png";
+import voucherImg from "../assets/voucher1.png";
 import nailPolishes from "../assets/nail-polish.png";
 import bigBannerImage from "../assets/bigBanner/banner-rezervace2.jpg";
 

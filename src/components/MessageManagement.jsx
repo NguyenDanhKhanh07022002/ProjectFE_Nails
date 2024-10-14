@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import { useNavigate } from "react-router-dom";
+import config from "../../config";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./MessageManagement.scss";
 
 const MessageManagement = () => {
@@ -18,18 +19,19 @@ const MessageManagement = () => {
   const getAll = () => {
     const token = localStorage.token;
     if (token == null) {
-      navigate('/admin/login');
+      navigate("/admin/login");
     }
-    axios.get('http://localhost:8082/api/message/getAll', {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-      .then(response => {
+    axios
+      .get(`${config.apiUrl}/api/message/getAll`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
         setData(response.data);
       })
-      .catch(error => {
-        console.error('Error fetching data:', error);
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   };
 
@@ -39,28 +41,28 @@ const MessageManagement = () => {
 
   const onDelete = (id) => {
     Swal.fire({
-      title: 'Do you want to delete this message?',
+      title: "Do you want to delete this message?",
       showCancelButton: true,
-      confirmButtonText: 'OK',
+      confirmButtonText: "OK",
     }).then((result) => {
       if (result.isConfirmed) {
         const token = localStorage.token;
         axios
-          .delete(`http://localhost:8082/api/message/delete/${id}`, {
+          .delete(`${config.apiUrl}/api/message/delete/${id}`, {
             headers: {
-              'Authorization': `Bearer ${token}`
-            }
+              Authorization: `Bearer ${token}`,
+            },
           })
           .then((response) => {
-            console.log('Response:', response);
+            console.log("Response:", response);
             if (response.status === 204) {
-              Swal.fire('Deleted!', '', 'success');
+              Swal.fire("Deleted!", "", "success");
               getAll();
             }
           })
           .catch((error) => {
-            console.error('Error deleting message:', error);
-            Swal.fire('Error', 'Could not delete message.', 'error');
+            console.error("Error deleting message:", error);
+            Swal.fire("Error", "Could not delete message.", "error");
           });
       }
     });
@@ -108,13 +110,18 @@ const MessageManagement = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="5" className="text-center">No data available</td>
+                <td colSpan="5" className="text-center">
+                  No data available
+                </td>
               </tr>
             )}
           </tbody>
         </table>
 
-        <Stack spacing={2} sx={{ mt: 2, mb: 2, justifyContent: 'center', alignItems: 'center' }}>
+        <Stack
+          spacing={2}
+          sx={{ mt: 2, mb: 2, justifyContent: "center", alignItems: "center" }}
+        >
           <Pagination
             count={Math.ceil(data.length / itemsPerPage)}
             page={currentPage}

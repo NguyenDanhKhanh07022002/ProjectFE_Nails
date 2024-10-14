@@ -5,8 +5,9 @@ import logoImg from "../assets/ht86-yellow.png";
 import video from "../assets/video-admin/2.mp4";
 import { AiFillAppstore, AiFillMessage } from "react-icons/ai";
 import Swal from "sweetalert2";
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import config from "../../config";
 
 import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -44,22 +45,23 @@ const Admin = () => {
 
   const handleLogout = async () => {
     const result = await Swal.fire({
-      title: 'Are you sure?',
-      text: 'Do you want to log out?',
-      icon: 'warning',
+      title: "Are you sure?",
+      text: "Do you want to log out?",
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonText: 'Yes, log out',
-      cancelButtonText: 'No, cancel'
+      confirmButtonText: "Yes, log out",
+      cancelButtonText: "No, cancel",
     });
 
     if (result.isConfirmed) {
-      axios.post('http://localhost:8082/api/auth/logout')
+      axios
+        .post(`${config.apiUrl}/api/auth/logout`)
         .then(() => {
-          localStorage.removeItem('token');
-          navigate('/admin/login');
+          localStorage.removeItem("token");
+          navigate("/admin/login");
         })
         .catch((error) => {
-          console.error('Error during logout', error);
+          console.error("Error during logout", error);
         });
     }
   };

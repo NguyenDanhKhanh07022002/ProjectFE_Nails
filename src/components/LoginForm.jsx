@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.scss";
-
+import config from "../../config";
 const LoginForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -74,7 +74,7 @@ const LoginForm = () => {
 
   const handleLogin = (values, { setErrors, setSubmitting }) => {
     axios
-      .post("http://localhost:8082/api/auth/signin", {
+      .post(`${config.apiUrl}/api/auth/signin`, {
         username: values.username,
         password: values.password,
       })

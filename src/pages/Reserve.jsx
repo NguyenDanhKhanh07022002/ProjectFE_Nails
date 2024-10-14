@@ -22,6 +22,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { ToastContainer, toast } from "react-toastify";
+import config from "../../config";
 
 import PageHeroBanner from "../components/PageHeroBanner";
 
@@ -167,7 +168,7 @@ function Reserve() {
     };
 
     axios
-      .post(`http://localhost:8082/api/bookings/create`, data)
+      .post(`${config.apiUrl}/api/bookings/create`, data)
       .then(function (response) {
         console.log(response);
         handleReset();

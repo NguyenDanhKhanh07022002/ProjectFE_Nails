@@ -3,7 +3,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "./ContactForm.scss";
 import Button from "./Button";
 import MiniBanner from "./MiniBanner";
-import axios from 'axios';
+import axios from "axios";
+import config from "../../config";
 
 import promoImg1 from "../assets/promo/promo-01.jpg";
 import promoImg2 from "../assets/promo/promo-02.jpg";
@@ -28,7 +29,7 @@ function ContactForm() {
     };
 
     axios
-      .post(`http://localhost:8082/api/message/create`, data)
+      .post(`${config.apiUrl}/api/message/create`, data)
       .then((response) => {
         setSuccess("Thank you. Your message has been successfully sent.");
         handleReset();
@@ -105,7 +106,7 @@ function ContactForm() {
         <div style={{ display: "flex", flexDirection: "row-reverse" }}>
           <Button hoverColor="blue" title="BookingVisit" />
         </div>
-        {success && <div style={{ color: 'green' }}>{success}</div>}
+        {success && <div style={{ color: "green" }}>{success}</div>}
       </form>
       <div className="contact-promo">
         <MiniBanner

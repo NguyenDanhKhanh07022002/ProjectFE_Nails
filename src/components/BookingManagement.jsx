@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import config from "../../config";
 const itemsPerPage = 10;
 
 const getBookingServiceText = (bookingService) => {
@@ -55,10 +56,10 @@ const BookingManagement = () => {
   const getAll = () => {
     const token = localStorage.getItem("token");
     if (token == null) {
-      navigate('/admin/login');
+      navigate("/admin/login");
     }
     axios
-      .get("http://localhost:8082/api/bookings/getAll", {
+      .get(`${config.apiUrl}/api/bookings/getAll`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -132,7 +133,7 @@ const BookingManagement = () => {
       if (result.isConfirmed) {
         const token = localStorage.token;
         axios
-          .delete(`http://localhost:8082/api/bookings/delete/${id}`, {
+          .delete(`${config.apiUrl}/api/bookings/delete/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -179,7 +180,7 @@ const BookingManagement = () => {
     }
 
     axios
-      .get("http://localhost:8082/api/bookings/getPhoneNumberOrEmail", {
+      .get(`${config.apiUrl}/api/bookings/getPhoneNumberOrEmail`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -291,17 +292,17 @@ const BookingManagement = () => {
                       backgroundColor: isToday
                         ? "inherit"
                         : isPast
-                          ? "#ffcccc"
-                          : isFuture
-                            ? "#ccffcc"
-                            : "inherit",
+                        ? "#ffcccc"
+                        : isFuture
+                        ? "#ccffcc"
+                        : "inherit",
                       transition: "background-color 0.3s",
                       "&:hover": {
                         backgroundColor: isPast
                           ? "#ffb3b3"
                           : isFuture
-                            ? "#b3ffb3"
-                            : "inherit",
+                          ? "#b3ffb3"
+                          : "inherit",
                       },
                     }}
                   >

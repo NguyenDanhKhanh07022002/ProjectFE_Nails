@@ -12,7 +12,7 @@ import bigBannerImage from "../assets/bigBanner/banner-rezervace2.jpg";
 
 import Button from "../components/Button";
 import BannerBackgroundRight from "../components/BannerBackgroundRight";
-import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
+import BannerBackgroundLeft from "../components/BannerBackgroundLeft";
 import OpenningHour from "../components/OpenningHour";
 import ServiceOffer from "../components/ServiceOffer";
 import PriceCard from "../components/PriceCard";

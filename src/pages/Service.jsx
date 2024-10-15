@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
+import BannerBackgroundLeft from "../components/BannerBackgroundLeft";
 import serviceThumb01 from "../assets/service-img-thumb-01.jpg";
 import serviceThumb02 from "../assets/service-img-thumb-02.jpg";
 import serviceThumb03 from "../assets/service-img-thumb-03.jpg";

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PageHeroBanner from "../components/PageHeroBanner";
-import BannerBackgroundLeft from "../components/BannerBackGroundLeft";
+import BannerBackgroundLeft from "../components/BannerBackgroundLeft";
 import OpenningHour from "../components/OpenningHour";
 import ImageListMansory from "../components/ImageListMansory";
 import Button from "../components/Button";

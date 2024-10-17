@@ -1,5 +1,5 @@
 const config = {
-    apiUrl: "https://api.nsc89nails.cz"
+    apiUrl: "ht:8083"
   };
   
   export default config;

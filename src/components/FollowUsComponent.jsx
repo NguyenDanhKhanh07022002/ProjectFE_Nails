@@ -14,7 +14,7 @@ const FollowUsComponent = () => {
           <h6 className="small-text">{t("FollowBanner.connected")}</h6>
           <h4 className="main-text">{t("FollowBanner.follow")}</h4>
           <h1 className="big-text">{t("FollowBanner.title")}</h1>
-          <Link to="https://www.instagram.com/">
+          <Link to="https://www.instagram.com/nsc89_nails/profilecard/?igsh=MXBtMGh5YmMzd3B0Nw%3D%3D">
             <Button hoverColor="blue" title={t("FollowBanner.btn_1")} />
           </Link>
         </div>

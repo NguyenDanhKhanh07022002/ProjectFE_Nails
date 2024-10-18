@@ -16,11 +16,17 @@ const getBookingServiceText = (bookingService) => {
     case "3":
       return "Manicure + Pedicure";
     case "4":
-      return "Prodluzování Ras";
+      return "Artificial Nail Modeling";
     case "5":
+      return "Nail Decoration";
+    case "6":
+      return "Nail Adjustments";
+    case "7":
+      return "Eyelash Extensions";
+    case "8":
       return "Massage";
-    default:
-      return "Unknown Service";
+    case "9":
+      return "Other services";
   }
 };
 
@@ -292,17 +298,17 @@ const BookingManagement = () => {
                       backgroundColor: isToday
                         ? "inherit"
                         : isPast
-                        ? "#ffcccc"
-                        : isFuture
-                        ? "#ccffcc"
-                        : "inherit",
+                          ? "#ffcccc"
+                          : isFuture
+                            ? "#ccffcc"
+                            : "inherit",
                       transition: "background-color 0.3s",
                       "&:hover": {
                         backgroundColor: isPast
                           ? "#ffb3b3"
                           : isFuture
-                          ? "#b3ffb3"
-                          : "inherit",
+                            ? "#b3ffb3"
+                            : "inherit",
                       },
                     }}
                   >

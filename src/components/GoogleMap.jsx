@@ -10,13 +10,13 @@ function GoogleMap() {
             <div className="contact-map-item">
               <h5 className="h5-lg">
                 <font style={{ verticalAlign: "inherit" }}>
-                  <font style={{ verticalAlign: "inherit" }}>NSC 88 Nails</font>
+                  <font style={{ verticalAlign: "inherit" }}>NSC 89 Nails</font>
                 </font>
               </h5>
               <p className="p-lg">
                 <font style={{ verticalAlign: "inherit" }}>
                   <font style={{ verticalAlign: "inherit" }}>
-                  Lidická 1877/44, 60200 Brno - střed
+                    Lidická 1877/44, 60200 Brno - střed
                   </font>
                 </font>
               </p>
@@ -24,7 +24,7 @@ function GoogleMap() {
                 <i>
                   <font style={{ verticalAlign: "inherit" }}>
                     <font style={{ verticalAlign: "inherit" }}>
-                      50 m from public transport stop 25, 26
+                      Vedle Antonínská zastávka tramvaje
                     </font>
                   </font>
                 </i>
@@ -42,7 +42,7 @@ function GoogleMap() {
                 <a href="mailto:info@nailsht86.cz">
                   <font style={{ verticalAlign: "inherit" }}>
                     <font style={{ verticalAlign: "inherit" }}>
-                      info@nailsht86.cz{" "}
+                      {/* info@nailsht86.cz{" "} */}
                     </font>
                   </font>
                 </a>
@@ -101,12 +101,11 @@ function GoogleMap() {
               </h5>
               <p className="p-lg">
                 <font style={{ verticalAlign: "inherit" }}>
-                  <font style={{ verticalAlign: "inherit" }}>Nguyen Thi Nhung</font>
+                  <font style={{ verticalAlign: "inherit" }}>Thai Sinh Ton</font>
                 </font>
               </p>
               <p className="p-lg">
                 <font style={{ verticalAlign: "inherit" }}>
-                  <font style={{ verticalAlign: "inherit" }}>ID: 28041399</font>
                 </font>
               </p>
             </div>
@@ -119,7 +118,7 @@ function GoogleMap() {
               <p className="p-lg">
                 <font style={{ verticalAlign: "inherit" }}>
                   <font style={{ verticalAlign: "inherit" }}>
-                    Jugoslávská 595/26, 613 00 Brno
+                    Lidická 1877/44, 602 00 Brno
                   </font>
                 </font>
               </p>
@@ -127,7 +126,7 @@ function GoogleMap() {
           </div>
           <div className="contact-location-wrapper">
             <a
-              href="https://maps.app.goo.gl/2xcVC1mSiHSHaFNf7"
+              href="https://maps.app.goo.gl/wfubZB4AL8BKta7s5"
               target="_blank"
             >
               <img src={priceHeroBanner} />

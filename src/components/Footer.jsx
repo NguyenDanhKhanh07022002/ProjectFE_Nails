@@ -42,7 +42,7 @@ const Footer = () => {
                 <i className="fab fa-twitter"></i>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/nsc89_nails/profilecard/?igsh=MXBtMGh5YmMzd3B0Nw%3D%3D"
                 className="footer__social-link"
                 aria-label="Instagram"
               >

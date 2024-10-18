@@ -85,6 +85,10 @@ function Reserve() {
         return t("priceMenu.title_6");
       case "7":
         return t("priceMenu.title_7");
+      case "8":
+        return t("priceMenu.title_8");
+      case "9":
+        return t("priceMenu.title_9");
       default:
         return t("reservePage.defaultService");
     }
@@ -255,6 +259,8 @@ function Reserve() {
                         <option value="5">{t("priceMenu.title_5")}</option>
                         <option value="6">{t("priceMenu.title_6")}</option>
                         <option value="7">{t("priceMenu.title_7")}</option>
+                        <option value="8">{t("priceMenu.title_8")}</option>
+                        <option value="9">{t("priceMenu.title_9")}</option>
                       </select>
                       {errors.bookingService && (
                         <Typography color="error">

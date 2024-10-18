@@ -341,11 +341,6 @@ function Introduction() {
           <div className="price-card-wrapper">
             <PriceCard priceList={priceOption1} />
             <PriceCard priceList={priceOption2} />
-            <PriceCard priceList={priceOption4} />
-            <PriceCard priceList={priceOption3} />
-            <PriceCard priceList={priceOption5} />
-            <PriceCard priceList={priceOption6} />
-            <PriceCard priceList={priceOption7} />
           </div>
           <div className="link-to-page">
             <a href="/price">{t("ShowPrice")}</a>

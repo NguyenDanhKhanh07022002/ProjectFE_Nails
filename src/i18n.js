@@ -55,7 +55,7 @@ const resources = {
         "welcome" : "Welcome",
         "introduce" : "We are a Brno nail studio with friendly prices.",
         "banner_des_1" : "We focus on manicure, pedicure and cosmetics.",
-        "banner_des_2" : "We are located at Lidická 1877/44, 60200 Brno - střed, approx. 50 m from the public transport stop of lines 25 and 26.",
+        "banner_des_2" : "We are located at Lidická 1877/44, 60200 Brno - střed, approximately 50 m from the Antonínská tram stop. With over 8 years of experience, NSC 89 Nails offers quality nail care services at affordable prices.",
         "voucher_text" : "Make happy",
         "voucher_title" : "Gift vouchers",
         "voucher_des_1" : "You can buy them personally in our studio.",
@@ -64,8 +64,8 @@ const resources = {
       },
       "About_Page" : {
         "intro" : "Who we are",
-        "des_1" : "We are a Brno nail studio with friendly prices. We have been doing manicures and pedicures for over 8 years. We are located at Lidická 1877/44, 60200 Brno - střed, approx. 50 m from the public transport stop of lines 25 and 26.",
-        "des_2" : "The studio is modernly equipped. Our specialization is manicure, pedicure and cosmetics."
+        "des_1" : "NSC 89 Nails is our nail salon located near the Antonínská tram stop, making it convenient for travel. With over 8 years of experience, we offer quality nail care services at affordable prices. Our team of experienced professionals uses safe products and modern techniques to care for your nails. Visit NSC 89 Nails to enjoy professional services and relaxation.",
+        "des_2" : "The studio is modernly equipped. Our specialization is manicure, pedicure, cosmetics and massage."
       },
       "heroBanner": {
         "header_1": "Perfect",
@@ -85,7 +85,7 @@ const resources = {
         "connected" : "BE CONNECTED",
         "reach" : "How do you reach us ?",
         "follow" : "Follow us",
-        "title" : "@nailsht86",
+        "title" : "nsc89nails.cz",
         "title_2" : "Where are we based",
         "btn_1" : "Go to our Instagram",
         "btn_2" : "Show contacts",
@@ -93,11 +93,13 @@ const resources = {
       "priceMenu": {
         "new" : "(new application)",
         "addition" : "(addition)",
-        "title_3": "Artificial Nail Modeling",
-        "title_4": "Nail Decoration",
-        "title_5": "Nail Adjustments",
-        "title_6": "Eyelash Extensions",
-        "title_7": "Massages",
+        "title_3": "Manicure + Pedicure",
+        "title_4": "Artificial Nail Modeling",
+        "title_5": "Nail Decoration",
+        "title_6": "Nail Adjustments",
+        "title_7": "Eyelash Extensions",
+        "title_8": "Massages",
+        "title_9": "Other services",
         "option_1": {
           "text_1": "Classic manicure",
           "text_2": "Manicure with regular O.P.I polish",
@@ -244,7 +246,7 @@ const resources = {
         "welcome" : "vítejte",
         "introduce" : "Jsme brněnské nehtové studio s přívětivými cenami.",
         "banner_des_1" : "Zaměřujeme se na manikúru, pedikúru a kosmetiku.",
-        "banner_des_2" : "Sídlíme na adrese Provazníkova 890/40, cca 50 m od zastávky MHD linek 25 a 26.",
+        "banner_des_2" : "Nacházíme se na adrese Lidická 1877/44, 60200 Brno - střed, přibližně 50 m od tramvajové zastávky Antonínská. S více než 8 lety zkušeností nabízí NSC 89 Nails kvalitní služby v oblasti nehtové péče za rozumné ceny.",
         "voucher_text" : "Udělejte radost",
         "voucher_title" : "Dárkové poukazy",
         "voucher_des_1" : "Koupíte je osobně v našem studiu.",
@@ -253,8 +255,8 @@ const resources = {
       },
       "About_Page" : {
         "intro" : "Kdo jsme",
-        "des_1" : "Jsme brněnské nehtové studio s přívětivými cenami. Manikúře a pedikúře se věnujeme přes 8 let. Sídlíme na adrese Provazníkova 890/40, cca 50 m od zastávky MHD linek 25 a 26.",
-        "des_2" : "Studio je moderně vybavené. Naše specializace je manikúra, pedikúra a kosmetika."
+        "des_1" : "NSC 89 Nails je naše nehtové studio, které se nachází blízko tramvajové zastávky Antonínská, což je pohodlné pro dopravu. S více než 8 lety zkušeností nabízíme kvalitní služby v oblasti nehtové péče za rozumné ceny. Náš tým zkušených odborníků používá bezpečné produkty a moderní techniky k péči o vaše nehty. Navštivte NSC 89 Nails a užijte si profesionální služby a relaxaci.",
+        "des_2" : "Studio je moderně vybavené. Naše specializace je manikúra, pedikúra, kosmetika a masáž."
       },
       "heroBanner": {
         "header_1": "Dokonalá",
@@ -274,7 +276,7 @@ const resources = {
         "connected" : "Buďte ve spojení",
         "reach" : "Jak se k nám dostanete?",
         "follow" : "Sledujte nás",
-        "title" : "@nailsht86",
+        "title" : "nsc89nails.cz",
         "title_2" : "Kde sídlíme?",
         "btn_1" : "Přejít na náš Instagram",
         "btn_2" : "Ukázat kontakt",
@@ -282,11 +284,13 @@ const resources = {
       "priceMenu" : {
         "new" : "(nová aplikace)",
         "addition" : "(doplnění)",
-        "title_3" : "Modelace Umelých Nehtú",
-        "title_4" : "Zdobení Nehtú",
-        "title_5" : "Úpravy Nehtú",
-        "title_6" : "Prodluzování Ras",
-        "title_7" : "Masáze",
+        "title_3" : "Manikúra + Pedikúra",
+        "title_4" : "Modelace Umelých Nehtú",
+        "title_5" : "Zdobení Nehtú",
+        "title_6" : "Úpravy Nehtú",
+        "title_7" : "Prodluzování Ras",
+        "title_8" : "Masáze",
+        "title_9" : "Další služby",
         "option_1" : {
           "text_1" : "Manikúra klasik",
           "text_2" : "Manikúra a obyčejné lakování O.P.I.",

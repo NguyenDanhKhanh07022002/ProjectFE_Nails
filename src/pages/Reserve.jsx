@@ -276,6 +276,7 @@ function Reserve() {
                         selected={bookingDate}
                         onChange={(date) => setBookingDate(date)}
                         minDate={new Date()}
+                        dateFormat="dd.MM.yyyy"
                       />
                       {errors.bookingDate && (
                         <Typography color="error">
@@ -297,6 +298,7 @@ function Reserve() {
                         selected={bookingDate}
                         onChange={(date) => setBookingDate(date)}
                         minDate={new Date()}
+                        dateFormat="dd.MM.yyyy"
                       />
                       {errors.bookingDate && (
                         <Typography color="error">
@@ -350,7 +352,7 @@ function Reserve() {
                         <b className="reserve-item-title">
                           {t("reservePage.Date")}:{" "}
                           {moment(bookingDate.toISOString()).format(
-                            "MM-DD-YYYY"
+                            "DD.MM.yyyy"
                           )}
                         </b>
                       </p>
@@ -393,7 +395,7 @@ function Reserve() {
                               id: "phoneNumber",
                               className: "phone-input",
                             }}
-                            country={"us"}
+                            country={"cz"}
                             value={bookingPhone}
                             onChange={(phone) => setBookingPhone(phone)}
                           />
@@ -451,7 +453,7 @@ function Reserve() {
                     <p>
                       <b className="reserve-item-title">
                         {t("reservePage.Date")}:{" "}
-                        {moment(bookingDate.toISOString()).format("MM-DD-YYYY")}
+                        {moment(bookingDate.toISOString()).format("DD.MM.yyyy")}
                       </b>
                     </p>
                     <p>

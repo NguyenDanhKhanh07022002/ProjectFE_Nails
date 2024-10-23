@@ -63,20 +63,14 @@ const Footer = () => {
             © 2024 Nails store. All rights reserved.
           </p>
           <div className="language-btn">
-            <button
-              onClick={() => {
-                i18n.changeLanguage("en");
-              }}
+            <select
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+              defaultValue={i18n.language}
             >
-              EN
-            </button>
-            <button
-              onClick={() => {
-                i18n.changeLanguage("cz");
-              }}
-            >
-              CZ
-            </button>
+              <option value="en">EN</option>
+              <option value="cz">CZ</option>
+              <option value="ua">UA</option>
+            </select>
           </div>
         </div>
       </div>

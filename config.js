@@ -1,5 +1,5 @@
 const config = {
-    apiUrl: "https://api.nsc89nails.cz"
-  };
-  
-  export default config;
+  apiUrl: "http://localhost:8082"
+};
+
+export default config;

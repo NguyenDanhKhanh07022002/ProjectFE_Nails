@@ -15,8 +15,13 @@ import ImageGalerie7 from "../assets/galerie/nails.jpg";
 import ImageGalerie8 from "../assets/galerie/massage.jfif";
 import ImageGalerie9 from "../assets/galerie/changeNails5.jfif";
 import ImageGalerie10 from "../assets/galerie/eyelashes1.jpg";
+<<<<<<< Updated upstream
 import ImageGalerie11 from "../assets/galerie/changeNails6.jfif";
 import ImageGalerie12 from "../assets/galerie/changeNails7.jfif";
+=======
+import ImageGalerie11 from "../assets/galerie/nail-foot1.jpg";
+// import ImageGalerie12 from "../assets/galerie/galerie-14-nehty.jpg";
+>>>>>>> Stashed changes
 import ImageGalerie13 from "../assets/galerie/massage1.jpg";
 import { useTranslation } from "react-i18next";
 
@@ -70,10 +75,6 @@ function ImageListMansory() {
     {
       img: ImageGalerie13,
       title: "Coffee table",
-    },
-    {
-      img: ImageGalerie12,
-      title: "Store",
     },
   ];
   useEffect(() => {

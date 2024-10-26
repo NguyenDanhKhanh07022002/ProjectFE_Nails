@@ -5,28 +5,32 @@ import { useNavigate } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import config from "../../config";
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 const itemsPerPage = 10;
 
 const getBookingServiceText = (bookingService) => {
   switch (bookingService) {
     case "1":
-      return "Manicure";
+      return "Manikúra";
     case "2":
-      return "Pedicure";
+      return "Pedikúra";
     case "3":
-      return "Manicure + Pedicure";
+      return "Manikúra + Pedikúra";
     case "4":
-      return "Artificial Nail Modeling";
+      return "Modelace Umelých Nehtú";
     case "5":
-      return "Nail Decoration";
+      return "Zdobení Nehtú";
     case "6":
-      return "Nail Adjustments";
+      return "Úpravy Nehtú";
     case "7":
-      return "Eyelash Extensions";
+      return "Prodluzování Ras";
     case "8":
-      return "Massage";
+      return "Masáze";
     case "9":
-      return "Other services";
+      return "Další služby";
   }
 };
 
@@ -55,8 +59,12 @@ const BookingManagement = () => {
     manicure: 0,
     pedicure: 0,
     manicurePedicure: 0,
+    artificialNailModeling: 0,
+    nailDecoration: 0,
+    nailGrooming: 0,
     prodluzovaniRas: 0,
     massage: 0,
+    otherService: 0,
   });
 
   const getAll = () => {
@@ -100,17 +108,27 @@ const BookingManagement = () => {
   const calculateServiceTotals = (data) => {
     const totals = {
       total: data.length,
-      manicure: data.filter((item) => item.bookingService === "Manicure")
+      manicure: data.filter((item) => item.bookingService === "Manikúra")
         .length,
-      pedicure: data.filter((item) => item.bookingService === "Pedicure")
+      pedicure: data.filter((item) => item.bookingService === "Pedikúra")
         .length,
       manicurePedicure: data.filter(
-        (item) => item.bookingService === "Manicure + Pedicure"
+        (item) => item.bookingService === "Manikúra + Pedikúra"
+      ).length,
+      artificialNailModeling: data.filter(
+        (item) => item.bookingService === "Modelace Umelých Nehtú"
+      ).length,
+      nailDecoration: data.filter(
+        (item) => item.bookingService === "Zdobení Nehtú"
+      ).length,
+      nailGrooming: data.filter(
+        (item) => item.bookingService === "Úpravy Nehtú"
       ).length,
       prodluzovaniRas: data.filter(
         (item) => item.bookingService === "Prodluzování Ras"
       ).length,
-      massage: data.filter((item) => item.bookingService === "Massage").length,
+      massage: data.filter((item) => item.bookingService === "Masáze").length,
+      otherService: data.filter((item) => item.bookingService === "Další služby").length,
     };
     setServiceTotals(totals);
   };
@@ -222,36 +240,77 @@ const BookingManagement = () => {
         setError("Error searching bookings");
       });
   };
+  const data = {
+    labels: [
+      'Booking Service',
+      'Manikúra',
+      'Pedikúra',
+      'Manikúra+Pedikúra',
+      'Modelace Umelých Nehtú',
+      'Zdobení Nehtú',
+      'Úpravy Nehtú',
+      'Prodluzování Ras',
+      'Masáze',
+      'Další služby'
+    ],
+    datasets: [
+      {
+        label: 'Service',
+        data: [
+          serviceTotals.total,
+          serviceTotals.manicure,
+          serviceTotals.pedicure,
+          serviceTotals.manicurePedicure,
+          serviceTotals.artificialNailModeling,
+          serviceTotals.nailDecoration,
+          serviceTotals.nailGrooming,
+          serviceTotals.prodluzovaniRas,
+          serviceTotals.massage,
+          serviceTotals.otherService
+        ],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+      },
+    ],
+  };
 
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Total Service Booking Nails',
+      },
+      datalabels: {
+        color: '#000',
+        anchor: 'end',
+        align: 'end',
+        formatter: (value) => value,
+        font: {
+          weight: 'bold',
+        },
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 50,
+        ticks: {
+          stepSize: 10,
+        },
+      },
+    },
+  };
   return (
     <div className="admin-page" ref={dropdownRef}>
       <main className="admin-content">
         <h4>Booking management</h4>
-        <div className="cards-container">
-          <div className="card">
-            <h4>Total Booking Service</h4>
-            <p>{serviceTotals.total}</p>
-          </div>
-          <div className="card">
-            <h4>Total Manicure</h4>
-            <p>{serviceTotals.manicure}</p>
-          </div>
-          <div className="card">
-            <h4>Total Pedicure</h4>
-            <p>{serviceTotals.pedicure}</p>
-          </div>
-          <div className="card">
-            <h4>Total Mani + Pedi</h4>
-            <p>{serviceTotals.manicurePedicure}</p>
-          </div>
-          <div className="card">
-            <h4>Prodluzování Ras</h4>
-            <p>{serviceTotals.prodluzovaniRas}</p>
-          </div>
-          <div className="card">
-            <h4>Massage</h4>
-            <p>{serviceTotals.massage}</p>
-          </div>
+        <div style={{ width: '100%', height: '800px' }}>
+          <Bar data={data} options={options} plugins={[ChartDataLabels]} />
         </div>
         {error && <div className="error-message">{error}</div>}
         <div className="custom-search-container">

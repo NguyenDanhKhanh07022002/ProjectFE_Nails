@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PageHeroBanner from "../components/PageHeroBanner";
-import contactHeroBanner from "../assets/contactHero.jpg";
+import contactHeroBanner from "../assets/Slide-1.jpg";
 import GoogleMap from "../components/GoogleMap";
 import ContactForm from "../components/ContactForm";
 

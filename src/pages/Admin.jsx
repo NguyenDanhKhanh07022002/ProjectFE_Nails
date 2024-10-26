@@ -158,14 +158,16 @@ const Admin = () => {
       </header>
       <nav className="admin-body">
         <div className="admin-body--navbar">
-          <NavLink to="/admin/booking" activeclassname="active">
-            <AiFillAppstore />
-            booking
-          </NavLink>
-          <NavLink to="/admin/message" activeclassname="active">
-            <AiFillMessage />
-            message
-          </NavLink>
+          <div>
+            <NavLink to="/admin/booking" activeclassname="active">
+              <AiFillAppstore />
+              booking
+            </NavLink>
+            <NavLink to="/admin/message" activeclassname="active">
+              <AiFillMessage />
+              message
+            </NavLink>
+          </div>
         </div>
         <div className="admin-body--content">
           <Outlet />

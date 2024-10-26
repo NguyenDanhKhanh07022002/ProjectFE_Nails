@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import CommentSlide from "../components/CommentSlide";
 import FooterBanner from "../components/FooterBanner";
 
-import aboutHeroBanner from "../assets/aboutHero.jpg";
+import aboutHeroBanner from "../assets/Slide-1.jpg";
 import storeImg from "../assets/store-outside.jpg";
 import bigBannerImage from "../assets/bigBanner/banner-rezervace2.jpg";
 

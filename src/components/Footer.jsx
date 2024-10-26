@@ -24,22 +24,15 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="footer__section">
+          <div className="footer__section  text-center">
             <h2 className="footer__title">{t("Social")}</h2>
-            <div className="footer__socials">
+            <div className="footer__socials  text-center">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=100047383026112"
                 className="footer__social-link"
                 aria-label="Facebook"
               >
                 <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="https://twitter.com"
-                className="footer__social-link"
-                aria-label="Twitter"
-              >
-                <i className="fab fa-twitter"></i>
               </a>
               <a
                 href="https://www.instagram.com/nsc89_nails/profilecard/?igsh=MXBtMGh5YmMzd3B0Nw%3D%3D"
@@ -47,13 +40,6 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://linkedin.com"
-                className="footer__social-link"
-                aria-label="LinkedIn"
-              >
-                <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
           </div>

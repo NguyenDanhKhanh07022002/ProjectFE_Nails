@@ -78,7 +78,7 @@ const MessageManagement = () => {
 
   return (
     <>
-      <div className="container mt-3">
+      <div className="m-lg-2">
         <h4>Message comment</h4>
         <table className="table table-hover">
           <thead>

@@ -305,6 +305,9 @@ const BookingManagement = () => {
       },
     },
   };
+  const onReload = () => {
+    getAll();
+  }
   return (
     <div className="admin-page" ref={dropdownRef}>
       <main className="admin-content">
@@ -314,6 +317,9 @@ const BookingManagement = () => {
         </div>
         {error && <div className="error-message">{error}</div>}
         <div className="custom-search-container">
+          <button onClick={onReload}>
+            Reload
+          </button>
           <div className="custom-search-container--form">
             <input
               type="text"

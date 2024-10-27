@@ -1,0 +1,49 @@
+.close-time-management {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    .close-time-title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .date-picker-wrapper {
+        margin-bottom: 20px;
+
+        .custom-date-picker {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+    }
+
+    .time-selection-wrapper {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+    }
+
+    .radio-group {
+        display: flex;
+        align-items: center;
+
+        .custom-radio {
+            margin-right: 5px;
+        }
+
+        .custom-radio-label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+    }
+
+    .custom-radio:checked + .custom-radio-label {
+        font-weight: bold;
+        color: #007bff;
+    }
+}

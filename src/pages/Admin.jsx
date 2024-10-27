@@ -13,6 +13,7 @@ import Badge from "@mui/material/Badge";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { FaClock } from 'react-icons/fa';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Admin = () => {
@@ -166,6 +167,10 @@ const Admin = () => {
             <NavLink to="/admin/message" activeclassname="active">
               <AiFillMessage />
               message
+            </NavLink>
+            <NavLink to="/admin/close-time" activeclassname="active">
+              <FaClock />
+              close Time
             </NavLink>
           </div>
         </div>

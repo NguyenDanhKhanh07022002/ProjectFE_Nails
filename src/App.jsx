@@ -19,6 +19,7 @@ import "react-phone-input-2/lib/style.css";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import BookingManagement from "./components/BookingManagement";
 import MessageManagement from "./components/MessageManagement";
+import CloseTimeManagement from "./components/CloseTimeManagement"
 function App() {
   let location = useLocation();
   const isAdminPage = location.pathname.startsWith("/admin");
@@ -66,6 +67,7 @@ function App() {
         <Route path="/admin" element={<Admin />}>
           <Route path="booking" element={<BookingManagement />} />
           <Route path="message" element={<MessageManagement />} />
+          <Route path="close-time" element={<CloseTimeManagement />} />
         </Route>
         <Route path="/admin/login" element={<LoginForm />} />
       </Routes>

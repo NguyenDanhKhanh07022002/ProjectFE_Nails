@@ -50,7 +50,7 @@ const CloseTimeManagement = () => {
 
         const token = localStorage.getItem("token");
 
-        axios.post("http://localhost:8082/api/close-times/create", closeTimes, {
+        axios.post("${config.apiUrl}api/close-times/create", closeTimes, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

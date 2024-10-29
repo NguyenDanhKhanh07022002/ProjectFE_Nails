@@ -152,7 +152,7 @@ function Reserve() {
 
   const fetchClosedTimes = async (date) => {
     try {
-      const response = await fetch(`${config.apiUrl}api/close-times/${date}`, {
+      const response = await fetch(`${config.apiUrl}/api/close-times/${date}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

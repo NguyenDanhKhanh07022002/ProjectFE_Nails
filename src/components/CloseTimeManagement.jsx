@@ -6,6 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./CloseTimeManagement.scss";
+import config from "../../config";
 
 const CloseTimeManagement = () => {
     const [bookingDate, setBookingDate] = useState(new Date());
@@ -50,7 +51,7 @@ const CloseTimeManagement = () => {
 
         const token = localStorage.getItem("token");
 
-        axios.post(`${config.apiUrl}api/close-times/create`, closeTimes, {
+        axios.post(`${config.apiUrl}/api/close-times/create`, closeTimes, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

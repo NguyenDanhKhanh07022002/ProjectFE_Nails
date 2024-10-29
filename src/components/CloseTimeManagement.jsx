@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
+import axios from "axios";
 
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,27 +9,69 @@ import "./CloseTimeManagement.scss";
 
 const CloseTimeManagement = () => {
     const [bookingDate, setBookingDate] = useState(new Date());
-    const [selectedTimes, setSelectedTimes] = useState([]);
+    const [selectedTimes, setSelectedTimes] = useState(() => {
+        const savedTimes = localStorage.getItem("selectedTimes");
+        return savedTimes ? JSON.parse(savedTimes) : {};
+    });
+
+    useEffect(() => {
+        localStorage.setItem("selectedTimes", JSON.stringify(selectedTimes));
+    }, [selectedTimes]);
+
+    const handleDateChange = (date) => {
+        setBookingDate(date);
+        const formattedDate = date.toLocaleDateString("en-GB").replace(/\//g, "-");
+        if (!selectedTimes[formattedDate]) {
+            setSelectedTimes((prev) => ({ ...prev, [formattedDate]: [] }));
+        }
+    };
 
     const handleCheckboxChange = (event) => {
+        event.stopPropagation();
         const { value } = event.target;
-        console.log("Before change:", selectedTimes);
-        setSelectedTimes((prevSelectedTimes) => {
-            const updatedTimes = prevSelectedTimes.includes(value)
-                ? prevSelectedTimes.filter((time) => time !== value)
-                : [...prevSelectedTimes, value];
+        const formattedDate = bookingDate.toLocaleDateString("en-GB").replace(/\//g, "-");
 
-            console.log("After change:", updatedTimes);
-            return updatedTimes;
+        setSelectedTimes((prevSelectedTimes) => {
+            const currentSelectedTimes = prevSelectedTimes[formattedDate] || [];
+            const updatedTimes = currentSelectedTimes.includes(value)
+                ? currentSelectedTimes.filter((time) => time !== value)
+                : [...currentSelectedTimes, value];
+
+            return { ...prevSelectedTimes, [formattedDate]: updatedTimes };
         });
     };
+
+    const handleSubmit = () => {
+        const formattedDate = bookingDate.toLocaleDateString("en-GB").replace(/\//g, "-");
+        const closeTimes = {
+            date: formattedDate,
+            time: selectedTimes[formattedDate] || [], // Sử dụng giờ đã chọn cho ngày hiện tại
+        };
+
+        const token = localStorage.getItem("token");
+
+        axios.post("http://localhost:8082/api/close-times/create", closeTimes, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+            .then((response) => {
+                console.log("Close times created:", response.data);
+            })
+            .catch((error) => {
+                console.error("Error creating close times", error);
+            });
+    };
+
+    const formattedCurrentDate = bookingDate.toLocaleDateString("en-GB").replace(/\//g, "-");
+
     return (
         <div className="close-time-management m-lg-2">
             <h4 className="close-time-title">Close Time</h4>
             <div className="date-picker-wrapper">
                 <DatePicker
                     selected={bookingDate}
-                    onChange={(date) => setBookingDate(date)}
+                    onChange={handleDateChange}
                     minDate={new Date()}
                     dateFormat="dd.MM.yyyy"
                     className="custom-date-picker"
@@ -70,7 +113,7 @@ const CloseTimeManagement = () => {
                             id={`time-${time.replace(":", "-")}`}
                             className="custom-radio"
                             onChange={handleCheckboxChange}
-                            checked={selectedTimes.includes(time)}
+                            checked={selectedTimes[formattedCurrentDate]?.includes(time) || false} // Kiểm tra an toàn
                         />
                         <label
                             htmlFor={`time-${time.replace(":", "-")}`}
@@ -81,6 +124,9 @@ const CloseTimeManagement = () => {
                     </div>
                 ))}
             </div>
+            <button className="btn btn-primary" onClick={handleSubmit}>
+                Confirm Close Times
+            </button>
         </div>
     );
 };

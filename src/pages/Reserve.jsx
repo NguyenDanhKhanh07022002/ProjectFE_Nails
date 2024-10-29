@@ -1,6 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import PhoneInput from "react-phone-input-2";
 import moment from "moment";
@@ -41,6 +42,7 @@ function Reserve() {
   const [bookingPhone, setBookingPhone] = React.useState("");
   const [bookingMail, setBookingMail] = React.useState("");
   const [bookingDescription, setBookingDescription] = React.useState("");
+  const [closedTimes, setClosedTimes] = useState([]);
   const bookingTimeOptions = [
     "08:00",
     "08:30",
@@ -128,6 +130,7 @@ function Reserve() {
   };
 
   const handleNext = () => {
+    var date = moment(bookingDate.toISOString()).format("DD-MM-YYYY");
     if (validateStep()) {
       let newSkipped = skipped;
       if (isStepSkipped(activeStep)) {
@@ -139,8 +142,32 @@ function Reserve() {
         handleSubmit();
       } else {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        if (activeStep === 0) {
+          fetchClosedTimes(date);
+        }
       }
       setSkipped(newSkipped);
+    }
+  };
+
+  const fetchClosedTimes = async (date) => {
+    try {
+      const response = await fetch(`http://localhost:8082/api/close-times/${date}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Closed times:", data);
+      setClosedTimes(data);
+    } catch (error) {
+      console.error("Error fetching closed times", error);
     }
   };
 
@@ -163,7 +190,7 @@ function Reserve() {
   const handleSubmit = () => {
     const data = {
       bookingService,
-      date: moment(bookingDate.toISOString()).format("MM-DD-YYYY"),
+      date: moment(bookingDate.toISOString()).format("DD-MM-YYYY"),
       time: bookingTime,
       fullName: bookingName,
       phoneNumber: bookingPhone,
@@ -183,6 +210,19 @@ function Reserve() {
       .catch(function (error) {
         console.log(error);
       });
+  };
+  const isTimeDisabled = (time) => {
+    const [hours, minutes] = time.split(":").map(Number);
+    const optionTime = new Date(bookingDate);
+    optionTime.setHours(hours, minutes, 0, 0);
+    const currentTime = new Date();
+    return optionTime < currentTime && bookingDate.toDateString() === currentTime.toDateString();
+  };
+
+  const handleDateChange = async (date) => {
+    setBookingDate(date);
+    const formattedDate = moment(date).format("DD-MM-YYYY");
+    await fetchClosedTimes(formattedDate);
   };
 
   return (
@@ -296,7 +336,7 @@ function Reserve() {
                       </b>
                       <DatePicker
                         selected={bookingDate}
-                        onChange={(date) => setBookingDate(date)}
+                        onChange={handleDateChange}
                         minDate={new Date()}
                         dateFormat="dd.MM.yyyy"
                       />
@@ -323,7 +363,7 @@ function Reserve() {
                           {bookingTimeOptions.map((e, i) => (
                             <FormControlLabel
                               value={e}
-                              control={<Radio />}
+                              control={<Radio disabled={closedTimes.includes(e) || isTimeDisabled(e)} />}
                               label={e}
                               key={i}
                             />

@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
         <div className="footer__bottom">
           <p className="footer__bottom-text">
-            © 2024 Nails store. All rights reserved.
+            © 2024 NSC 89 Nails store. All rights reserved.
           </p>
           <div className="language-btn">
             <select

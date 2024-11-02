@@ -347,7 +347,9 @@ function Introduction() {
           </div>
           <ImageListMansory />
           <div className="link-to-page">
-            <Button hoverColor="blue" title="Reservation" />
+            <Link to="/reserve">
+              <Button hoverColor="blue" title="Reservation" />
+            </Link>
           </div>
           <FollowUsComponent />
           <CommentSlide />

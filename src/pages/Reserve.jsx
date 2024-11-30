@@ -190,7 +190,7 @@ function Reserve() {
   const handleSubmit = () => {
     const data = {
       bookingService,
-      date: moment(bookingDate.toISOString()).format("DD-MM-YYYY"),
+      date: moment(bookingDate.toISOString()).format("MM.DD.YYYY"),
       time: bookingTime,
       fullName: bookingName,
       phoneNumber: bookingPhone,

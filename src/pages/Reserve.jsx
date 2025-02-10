@@ -179,7 +179,7 @@ function Reserve() {
     setActiveStep(0);
     setErrors({});
     setBookingService(0);
-    setBookingDate(new Date());
+    setBookingDate(new Date(moment().add(1, "days").toDate()));
     setBookingTime("");
     setBookingName("");
     setBookingPhone("");

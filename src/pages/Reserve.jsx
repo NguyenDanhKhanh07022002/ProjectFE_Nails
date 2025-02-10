@@ -36,7 +36,7 @@ function Reserve() {
   const [isSendingReserve, setIsSendingReserve] = React.useState(false);
 
   const [bookingService, setBookingService] = React.useState(0);
-  const [bookingDate, setBookingDate] = React.useState(new Date());
+  const [bookingDate, setBookingDate] = React.useState(moment().add(1, "days").toDate());
   const [bookingTime, setBookingTime] = React.useState("");
   const [bookingName, setBookingName] = React.useState("");
   const [bookingPhone, setBookingPhone] = React.useState("");
@@ -315,7 +315,7 @@ function Reserve() {
                       <DatePicker
                         selected={bookingDate}
                         onChange={(date) => setBookingDate(date)}
-                        minDate={new Date()}
+                        minDate={moment().add(1, "days").toDate()}
                         dateFormat="dd.MM.yyyy"
                       />
                       {errors.bookingDate && (
@@ -337,7 +337,7 @@ function Reserve() {
                       <DatePicker
                         selected={bookingDate}
                         onChange={handleDateChange}
-                        minDate={new Date()}
+                        minDate={moment().add(1, "days").toDate()}
                         dateFormat="dd.MM.yyyy"
                       />
                       {errors.bookingDate && (

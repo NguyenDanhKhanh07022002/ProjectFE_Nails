@@ -6,10 +6,11 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./CloseTimeManagement.scss";
+import moment from "moment";
 import config from "../../config";
 
 const CloseTimeManagement = () => {
-    const [bookingDate, setBookingDate] = useState(new Date());
+    const [bookingDate, setBookingDate] = React.useState(moment().add(1, "days").toDate());
     const [selectedTimes, setSelectedTimes] = useState(() => {
         const savedTimes = localStorage.getItem("selectedTimes");
         return savedTimes ? JSON.parse(savedTimes) : {};
@@ -73,7 +74,7 @@ const CloseTimeManagement = () => {
                 <DatePicker
                     selected={bookingDate}
                     onChange={handleDateChange}
-                    minDate={new Date()}
+                    minDate={moment().add(1, "days").toDate()}
                     dateFormat="dd.MM.yyyy"
                     className="custom-date-picker"
                 />
